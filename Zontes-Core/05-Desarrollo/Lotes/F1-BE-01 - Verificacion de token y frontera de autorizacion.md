@@ -1,16 +1,16 @@
 ---
 title: "F1-BE-01 — Verificacion de token y frontera de autorizacion"
 tags: [zontes, lote, f1, backend]
-status: bloqueado-por-decision
+status: implementado-sin-integracion
 fase: F1
 frente: BE
-bloqueos: [DEC-02, DEC-03]
+bloqueos: [entorno-firebase]
 updated: 2026-10-03
 ---
 
 # F1-BE-01 — Verificacion de token y frontera de autorizacion
 
-Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote de trabajo]]. **No iniciado.** Índice: [[05-Desarrollo/Lotes F1-F7 - indice]].
+Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote de trabajo]]. **Resultado 2026-10-03:** Implementado: verificación con Admin SDK y `checkRevoked`, perfil en Firestore, `GET /api/v1/me`, `requireAuth`/`requireRole`. Probado con dobles (F1-T01, F1-T06). Evidencia en [[05-Desarrollo/Testing]] «Corridas F1». Índice: [[05-Desarrollo/Lotes F1-F7 - indice]].
 
 | Campo | Contenido |
 | --- | --- |
@@ -24,7 +24,7 @@ Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote d
 | Dependencias | F0 verificada. DEC-02 y autorización para usar Firebase Auth Emulator (requiere `firebase-tools`, no instalado) o un proyecto de prueba sin datos reales. |
 | Aceptación | Ver lista siguiente. |
 | Prueba y evidencia | T-AUTHZ, T-ROLE · unitarias con `verifyIdToken` simulado (Vitest+Supertest) + integración con emulador o proyecto autorizado · `npm run check` · resultados en [[05-Desarrollo/Testing]] con fecha, revisión FE/BE y datos sintéticos |
-| Estado | **Bloqueado por decisión: DEC-02, DEC-03** · 2026-10-03 |
+| Estado | **Implementado y probado con dobles; integración con Firebase real pendiente (F1-I-01)** · 2026-10-03 |
 
 ## Aceptación
 

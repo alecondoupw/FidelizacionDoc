@@ -1,16 +1,16 @@
 ---
 title: "F1-BE-03 — Normalizacion de correo y vinculo legacy"
 tags: [zontes, lote, f1, backend]
-status: bloqueado-por-decision
+status: implementado-sin-integracion
 fase: F1
 frente: BE
-bloqueos: [DEC-04, DEC-02]
+bloqueos: [entorno-firebase]
 updated: 2026-10-03
 ---
 
 # F1-BE-03 — Normalizacion de correo y vinculo legacy
 
-Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote de trabajo]]. **No iniciado.** Índice: [[05-Desarrollo/Lotes F1-F7 - indice]].
+Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote de trabajo]]. **Resultado 2026-10-03:** Implementado: `POST /api/v1/clientes/registro` con normalización, correo verificado (ADR-11), adaptador legacy con doble sintético (DEC-04) y unicidad por correo en transacción. Probado con dobles. Evidencia en [[05-Desarrollo/Testing]] «Corridas F1». Índice: [[05-Desarrollo/Lotes F1-F7 - indice]].
 
 | Campo | Contenido |
 | --- | --- |
@@ -24,7 +24,7 @@ Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote d
 | Dependencias | [[05-Desarrollo/Lotes/F1-BE-01 - Verificacion de token y frontera de autorizacion\|F1-BE-01]]; DEC-04 (contrato de la fuente); acceso autorizado a la fuente o a un doble acordado. |
 | Aceptación | Ver lista siguiente. |
 | Prueba y evidencia | T-LINK, T-AUTHZ · unitarias de normalización + integración con doble/fuente autorizada · resultados en [[05-Desarrollo/Testing]] con fecha, revisión FE/BE y datos sintéticos |
-| Estado | **Bloqueado por decisión: DEC-04, DEC-02** · 2026-10-03 |
+| Estado | **Implementado y probado con dobles; integración con Firebase real pendiente (F1-I-01)** · 2026-10-03 |
 
 ## Aceptación
 

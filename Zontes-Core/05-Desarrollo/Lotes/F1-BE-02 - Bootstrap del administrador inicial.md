@@ -1,16 +1,16 @@
 ---
 title: "F1-BE-02 — Bootstrap del administrador inicial"
 tags: [zontes, lote, f1, backend]
-status: bloqueado-por-decision
+status: implementado-sin-integracion
 fase: F1
 frente: BE
-bloqueos: [DEC-03, DEC-02]
+bloqueos: [entorno-firebase]
 updated: 2026-10-03
 ---
 
 # F1-BE-02 — Bootstrap del administrador inicial
 
-Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote de trabajo]]. **No iniciado.** Índice: [[05-Desarrollo/Lotes F1-F7 - indice]].
+Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote de trabajo]]. **Resultado 2026-10-03:** Implementado: `bootstrapAdministrador` + comando `npm run admin:bootstrap`. Probado con dobles: crea una vez, es idempotente, rechaza un segundo admin y nunca promueve a un cliente. **Pendiente:** que Paulo lo ejecute en el proyecto de desarrollo. Evidencia en [[05-Desarrollo/Testing]] «Corridas F1». Índice: [[05-Desarrollo/Lotes F1-F7 - indice]].
 
 | Campo | Contenido |
 | --- | --- |
@@ -24,7 +24,7 @@ Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote d
 | Dependencias | [[05-Desarrollo/Lotes/F1-BE-01 - Verificacion de token y frontera de autorizacion\|F1-BE-01]]; DEC-02; DEC-03. |
 | Aceptación | Ver lista siguiente. |
 | Prueba y evidencia | T-ROLE · prueba del script contra emulador/proyecto autorizado · `npm run check` · resultados en [[05-Desarrollo/Testing]] con fecha, revisión FE/BE y datos sintéticos |
-| Estado | **Bloqueado por decisión: DEC-03, DEC-02** · 2026-10-03 |
+| Estado | **Implementado y probado con dobles; integración con Firebase real pendiente (F1-I-01)** · 2026-10-03 |
 
 ## Aceptación
 

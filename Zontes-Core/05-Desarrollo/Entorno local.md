@@ -14,8 +14,8 @@ Respuesta literal al abrir F0: frontend `…\FidelizacionFronted`; backend `…\
 | Frente | Ruta absoluta en este host (Windows) | Repositorio | Revisión F0 |
 | --- | --- | --- | --- |
 | Core (este baúl) | `C:\Users\aleco\Documents\Fidelizacion\FidelizacionDoc\Zontes-Core` | [FidelizacionDoc](https://github.com/alecondoupw/FidelizacionDoc), rama `main` | commit de documentación F0 sobre `591032d` |
-| FE_REPO | `C:\Users\aleco\Documents\Fidelizacion\FidelizacionFronted` | [FidelizacionFronted](https://github.com/alecondoupw/FidelizacionFronted), rama `main` | `f29da45` sobre `4f8ad6e` (`main`) |
-| BE_REPO | `C:\Users\aleco\Documents\Fidelizacion\FidelizacionBackend` | [FidelizacionBackend](https://github.com/alecondoupw/FidelizacionBackend), rama `main` | `747e191` sobre `e9e0dd2` (`main`) |
+| FE_REPO | `C:\Users\aleco\Documents\Fidelizacion\FidelizacionFronted` | [FidelizacionFronted](https://github.com/alecondoupw/FidelizacionFronted), rama `main` | F0 `f29da45`, F1 `71184a5` (`main`) |
+| BE_REPO | `C:\Users\aleco\Documents\Fidelizacion\FidelizacionBackend` | [FidelizacionBackend](https://github.com/alecondoupw/FidelizacionBackend), rama `main` | F0 `747e191`, F1 `8fce35e` (`main`) |
 
 Paulo autorizó commit y push el 2026-10-03. Se publicó primero en la rama `f0/base-tecnica` de cada repo y, por decisión de Paulo el mismo día, se fusionó en `main` por avance rápido (sin commits de fusión). Desde entonces `main` de FE y BE apunta a la revisión F0. La rama `f0/base-tecnica` se borró en local y remoto en los tres repos tras comprobar que estaba contenida en `main`; cada repo queda sólo con `main`. Remotos verificados con `git ls-remote`.
 
@@ -52,6 +52,10 @@ Fuentes oficiales consultadas el 2026-10-03: instalación de Next.js (docs versi
 | Arranque de prueba | `npm run smoke` (tras build; puerto 3100) | `npm run smoke` (tras build; puerto 4100) |
 | FE→BE | `INTEGRATION_API_BASE_URL=http://localhost:4000 npm run test:integration` con el BE en marcha | — |
 
+**Comandos de F1 (BE, los ejecuta Paulo contra el proyecto de desarrollo):** `npm run admin:bootstrap -- --email <correo>` crea el administrador inicial una sola vez e imprime un enlace para definir la contraseña; `npm run dev:usuario-prueba -- --email <nombre>@ejemplo.test` crea un usuario de prueba con correo verificado (sólo dominio `ejemplo.test`, nunca con `NODE_ENV=production`); `FIRESTORE_INTEGRATION=1 npm run test:firebase` corre el contrato del repositorio contra Firestore real con prefijo temporal y lo borra al terminar.
+
+**Dependencias añadidas en F1 (FE, desarrollo):** `@testing-library/react` 16.3.3, `@testing-library/dom` 10.4.2, `@testing-library/user-event` 14.6.7, `jsdom` 29.1.1 (jsdom 30 exige Node ≥ 24.15 y aquí hay 24.14.1; `@vitejs/plugin-react` descartado por conflicto Babel 7/8 y porque Vite 8 ya transforma JSX). Componentes shadcn/ui añadidos: input, label, card, badge, alert, skeleton. Ambos repos llevan `.gitattributes` con `eol=lf`.
+
 ## Variables de entorno (sólo nombres)
 
 | Repo | Variable | Uso | Valor en F0 |
@@ -61,6 +65,8 @@ Fuentes oficiales consultadas el 2026-10-03: instalación de Next.js (docs versi
 | BE | `NODE_ENV`, `HOST`, `PORT` | Arranque | `development`, `127.0.0.1`, `4000` |
 | BE | `CORS_ALLOWED_ORIGINS` | Orígenes FE, separados por coma | `http://localhost:3000` |
 | BE | `FIREBASE_PROJECT_ID`, `GOOGLE_APPLICATION_CREDENTIALS` | Admin SDK vía ADC; el archivo de credenciales vive fuera del repo | vacías (DEC-02) |
+| BE | `LEGACY_SOURCE` | Fuente de clientes existentes; sólo `sintetica` en F1 (DEC-04) | `sintetica` |
+| BE | `FIRESTORE_PREFIX` | Prefijo de colecciones; aísla pruebas | vacío |
 
 Custodio de valores reales: pendiente de DEC-02. `.env*` (salvo `.env.example`), `*.pem` y archivos de cuenta de servicio están ignorados por Git en ambos repos. No registrar aquí valores, tokens ni correos reales.
 

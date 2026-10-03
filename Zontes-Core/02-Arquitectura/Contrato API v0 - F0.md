@@ -1,7 +1,7 @@
 ---
 title: "Contrato API v0 — F0"
 tags: [zontes, arquitectura, contrato, fase-0]
-status: v0-implementado-parcial
+status: v1-identidad-implementada
 updated: 2026-10-03
 ---
 
@@ -56,18 +56,23 @@ Público, sin token ni datos personales, `Cache-Control: no-store`.
 
 `requireAuth()` es el único punto donde Express verificará identidad. En F0: sin token → 401; con token → 501, el handler protegido nunca se alcanza. No está montada en rutas de producto. Orden previsto (F1-BE-01): verificar ID token con Admin SDK incluida revocación → cargar perfil (rol, estado) → autorizar rol → autorizar propietario y marca por recurso. El Admin SDK se inicializa de forma perezosa con Application Default Credentials y omite las reglas de Firestore, por eso nada lo invoca sin pasar por esta frontera.
 
-## 5. I-01 / I-02 — propuesta para F1, **no aprobada**
+## 5. I-01 / I-02 v1 — aprobado por Paulo e implementado (2026-10-03)
 
-Formas de partida para discutir en F1; ningún endpoint existe ni está aprobado. Roles y vínculo por correo vienen de SRC-02; los nombres de rutas y campos son propuesta.
+Aprobado como v1 el 2026-10-03 e implementado en F1 con dobles de prueba; la integración contra el proyecto Firebase de desarrollo está pendiente (DEC-02). Evidencia: [[05-Desarrollo/Testing]] «Corridas F1».
 
-| Flujo | Endpoint propuesto | Respuesta propuesta | Errores | Pendiente |
-| --- | --- | --- | --- | --- |
-| I-01 sesión | `GET /api/v1/me` (Bearer) | `{ uid, rol: "cliente"\|"administrador", activo, marcas: ("zontes"\|"kiden"\|"niu")[], vinculo: "vinculado"\|"no_vinculado" }` | 401 token ausente/expirado/revocado · 403 usuario inactivo | DEC-02 proyecto Auth · DEC-03 bootstrap admin · política de sesión |
-| I-01 rol admin | Guardas `requireRole("administrador")` sobre `/api/v1/admin/*` | — | 403 `FORBIDDEN` para cliente | DEC-03 |
-| I-02 registro/vínculo | `POST /api/v1/clientes/registro` (Bearer del usuario recién creado en Firebase Auth) | `{ vinculo, marcas }` sin exponer datos legacy no autorizados | 409 correo ya vinculado · 422 validación | **DEC-04**: API/esquema legacy, duplicados, cambio de correo, multiplicidad de marcas |
+| Flujo | Endpoint | Respuesta | Errores |
+| --- | --- | --- | --- |
+| I-01 sesión | `GET /api/v1/me` (Bearer) | 200 `{ uid, rol: "cliente"\|"administrador", activo, marcas: ("zontes"\|"kiden"\|"niu")[], vinculo: "vinculado"\|"no_vinculado" }`, `Cache-Control: no-store` | 401 `UNAUTHENTICATED` (ausente, malformado, expirado, revocado, usuario deshabilitado) · 403 `REGISTRATION_REQUIRED` (usuario de Firebase sin perfil) · 403 `FORBIDDEN` (perfil inactivo) · 503 `AUTH_NOT_CONFIGURED` · 500 si Firebase falla (no se disfraza de 401) |
+| I-01 rol | `requireRole("administrador")` para futuras rutas `/api/v1/admin/*` | — | 403 `FORBIDDEN` |
+| I-02 registro/vínculo | `POST /api/v1/clientes/registro` (Bearer del usuario recién creado; **sin cuerpo**, el correo sale del token) | 201 `{ vinculo, marcas }` | 401 · 403 `EMAIL_NOT_VERIFIED` · 422 `VALIDATION_ERROR` (cuenta sin correo) · 409 `ALREADY_REGISTERED` · 409 `EMAIL_ALREADY_LINKED` |
 
-Normalización de correo propuesta para I-02: recortar espacios y pasar a minúsculas antes de comparar; es el **único** criterio de vínculo (ADR-04). Cualquier regla adicional (alias, puntos en Gmail) es decisión de DEC-04, no se infiere.
+**Añadidos al implementar (precisan la confirmación de Paulo):** los códigos `REGISTRATION_REQUIRED` y `ALREADY_REGISTERED`, y la **exigencia de correo verificado** antes del vínculo (`EMAIL_NOT_VERIFIED`). Sin ella, cualquiera podría registrarse con el correo de otro cliente y heredar sus marcas y puntos; es una medida de seguridad, no un cambio de alcance, pero modifica el flujo de registro (paso de verificación por enlace).
 
+**Normalización:** `trim` + minúsculas; único criterio de vínculo (ADR-04).
+
+**Modelo Firestore (DEC-03):** `usuarios/{uid}` → `{ correo, rol, activo, marcas, vinculo, creadoEn }`; `correos/{sha256(correo)}` → `{ uid }` (unicidad sin usar el correo como ID); `auditoria/{auto}` → `{ accion, actor, objetivoUid, en, datos }` sin correos ni tokens. Registro y bootstrap escriben los tres documentos en una transacción. `FIRESTORE_PREFIX` aísla colecciones de prueba.
+
+**Fuente legacy (DEC-04):** interfaz `FuenteLegacy.buscarPorCorreo` con doble sintético de dominio `ejemplo.test`: `cliente.zontes@` → Zontes; `cliente.kiden.niu@` → Kiden y NIU; `cliente.multimarca@` → las tres.
 ## 6. Dependencias abiertas
 
 DEC-02 (proyecto Firebase y custodio), DEC-03 (administrador inicial), DEC-04 (contrato legacy), DEC-06 (zona horaria y vencimiento). Hasta resolverlas, §5 no se implementa como definitivo. Contratos I-03–I-09 se detallan al abrir su fase.

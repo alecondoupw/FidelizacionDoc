@@ -53,4 +53,24 @@ Pruebas BE incluidas en F0-T03: contrato de salud y UTC; `X-Request-Id` (seguro 
 
 **Fallos observados durante F0 y corregidos antes de la corrida final:** `CORS_ALLOWED_ORIGINS="*"` → excepción no controlada (FAIL → corregido); aserción libuv del smoke FE en Windows (FAIL exit 127 → corregido); tipos de mocks y `LayoutProps` en typecheck FE (FAIL → corregido). Ningún T-ID de producto (T-ROLE…T-DEMO) se ejecutó: F0 no implementa reglas de negocio.
 
+## Corridas F1 — 2026-10-03 (dobles de prueba, sin Firebase real)
+
+Entorno: el mismo de F0; código publicado en `main` como FE `71184a5` y BE `8fce35e`. Datos sintéticos (`ejemplo.test`). Firebase Auth y Firestore **sustituidos por dobles**: el comportamiento contra el proyecto de desarrollo está **sin ejecutar** hasta que Paulo lo cree (DEC-02).
+
+| ID | Prueba | Comando | Resultado | Límite |
+| --- | --- | --- | --- | --- |
+| F1-T01 | BE completo | `npm run check` (FidelizacionBackend) | PASS, exit 0; 63 pasadas, 5 omitidas (Firestore real) | Dobles de Auth y Firestore |
+| F1-T02 | Arranque BE | `npm run smoke` | PASS 2/2 | — |
+| F1-T03 | FE completo | `npm run check` (FidelizacionFronted) | PASS, exit 0; 43 pasadas, 3 omitidas (integración) | Componentes en jsdom con sesión simulada |
+| F1-T04 | Arranque FE | `npm run smoke` | PASS 7/7; las rutas protegidas sólo envían «Cargando tu cuenta» desde el servidor | — |
+| F1-T05 | FE→BE en vivo, BE sin Firebase | `curl` + `npm run test:integration` | `/me` sin token → 401; con token → 503 `AUTH_NOT_CONFIGURED`; preflight con `Authorization` desde `localhost:3000` → 204; integración 3/3 | Sin token real |
+| F1-T06 | Mutaciones de seguridad | quitar la verificación de correo y `requireRole` | Las pruebas correspondientes fallan (2) y vuelven a pasar al restaurar | — |
+| F1-T07 | Navegador real (Chrome del panel de la app) | `/ingresar`, `/registro`, `/admin/ingresar` en escritorio y 375 px; `/marcas` sin sesión | Sin scroll horizontal; aviso de Firebase no configurado; `/marcas` redirige a `/ingresar` | Sin sesión real: las vistas protegidas sólo se ven en pruebas de componentes |
+| F1-T08 | Firestore real | `FIRESTORE_INTEGRATION=1 npm run test:firebase` | **No ejecutada:** falta el proyecto de desarrollo | — |
+| F1-T09 | Recorrido integrado F1-I-01 | registro → vínculo → `/me` → salida con usuarios de prueba | **No ejecutada:** requiere proyecto y usuarios creados por Paulo | — |
+
+Escenarios cubiertos con dobles: **T-AUTHZ** (sin token, malformado, expirado, revocado, esquema no Bearer, inactivo, sin registro, fallo de infraestructura → 500), **T-ROLE** (cliente en ruta de admin → 403; bootstrap sólo una vez, idempotente, nunca promueve a un cliente), **T-LINK** (normalización con mayúsculas/espacios, sin coincidencia, correo no verificado, correo del cuerpo ignorado, mismo uid → 409, mismo correo con otro uid → 409, auditoría sin correo). En el FE: ingreso por rol, mensajes que no revelan si una cuenta existe, aviso de sesión expirada, registro por pasos con verificación, resultado vinculado y no vinculado, Mis marcas sólo con marcas del backend y marca activa inválida descartada.
+
+Fallos encontrados y corregidos en F1: contrato de prueba de Firestore construido fuera de `beforeAll`; prueba de configuración por defecto desactualizada; finales CRLF tras `git checkout` que rompían `prettier --check` (se añadió `.gitattributes` con `eol=lf` en FE y BE); etiquetas de pasos ocultas a lectores de pantalla en móvil; marcador del smoke que pasaba por el `<title>`.
+
 Una captura o una compilación no es prueba de reglas. Los resultados se registrarán aquí o se enlazarán desde una nota de evidencia dentro de este Core. Ver [[05-Desarrollo/Criterio de terminado]] y [[06-Estado/Bitacora]].

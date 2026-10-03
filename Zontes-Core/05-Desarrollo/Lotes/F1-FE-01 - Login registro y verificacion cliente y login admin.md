@@ -1,16 +1,16 @@
 ---
 title: "F1-FE-01 — Login registro y verificacion cliente y login admin"
 tags: [zontes, lote, f1, frontend]
-status: bloqueado-por-decision
+status: implementado-sin-integracion
 fase: F1
 frente: FE
-bloqueos: [DEC-02, DEC-04]
+bloqueos: [entorno-firebase]
 updated: 2026-10-03
 ---
 
 # F1-FE-01 — Login registro y verificacion cliente y login admin
 
-Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote de trabajo]]. **No iniciado.** Índice: [[05-Desarrollo/Lotes F1-F7 - indice]].
+Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote de trabajo]]. **Resultado 2026-10-03:** Implementado: `/ingresar`, `/registro` (3 pasos con verificación por enlace) y `/admin/ingresar`; avisos de sesión expirada, cerrada y cuenta desactivada. Probado con componentes y en navegador sin sesión (F1-T03, F1-T07). Sin recuperación de contraseña (no habilitada por Paulo); documento y teléfono no se piden (ningún contrato los guarda). Evidencia en [[05-Desarrollo/Testing]] «Corridas F1». Índice: [[05-Desarrollo/Lotes F1-F7 - indice]].
 
 | Campo | Contenido |
 | --- | --- |
@@ -24,7 +24,7 @@ Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote d
 | Dependencias | [[05-Desarrollo/Lotes/F1-BE-01 - Verificacion de token y frontera de autorizacion\|F1-BE-01]], [[05-Desarrollo/Lotes/F1-BE-03 - Normalizacion de correo y vinculo legacy\|F1-BE-03]] para integrar; DEC-02; React Testing Library/jsdom a instalar en el lote. |
 | Aceptación | Ver lista siguiente. |
 | Prueba y evidencia | T-UI, T-LINK, T-AUTHZ · componentes (RTL) + `npm run test:integration` contra BE + navegador · resultados en [[05-Desarrollo/Testing]] con fecha, revisión FE/BE y datos sintéticos |
-| Estado | **Bloqueado por decisión: DEC-02, DEC-04** · 2026-10-03 |
+| Estado | **Implementado y probado con dobles; integración con Firebase real pendiente (F1-I-01)** · 2026-10-03 |
 
 ## Aceptación
 

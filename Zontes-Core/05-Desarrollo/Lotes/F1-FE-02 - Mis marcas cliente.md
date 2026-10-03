@@ -1,16 +1,16 @@
 ---
 title: "F1-FE-02 — Mis marcas cliente"
 tags: [zontes, lote, f1, frontend]
-status: bloqueado-por-decision
+status: implementado-sin-integracion
 fase: F1
 frente: FE
-bloqueos: [DEC-04, DEC-02]
+bloqueos: [entorno-firebase]
 updated: 2026-10-03
 ---
 
 # F1-FE-02 — Mis marcas cliente
 
-Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote de trabajo]]. **No iniciado.** Índice: [[05-Desarrollo/Lotes F1-F7 - indice]].
+Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote de trabajo]]. **Resultado 2026-10-03:** Implementado: `/marcas` con marcas de `/me`, marca activa local (ADR-12), estado vacío y «Vincular nueva marca» deshabilitado (DEC-04). Sin saldos (F2) ni catálogo (F3). Evidencia en [[05-Desarrollo/Testing]] «Corridas F1». Índice: [[05-Desarrollo/Lotes F1-F7 - indice]].
 
 | Campo | Contenido |
 | --- | --- |
@@ -24,7 +24,7 @@ Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote d
 | Dependencias | [[05-Desarrollo/Lotes/F1-BE-01 - Verificacion de token y frontera de autorizacion\|F1-BE-01]], [[05-Desarrollo/Lotes/F1-FE-01 - Login registro y verificacion cliente y login admin\|F1-FE-01]]. |
 | Aceptación | Ver lista siguiente. |
 | Prueba y evidencia | T-BRAND, T-UI · resultados en [[05-Desarrollo/Testing]] con fecha, revisión FE/BE y datos sintéticos |
-| Estado | **Bloqueado por decisión: DEC-04 (y DEC-02 vía F1-BE-01)** · 2026-10-03 |
+| Estado | **Implementado y probado con dobles; integración con Firebase real pendiente (F1-I-01)** · 2026-10-03 |
 
 ## Aceptación
 

@@ -12,9 +12,9 @@ Las reglas consolidadas de SRC-02 ya están definidas; esta lista sólo recoge h
 | ID | Decisión solicitada a Paulo | Desbloquea |
 | --- | --- | --- |
 | DEC-01 | **Resuelta 2026-10-03** por Paulo: dos repos Git independientes en rutas confirmadas; ver [[02-Arquitectura/Decisiones tecnicas]] y [[05-Desarrollo/Entorno local]]. Sigue abierto: responsables por repo y CI. | F0 (cerrada); CI pendiente |
-| DEC-02 | El stack Next.js + Express + Firebase ya está documentado como base de desarrollo en SRC-02 pp. 11–15 y reiterado en SRC-03 pp. 11–13. Falta identificar proyecto Firebase, cuenta/custodio, permisos, límites/costos y ambientes; cualquier excepción al stack requiere decisión expresa. | F0/F1; no asumir servicios disponibles |
-| DEC-03 | ¿Cómo crear de forma segura al administrador inicial, sin registro público? ¿Quién custodia su acceso? | F1 |
-| DEC-04 | Contrato real de base de clientes: API/esquema, permisos, correos duplicados, cambio de correo, fuente de verdad, multiplicidad de marcas y semántica de “Vincular nueva marca” en C02 | F1 sincronización/UI-17 |
+| DEC-02 | **Resuelta 2026-10-03:** proyecto Firebase de desarrollo creado y custodiado por Paulo; ver [[02-Arquitectura/Decisiones tecnicas]]. Abierto: ambientes de prueba/producción, cuotas y costes. | F1 (resuelto); F7 ambientes |
+| DEC-03 | **Resuelta 2026-10-03:** rol/estado en Firestore + script CLI de bootstrap ejecutado por Paulo (custodio). | F1 (resuelto) |
+| DEC-04 | **Parcial 2026-10-03:** adaptador + doble sintético en F1; 1–3 marcas por correo; «Vincular nueva marca» deshabilitado. **Sigue abierto:** Contrato real de base de clientes: API/esquema, permisos, correos duplicados, cambio de correo, fuente de verdad, multiplicidad de marcas y semántica de “Vincular nueva marca” en C02 | F1 sincronización/UI-17 |
 | DEC-05 | Origen y validación de Compra/Referido/Mantenimiento/Asistencia; identificador estable/idempotencia y quién emite el evento | F2 motor |
 | DEC-06 | Periodos de puntos por marca; zona horaria, cálculo en días/meses/años, orden de consumo y regla de vencimiento de saldo parcialmente canjeado | F2/F3 |
 | DEC-07 | Beneficios/catálogo por marca, disponibilidad, estados de canje, comprobante o cupón y política de reversa | F3 |
