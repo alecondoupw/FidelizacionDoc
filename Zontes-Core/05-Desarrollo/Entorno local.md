@@ -17,7 +17,7 @@ Respuesta literal al abrir F0: frontend `…\FidelizacionFronted`; backend `…\
 | FE_REPO | `C:\Users\aleco\Documents\Fidelizacion\FidelizacionFronted` | [FidelizacionFronted](https://github.com/alecondoupw/FidelizacionFronted), rama `f0/base-tecnica` | `f29da45` sobre `4f8ad6e` (`main`) |
 | BE_REPO | `C:\Users\aleco\Documents\Fidelizacion\FidelizacionBackend` | [FidelizacionBackend](https://github.com/alecondoupw/FidelizacionBackend), rama `f0/base-tecnica` | `747e191` sobre `e9e0dd2` (`main`) |
 
-Paulo autorizó commit y push el 2026-10-03. Se publicó en la rama `f0/base-tecnica` de cada repo, sin tocar `main`; la fusión en `main` queda pendiente de su decisión. Remotos verificados con `git ls-remote`.
+Paulo autorizó commit y push el 2026-10-03. Se publicó primero en la rama `f0/base-tecnica` de cada repo y, por decisión de Paulo el mismo día, se fusionó en `main` por avance rápido (sin commits de fusión). Desde entonces `main` de FE y BE apunta a la revisión F0. Remotos verificados con `git ls-remote`.
 
 El nombre `FidelizacionFronted` conserva la grafía del repositorio existente. La raíz `E:/Repositorios/Hackathon/Zontes` que figuraba en la semilla no corresponde a este host; las rutas válidas son las de la tabla. Estas rutas son de este equipo: en otro host se registra su propia fila.
 
