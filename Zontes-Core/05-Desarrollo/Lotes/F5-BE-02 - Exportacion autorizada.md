@@ -1,16 +1,16 @@
 ---
 title: "F5-BE-02 — Exportacion autorizada"
 tags: [zontes, lote, f5, backend]
-status: bloqueado-por-decision
+status: verificado
 fase: F5
 frente: BE
-bloqueos: [DEC-09]
+bloqueos: []
 updated: 2026-10-03
 ---
 
 # F5-BE-02 — Exportacion autorizada
 
-Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote de trabajo]]. **No iniciado.** Índice: [[05-Desarrollo/Lotes F1-F7 - indice]].
+Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote de trabajo]]. **Resultado 2026-10-03:** Implementado: `/admin/exportaciones/{clientes,movimientos,canjes,actividad}` en CSV (BOM, `;`, fórmulas neutralizadas) y .xlsx, vista previa con filas y columnas, tope de 10.000 filas y auditoría `exportacion.generada` (DEC-09). Evidencia en [[05-Desarrollo/Testing]] «Corridas F5». Índice: [[05-Desarrollo/Lotes F1-F7 - indice]].
 
 | Campo | Contenido |
 | --- | --- |
@@ -24,7 +24,7 @@ Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote d
 | Dependencias | [[05-Desarrollo/Lotes/F5-BE-01 - Agregados y consultas de reportes\|F5-BE-01]]; DEC-09. |
 | Aceptación | Ver lista siguiente. |
 | Prueba y evidencia | T-EXPORT, T-AUTHZ · resultados en [[05-Desarrollo/Testing]] con fecha, revisión FE/BE y datos sintéticos |
-| Estado | **Bloqueado por decisión: DEC-09** · 2026-10-03 |
+| Estado | **Implementado y verificado (dobles + Firestore real + recorrido integrado F5-T10)** · 2026-10-03 |
 
 ## Aceptación
 

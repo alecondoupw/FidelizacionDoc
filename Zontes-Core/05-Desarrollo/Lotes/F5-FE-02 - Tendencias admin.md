@@ -1,16 +1,16 @@
 ---
 title: "F5-FE-02 — Tendencias admin"
 tags: [zontes, lote, f5, frontend]
-status: bloqueado-por-decision
+status: verificado
 fase: F5
 frente: FE
-bloqueos: [DEC-09]
+bloqueos: []
 updated: 2026-10-03
 ---
 
 # F5-FE-02 — Tendencias admin
 
-Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote de trabajo]]. **No iniciado.** Índice: [[05-Desarrollo/Lotes F1-F7 - indice]].
+Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote de trabajo]]. **Resultado 2026-10-03:** Implementado: `/admin/tendencias` con indicador, periodo actual contra anterior, comparación por marca y enlace a los registros que originan la tendencia; gráficos con tabla accesible. Evidencia en [[05-Desarrollo/Testing]] «Corridas F5». Índice: [[05-Desarrollo/Lotes F1-F7 - indice]].
 
 | Campo | Contenido |
 | --- | --- |
@@ -24,7 +24,7 @@ Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote d
 | Dependencias | [[05-Desarrollo/Lotes/F5-BE-01 - Agregados y consultas de reportes\|F5-BE-01]]. |
 | Aceptación | Ver lista siguiente. |
 | Prueba y evidencia | T-UI · resultados en [[05-Desarrollo/Testing]] con fecha, revisión FE/BE y datos sintéticos |
-| Estado | **Bloqueado por decisión: DEC-09** · 2026-10-03 |
+| Estado | **Implementado y verificado (dobles + Firestore real + recorrido integrado F5-T10)** · 2026-10-03 |
 
 ## Aceptación
 

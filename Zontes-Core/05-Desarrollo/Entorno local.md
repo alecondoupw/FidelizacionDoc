@@ -63,6 +63,8 @@ Fuentes oficiales consultadas el 2026-10-03: instalación de Next.js (docs versi
 
 **F4:** sin dependencias nuevas. Usa más de Firebase Auth desde el BE (Admin SDK: crear, editar, borrar cuentas y revocar sesiones) y desde el FE el correo de restablecimiento de contraseña (`sendPasswordResetEmail`) para invitar administradores y cambiar la propia contraseña. Requiere el proveedor Correo/contraseña activo y el dominio de la app entre los autorizados de Firebase Auth (`localhost` lo está por defecto); el correo usa la plantilla estándar de Firebase y puede llegar a spam.
 
+**F5:** BE añade `write-excel-file` 4.1.1 (MIT, una dependencia: `fflate`) para exportar .xlsx; se descartaron `exceljs` (nueve dependencias, entre ellas `uuid` con avisos) y `xlsx` de npm (versión antigua con CVE). `npm audit --omit=dev` sin cambios (2 moderadas de `uuid`/`gaxios` ya aceptadas). Nuevo comando `npm run reportes:conciliar [-- --reparar]`: sin argumento sólo informa; con `--reparar` completa el libro y el índice de canjes con los datos anteriores a F5 (lo ejecuta Paulo o el agente con su autorización). FE sin dependencias nuevas; usa `recharts` instalado en F0.
+
 ## Variables de entorno (sólo nombres)
 
 | Repo | Variable | Uso | Valor en F0 |

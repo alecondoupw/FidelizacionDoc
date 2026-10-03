@@ -1,16 +1,16 @@
 ---
 title: "F5-I-01 — Integracion y conciliacion de reportes"
 tags: [zontes, lote, f5, integracion]
-status: bloqueado-por-decision
+status: verificado
 fase: F5
 frente: Integración
-bloqueos: [DEC-09]
+bloqueos: []
 updated: 2026-10-03
 ---
 
 # F5-I-01 — Integracion y conciliacion de reportes
 
-Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote de trabajo]]. **No iniciado.** Índice: [[05-Desarrollo/Lotes F1-F7 - indice]].
+Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote de trabajo]]. **Resultado 2026-10-03:** Conciliación verificada con dobles y contra Firestore real (pantalla, archivo y libro coinciden con los movimientos); falta el recorrido FE↔BE en navegador por Paulo y reparar en el proyecto real los datos anteriores a F5 (F5-T06). Evidencia en [[05-Desarrollo/Testing]] «Corridas F5». Índice: [[05-Desarrollo/Lotes F1-F7 - indice]].
 
 | Campo | Contenido |
 | --- | --- |
@@ -24,7 +24,7 @@ Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote d
 | Dependencias | [[05-Desarrollo/Lotes/F5-BE-01 - Agregados y consultas de reportes\|F5-BE-01]]/02, [[05-Desarrollo/Lotes/F5-FE-01 - Dashboard actividad movimientos y canjes admin\|F5-FE-01]]/02/03. |
 | Aceptación | Ver lista siguiente. |
 | Prueba y evidencia | T-EXPORT · resultados en [[05-Desarrollo/Testing]] con fecha, revisión FE/BE y datos sintéticos |
-| Estado | **Bloqueado por decisión: DEC-09** · 2026-10-03 |
+| Estado | **Implementado y verificado (dobles + Firestore real + recorrido integrado F5-T10)** · 2026-10-03 |
 
 ## Aceptación
 

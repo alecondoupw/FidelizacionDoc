@@ -19,7 +19,7 @@ Las reglas consolidadas de SRC-02 ya están definidas; esta lista sólo recoge h
 | DEC-06 | **Resuelta 2026-10-03:** America/La_Paz, vence a fin de día; lotes consumidos primero por vencimiento más próximo. | F2/F3 (resuelto) |
 | DEC-07 | **Resuelta 2026-10-03:** catálogo por script + pantalla admin; stock por variante; Emitido/Entregado/Vencido/Anulado; PDF con QR en backend. Ver [[02-Arquitectura/Decisiones tecnicas]]. | F3 (resuelto) |
 | DEC-08 | **Resuelta 2026-10-03:** eliminar = baja + anonimización conservando movimientos, canjes y auditoría; admin edita nombre, correo y estado; cliente sólo su nombre. Ver [[02-Arquitectura/Decisiones tecnicas]]. | F4 (resuelto) |
-| DEC-09 | Definición operativa de “tiempo real”, filtros, volúmenes, granularidad de tendencias y formatos de exportación | F5 |
+| DEC-09 | **Resuelta 2026-10-03:** al instante + «Actualizar»; presets y rango de hasta 12 meses en hora de Bolivia; CSV + Excel; hasta 10.000 filas con nombre y correo, auditado. Ver [[02-Arquitectura/Decisiones tecnicas]]. | F5 (resuelto) |
 | DEC-10 | Tipo de contenido por marca (banners, noticias, eventos, promociones), visibilidad y assets autorizados | F6 |
 | DEC-11 | Identidad final de MOTO LOYALTY/Zontes/Kiden/NIU, logotipos, fotos y fuentes licenciadas; autorizar activos reales distintos de las referencias SRC-04/05 | F0 diseño y F1–F6 UI |
 | DEC-12 | Prioridad/detalle de vistas cliente frente a administrador; alcance de prototipo e hitos/fecha de hackathon | F0 plan |

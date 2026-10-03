@@ -1,16 +1,16 @@
 ---
 title: "F5-BE-01 — Agregados y consultas de reportes"
 tags: [zontes, lote, f5, backend]
-status: bloqueado-por-decision
+status: verificado
 fase: F5
 frente: BE
-bloqueos: [DEC-09]
+bloqueos: []
 updated: 2026-10-03
 ---
 
 # F5-BE-01 — Agregados y consultas de reportes
 
-Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote de trabajo]]. **No iniciado.** Índice: [[05-Desarrollo/Lotes F1-F7 - indice]].
+Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote de trabajo]]. **Resultado 2026-10-03:** Implementado: libro global `libro/{id}` escrito con cada movimiento e índice `codigos` ampliado; `/admin/reportes/{resumen,actividad,tendencias,canjes}` y `/admin/movimientos` sin índices compuestos; conciliación `npm run reportes:conciliar` (ADR-15 propuesta). Evidencia en [[05-Desarrollo/Testing]] «Corridas F5». Índice: [[05-Desarrollo/Lotes F1-F7 - indice]].
 
 | Campo | Contenido |
 | --- | --- |
@@ -24,7 +24,7 @@ Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote d
 | Dependencias | [[05-Desarrollo/Lotes/F2-BE-02 - Ledger idempotente y transacciones de otorgamiento\|F2-BE-02]], [[05-Desarrollo/Lotes/F3-BE-02 - Canje atomico con saldo stock e idempotencia\|F3-BE-02]]; DEC-09. |
 | Aceptación | Ver lista siguiente. |
 | Prueba y evidencia | T-EXPORT (conciliación), T-HISTORY, T-BRAND · resultados en [[05-Desarrollo/Testing]] con fecha, revisión FE/BE y datos sintéticos |
-| Estado | **Bloqueado por decisión: DEC-09** · 2026-10-03 |
+| Estado | **Implementado y verificado (dobles + Firestore real + recorrido integrado F5-T10)** · 2026-10-03 |
 
 ## Aceptación
 

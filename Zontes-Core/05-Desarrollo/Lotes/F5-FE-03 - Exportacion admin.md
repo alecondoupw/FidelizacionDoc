@@ -1,16 +1,16 @@
 ---
 title: "F5-FE-03 — Exportacion admin"
 tags: [zontes, lote, f5, frontend]
-status: bloqueado-por-decision
+status: verificado
 fase: F5
 frente: FE
-bloqueos: [DEC-09]
+bloqueos: []
 updated: 2026-10-03
 ---
 
 # F5-FE-03 — Exportacion admin
 
-Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote de trabajo]]. **No iniciado.** Índice: [[05-Desarrollo/Lotes F1-F7 - indice]].
+Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote de trabajo]]. **Resultado 2026-10-03:** Implementado: `/admin/exportar` con tipo, filtros, formato Excel/CSV, vista previa, rechazo por volumen, descarga y lista de la sesión; las pantallas de origen llevan sus filtros. Evidencia en [[05-Desarrollo/Testing]] «Corridas F5». Índice: [[05-Desarrollo/Lotes F1-F7 - indice]].
 
 | Campo | Contenido |
 | --- | --- |
@@ -24,7 +24,7 @@ Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote d
 | Dependencias | [[05-Desarrollo/Lotes/F5-BE-02 - Exportacion autorizada\|F5-BE-02]]. |
 | Aceptación | Ver lista siguiente. |
 | Prueba y evidencia | T-EXPORT, T-UI · resultados en [[05-Desarrollo/Testing]] con fecha, revisión FE/BE y datos sintéticos |
-| Estado | **Bloqueado por decisión: DEC-09** · 2026-10-03 |
+| Estado | **Implementado y verificado (dobles + Firestore real + recorrido integrado F5-T10)** · 2026-10-03 |
 
 ## Aceptación
 
