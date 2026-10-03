@@ -24,7 +24,7 @@ Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote d
 | Dependencias | [[05-Desarrollo/Lotes/F1-BE-01 - Verificacion de token y frontera de autorizacion\|F1-BE-01]]/02/03, [[05-Desarrollo/Lotes/F1-FE-01 - Login registro y verificacion cliente y login admin\|F1-FE-01]]/02/03. |
 | Aceptación | Ver lista siguiente. |
 | Prueba y evidencia | T-ROLE, T-LINK, T-AUTHZ · evidencia en [[05-Desarrollo/Testing]] · resultados en [[05-Desarrollo/Testing]] con fecha, revisión FE/BE y datos sintéticos |
-| Estado | **Bloqueado: requiere el proyecto Firebase de desarrollo (DEC-02 resuelta, recurso aún no entregado) y usuarios de prueba creados por Paulo** · 2026-10-03 |
+| Estado | **Bloqueado: proyecto conectado y Firestore verificado (F1-T08/T10); faltan admin inicial, usuarios de prueba y el recorrido con inicio de sesión que hace Paulo** · 2026-10-03 |
 
 ## Aceptación
 
