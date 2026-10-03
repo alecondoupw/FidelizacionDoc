@@ -66,7 +66,7 @@ Aprobado como v1 el 2026-10-03 e implementado en F1 con dobles de prueba; la int
 | I-01 rol | `requireRole("administrador")` para futuras rutas `/api/v1/admin/*` | — | 403 `FORBIDDEN` |
 | I-02 registro/vínculo | `POST /api/v1/clientes/registro` (Bearer del usuario recién creado; **sin cuerpo**, el correo sale del token) | 201 `{ vinculo, marcas }` | 401 · 403 `EMAIL_NOT_VERIFIED` · 422 `VALIDATION_ERROR` (cuenta sin correo) · 409 `ALREADY_REGISTERED` · 409 `EMAIL_ALREADY_LINKED` |
 
-**Añadidos al implementar (precisan la confirmación de Paulo):** los códigos `REGISTRATION_REQUIRED` y `ALREADY_REGISTERED`, y la **exigencia de correo verificado** antes del vínculo (`EMAIL_NOT_VERIFIED`). Sin ella, cualquiera podría registrarse con el correo de otro cliente y heredar sus marcas y puntos; es una medida de seguridad, no un cambio de alcance, pero modifica el flujo de registro (paso de verificación por enlace).
+**Añadidos al implementar, confirmados por Paulo el 2026-10-03 (ADR-11):** los códigos `REGISTRATION_REQUIRED` y `ALREADY_REGISTERED`, y la **exigencia de correo verificado** antes del vínculo (`EMAIL_NOT_VERIFIED`). Sin ella, cualquiera podría registrarse con el correo de otro cliente y heredar sus marcas y puntos; es una medida de seguridad, no un cambio de alcance, pero modifica el flujo de registro (paso de verificación por enlace).
 
 **Normalización:** `trim` + minúsculas; único criterio de vínculo (ADR-04).
 
