@@ -1,16 +1,16 @@
 ---
 title: "F2-BE-03 — Vencimiento por marca y auditoria"
 tags: [zontes, lote, f2, backend]
-status: bloqueado-por-decision
+status: verificado-con-recorrido-parcial
 fase: F2
 frente: BE
-bloqueos: [DEC-06, DEC-13]
+bloqueos: []
 updated: 2026-10-03
 ---
 
 # F2-BE-03 — Vencimiento por marca y auditoria
 
-Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote de trabajo]]. **No iniciado.** Índice: [[05-Desarrollo/Lotes F1-F7 - indice]].
+Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote de trabajo]]. **Resultado 2026-10-03:** Implementado: vigencia por marca con historial, vencimiento America/La_Paz a fin de día (DEC-06), vencimiento perezoso al leer saldo y proceso reejecutable (`npm run puntos:vencer`, `POST /admin/vencimientos/procesar`). Programación periódica pendiente de DEC-13. Evidencia en [[05-Desarrollo/Testing]] «Corridas F2». Índice: [[05-Desarrollo/Lotes F1-F7 - indice]].
 
 | Campo | Contenido |
 | --- | --- |
@@ -24,7 +24,7 @@ Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote d
 | Dependencias | [[05-Desarrollo/Lotes/F2-BE-02 - Ledger idempotente y transacciones de otorgamiento\|F2-BE-02]]; DEC-06; DEC-13 para la ejecución programada. |
 | Aceptación | Ver lista siguiente. |
 | Prueba y evidencia | T-EXP, T-HISTORY · resultados en [[05-Desarrollo/Testing]] con fecha, revisión FE/BE y datos sintéticos |
-| Estado | **Bloqueado por decisión: DEC-06, DEC-13** · 2026-10-03 |
+| Estado | **Implementado y verificado (dobles + Firestore real); recorrido integrado parcial (F2-T08)** · 2026-10-03 |
 
 ## Aceptación
 

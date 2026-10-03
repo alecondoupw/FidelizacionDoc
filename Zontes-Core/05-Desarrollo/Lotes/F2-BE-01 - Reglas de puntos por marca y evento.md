@@ -1,16 +1,16 @@
 ---
 title: "F2-BE-01 — Reglas de puntos por marca y evento"
 tags: [zontes, lote, f2, backend]
-status: pendiente
+status: verificado-con-recorrido-parcial
 fase: F2
 frente: BE
-bloqueos: [DEC-02]
+bloqueos: []
 updated: 2026-10-03
 ---
 
 # F2-BE-01 — Reglas de puntos por marca y evento
 
-Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote de trabajo]]. **No iniciado.** Índice: [[05-Desarrollo/Lotes F1-F7 - indice]].
+Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote de trabajo]]. **Resultado 2026-10-03:** Implementado: CRUD de reglas con auditoría antes/después; combinación única; cambio de marca sin pisar otra regla. Evidencia en [[05-Desarrollo/Testing]] «Corridas F2». Índice: [[05-Desarrollo/Lotes F1-F7 - indice]].
 
 | Campo | Contenido |
 | --- | --- |
@@ -24,7 +24,7 @@ Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote d
 | Dependencias | [[05-Desarrollo/Lotes/F1-BE-01 - Verificacion de token y frontera de autorizacion\|F1-BE-01]] (rol admin); DEC-02. |
 | Aceptación | Ver lista siguiente. |
 | Prueba y evidencia | T-RULE, T-HISTORY, T-AUTHZ · resultados en [[05-Desarrollo/Testing]] con fecha, revisión FE/BE y datos sintéticos |
-| Estado | **Pendiente: depende de F1-BE-01 y DEC-02** · 2026-10-03 |
+| Estado | **Implementado y verificado (dobles + Firestore real); recorrido integrado parcial (F2-T08)** · 2026-10-03 |
 
 ## Aceptación
 

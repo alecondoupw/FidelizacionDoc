@@ -1,10 +1,10 @@
 ---
 title: "F2-I-01 — Integracion evento a saldo e historial"
 tags: [zontes, lote, f2, integracion]
-status: bloqueado-por-decision
+status: verificado-con-recorrido-parcial
 fase: F2
 frente: Integración
-bloqueos: [DEC-05, DEC-06, DEC-14]
+bloqueos: []
 updated: 2026-10-03
 ---
 
@@ -24,7 +24,7 @@ Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote d
 | Dependencias | [[05-Desarrollo/Lotes/F2-BE-01 - Reglas de puntos por marca y evento\|F2-BE-01]]/02/03, [[05-Desarrollo/Lotes/F2-FE-01 - Inicio saldo e historial cliente\|F2-FE-01]]/02. |
 | Aceptación | Ver lista siguiente. |
 | Prueba y evidencia | T-RULE, T-HISTORY, T-POINTS, T-EXP · resultados en [[05-Desarrollo/Testing]] con fecha, revisión FE/BE y datos sintéticos |
-| Estado | **Bloqueado por decisión: DEC-05, DEC-06, DEC-14** · 2026-10-03 |
+| Estado | **Recorrido parcial aceptado por Paulo (2026-10-03): reglas, otorgamiento, evento sin regla y saldo verificados con Firebase real (F2-T08/T09); vencimiento por marca, ajustes (incluido el rechazo por saldo insuficiente), edición/activación/eliminación de reglas y la vista del cliente no se ejercitaron por la interfaz con Firebase real** · 2026-10-03 |
 
 ## Aceptación
 

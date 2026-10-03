@@ -75,4 +75,22 @@ Escenarios cubiertos con dobles: **T-AUTHZ** (sin token, malformado, expirado, r
 
 Fallos encontrados y corregidos en F1: contrato de prueba de Firestore construido fuera de `beforeAll`; prueba de configuración por defecto desactualizada; finales CRLF tras `git checkout` que rompían `prettier --check` (se añadió `.gitattributes` con `eol=lf` en FE y BE); etiquetas de pasos ocultas a lectores de pantalla en móvil; marcador del smoke que pasaba por el `<title>`.
 
+## Corridas F2 — 2026-10-03
+
+Mismo entorno; código publicado en `main` como BE `7e5589a` y FE `e4278a2`. Firestore real = proyecto de desarrollo de Paulo con colecciones temporales `prueba_*` borradas al terminar.
+
+| ID | Prueba | Comando | Resultado | Límite |
+| --- | --- | --- | --- | --- |
+| F2-T01 | BE completo con dobles | `npm run check` (FidelizacionBackend) | PASS, exit 0; 116 pasadas, 30 omitidas (Firestore) | — |
+| F2-T02 | Contratos contra Firestore real | `FIRESTORE_INTEGRATION=1 npm run test:firebase` | **Primera corrida FAIL 5/61:** ordenar por id descendente exige índice; corregido con ids invertidos. **Corrida final PASS 61/61** (almacén, perfiles y motor de puntos completo) y proyecto sin restos | Sin concurrencia real entre procesos |
+| F2-T03 | Mutaciones | quitar idempotencia, aislamiento por marca o control de saldo | Fallan 3, 1 y 3 pruebas; restaurado todo pasa | — |
+| F2-T04 | Arranque BE | `npm run smoke` | PASS 2/2 | — |
+| F2-T05 | FE completo | `npm run check` (FidelizacionFronted) | PASS, exit 0; 66 pasadas | Componentes con sesión simulada |
+| F2-T06 | Arranque FE | `npm run smoke` | PASS 11/11; `/inicio`, `/historial`, `/admin/reglas`, `/admin/registrar` sólo envían «Cargando tu cuenta» | — |
+| F2-T07 | Rutas F2 en vivo sin credenciales | `curl` al BE nuevo | `/me/saldo` 401, `/admin/reglas` 401, `/integracion/eventos` 503 sin claves | — |
+| F2-T08 | Recorrido integrado F2-I-01 en navegador | Paulo inicia sesión como admin con BE (:4000) y FE (:3000) contra el proyecto de desarrollo | **PARCIAL (2026-10-03, decisión de Paulo):** creó la regla «Compra · Kiden · 4»; registró una compra Kiden que otorgó +4 y un evento sin regla que quedó sin puntos | Sin probar por la interfaz: vencimiento por marca, ajustes (incluido el rechazo por saldo insuficiente), edición/activación/eliminación de reglas y la vista del cliente no se ejercitaron por la interfaz con Firebase real; cubiertos por F2-T01/T02/T05 |
+| F2-T09 | Estado de Firestore tras F2-T08 | script de lectura con Admin SDK (sin correos ni uid) | **PASS:** saldo materializado Kiden = 4 = suma de lotes (un lote sin vencimiento); 2 registros de idempotencia (otorgado y sin puntos); 0 vencimientos pendientes; auditoría `regla.creada` sin «@»; log del BE sin errores | — |
+
+Escenarios cubiertos: **T-RULE** (combinación única, sin condición, sin negativos/decimales, cambio sólo futuro), **T-POINTS** (mismo origen + id no otorga dos veces, conflicto con otros datos, regla inactiva o ausente sin puntos), **T-BRAND** (cliente no vinculado rechazado, saldos y filtros por marca), **T-EXP** (fin de mes, bisiesto, día local de Bolivia, último milisegundo, vencimiento al leer el saldo, proceso reejecutable, cambio de vigencia sin efecto retroactivo), **T-HISTORY** (vencimiento y ajustes como movimientos con motivo, auditoría sin correos, conciliación saldo = suma de lotes). FE: resumen singular/plural, reglas (crear, validar, conflicto, activar, eliminar con confirmación), vencimiento (máximo 10 años, historial), registro de eventos con la misma clave al reintentar, ajuste con motivo y saldo insuficiente, inicio con error parcial, historial paginado y filtrado.
+
 Una captura o una compilación no es prueba de reglas. Los resultados se registrarán aquí o se enlazarán desde una nota de evidencia dentro de este Core. Ver [[05-Desarrollo/Criterio de terminado]] y [[06-Estado/Bitacora]].

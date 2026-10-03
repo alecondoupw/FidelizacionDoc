@@ -1,16 +1,16 @@
 ---
 title: "F2-FE-02 — Reglas y vencimiento admin"
 tags: [zontes, lote, f2, frontend]
-status: pendiente
+status: verificado-con-recorrido-parcial
 fase: F2
 frente: FE
-bloqueos: [DEC-06, DEC-02]
+bloqueos: []
 updated: 2026-10-03
 ---
 
 # F2-FE-02 — Reglas y vencimiento admin
 
-Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote de trabajo]]. **No iniciado.** Índice: [[05-Desarrollo/Lotes F1-F7 - indice]].
+Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote de trabajo]]. **Resultado 2026-10-03:** Implementado: `/admin/reglas` con resumen dinámico y confirmación al eliminar; `/admin/vencimiento` sin el campo de fecha de A06 (sería retroactivo, contra SRC-02 p. 5); `/admin/registrar` (UI-24 propuesta) para eventos y ajustes. Evidencia en [[05-Desarrollo/Testing]] «Corridas F2». Índice: [[05-Desarrollo/Lotes F1-F7 - indice]].
 
 | Campo | Contenido |
 | --- | --- |
@@ -24,7 +24,7 @@ Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote d
 | Dependencias | [[05-Desarrollo/Lotes/F2-BE-01 - Reglas de puntos por marca y evento\|F2-BE-01]]; [[05-Desarrollo/Lotes/F2-BE-03 - Vencimiento por marca y auditoria\|F2-BE-03]] para vigencia. |
 | Aceptación | Ver lista siguiente. |
 | Prueba y evidencia | T-RULE, T-UI · resultados en [[05-Desarrollo/Testing]] con fecha, revisión FE/BE y datos sintéticos |
-| Estado | **Pendiente (reglas) tras F2-BE-01 · Bloqueado (vigencia) por DEC-06** · 2026-10-03 |
+| Estado | **Implementado y verificado (dobles + Firestore real); recorrido integrado parcial (F2-T08)** · 2026-10-03 |
 
 ## Aceptación
 

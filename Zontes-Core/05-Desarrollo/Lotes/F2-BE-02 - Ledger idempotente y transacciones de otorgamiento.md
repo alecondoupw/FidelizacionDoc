@@ -1,16 +1,16 @@
 ---
 title: "F2-BE-02 — Ledger idempotente y transacciones de otorgamiento"
 tags: [zontes, lote, f2, backend]
-status: bloqueado-por-decision
+status: verificado-con-recorrido-parcial
 fase: F2
 frente: BE
-bloqueos: [DEC-05, DEC-06, DEC-14, DEC-02]
+bloqueos: []
 updated: 2026-10-03
 ---
 
 # F2-BE-02 — Ledger idempotente y transacciones de otorgamiento
 
-Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote de trabajo]]. **No iniciado.** Índice: [[05-Desarrollo/Lotes F1-F7 - indice]].
+Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote de trabajo]]. **Resultado 2026-10-03:** Implementado: libro de lotes con idempotencia origen + id externo (DEC-05), transacciones, saldo materializado conciliable, ajustes (DEC-14) y API de integración con clave. Evidencia en [[05-Desarrollo/Testing]] «Corridas F2». Índice: [[05-Desarrollo/Lotes F1-F7 - indice]].
 
 | Campo | Contenido |
 | --- | --- |
@@ -24,7 +24,7 @@ Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote d
 | Dependencias | [[05-Desarrollo/Lotes/F2-BE-01 - Reglas de puntos por marca y evento\|F2-BE-01]]; DEC-05/06/14; emulador Firestore autorizado para concurrencia. |
 | Aceptación | Ver lista siguiente. |
 | Prueba y evidencia | T-POINTS, T-HISTORY, T-BRAND · pruebas de concurrencia en emulador · resultados en [[05-Desarrollo/Testing]] con fecha, revisión FE/BE y datos sintéticos |
-| Estado | **Bloqueado por decisión: DEC-05, DEC-06, DEC-14, DEC-02** · 2026-10-03 |
+| Estado | **Implementado y verificado (dobles + Firestore real); recorrido integrado parcial (F2-T08)** · 2026-10-03 |
 
 ## Aceptación
 

@@ -76,3 +76,20 @@ Aprobado como v1 el 2026-10-03 e implementado en F1 con dobles de prueba; la int
 ## 6. Dependencias abiertas
 
 DEC-02 (proyecto Firebase y custodio), DEC-03 (administrador inicial), DEC-04 (contrato legacy), DEC-06 (zona horaria y vencimiento). Hasta resolverlas, §5 no se implementa como definitivo. Contratos I-03–I-09 se detallan al abrir su fase.
+
+## 7. I-03 / I-04 — motor de puntos, implementado en F2 (2026-10-03)
+
+Implementado según DEC-05/06/14; evidencia en [[05-Desarrollo/Testing]] «Corridas F2». Todas las fechas en ISO 8601 UTC; el vencimiento se calcula en America/La_Paz a fin de día.
+
+| Actor | Endpoint | Respuesta | Errores |
+| --- | --- | --- | --- |
+| Cliente | `GET /me/saldo` | `{ total, marcas: [{ marca, disponible, proximoVencimiento: { fecha, puntos } \| null }] }` sólo de marcas vinculadas; vence lo caducado antes de responder | 401, 403 (no cliente) |
+| Cliente | `GET /me/movimientos?marca&tipo&limite(1–100)&cursor` | `{ items: [{ id, marca, tipo, puntos (con signo), fecha, venceEn, evento, motivo }], siguiente }` del más reciente al más antiguo | 403 marca no vinculada, 422 |
+| Admin | `GET/POST /admin/reglas`, `PATCH/DELETE /admin/reglas/{marca}__{evento}` | regla `{ id, marca, evento, puntos, activa, creadoEn, actualizadoEn, actualizadoPor }`; sin campo condición (cuerpo estricto) | 409 `RULE_EXISTS`, 404, 422 (negativos, decimales, campos extra) |
+| Admin | `GET /admin/vigencias`, `PUT /admin/vigencias/{marca}`, `GET …/{marca}/historial` | `{ marca, activa, cantidad, unidad: dias\|meses\|anios }`; historial `{ en, actor, antes, despues }` | 422 (más de 10 años) |
+| Admin | `POST /admin/eventos` `{ idExterno, evento, marca, correoCliente }` | 201 `{ resultado: otorgado, puntos, movimientoId, venceEn }` o `{ resultado: sin_puntos, motivo: sin_regla\|regla_inactiva }`; 200 con `repetido: true` al reintentar | 409 `IDEMPOTENCY_CONFLICT`, 422 `CLIENT_NOT_FOUND`/`CLIENT_INACTIVE`/`BRAND_NOT_LINKED` |
+| Admin | `POST /admin/ajustes` `{ idExterno, marca, correoCliente, puntos (≠0), motivo (5–300) }` | 201 `{ movimientoId, puntos, disponible, repetido }` | 409 `INSUFFICIENT_BALANCE`, 409 `IDEMPOTENCY_CONFLICT`, 422 |
+| Admin | `POST /admin/vencimientos/procesar` | `{ lotesVencidos, cuentas }`; reejecutable | — |
+| Sistema externo | `POST /integracion/eventos` con `X-Api-Key` | igual que `/admin/eventos`; origen `api:{sistema}` | 401 clave ausente/inválida, 503 sin claves configuradas |
+
+**Modelo Firestore F2 (sin índices compuestos):** `reglas/{marca}__{evento}`, `vigencias/{marca}`, `eventos/{sha256(origen|idExterno)}` (idempotencia), `usuarios/{uid}/marcas/{marca}` (saldo materializado), `…/movimientos/{id}` (id con la fecha invertida para que el orden ascendente sea del más reciente al más antiguo), `…/lotes/{id}`, `vencimientos/{uid}__{marca}__{lote}` (pendientes), `auditoria`. Los ids invertidos se adoptaron tras comprobar contra Firestore real que ordenar por id de forma descendente exige un índice adicional.
