@@ -1,16 +1,16 @@
 ---
 title: "F4-FE-01 — Administradores admin"
 tags: [zontes, lote, f4, frontend]
-status: bloqueado-por-decision
+status: verificado-con-recorrido-parcial
 fase: F4
 frente: FE
-bloqueos: [DEC-03]
+bloqueos: []
 updated: 2026-10-03
 ---
 
 # F4-FE-01 — Administradores admin
 
-Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote de trabajo]]. **No iniciado.** Índice: [[05-Desarrollo/Lotes F1-F7 - indice]].
+Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote de trabajo]]. **Resultado 2026-10-03:** Implementado: `/admin/administradores` (UI-06) con «Tú», alta e invitación por correo de Firebase, reenviar invitación, edición del nombre, interruptor de estado y eliminación confirmada. Evidencia en [[05-Desarrollo/Testing]] «Corridas F4». Índice: [[05-Desarrollo/Lotes F1-F7 - indice]].
 
 | Campo | Contenido |
 | --- | --- |
@@ -24,7 +24,7 @@ Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote d
 | Dependencias | [[05-Desarrollo/Lotes/F4-BE-01 - Gestion de administradores y ultimo activo\|F4-BE-01]]. |
 | Aceptación | Ver lista siguiente. |
 | Prueba y evidencia | T-ROLE, T-UI · resultados en [[05-Desarrollo/Testing]] con fecha, revisión FE/BE y datos sintéticos |
-| Estado | **Bloqueado por decisión: DEC-03** · 2026-10-03 |
+| Estado | **Implementado y verificado (dobles + Firestore real; Auth con doble); recorrido integrado parcial (F4-T07)** · 2026-10-03 |
 
 ## Aceptación
 

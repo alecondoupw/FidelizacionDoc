@@ -1,16 +1,16 @@
 ---
 title: "F4-BE-02 — Gestion de clientes y revinculacion"
 tags: [zontes, lote, f4, backend]
-status: bloqueado-por-decision
+status: verificado-con-recorrido-parcial
 fase: F4
 frente: BE
-bloqueos: [DEC-08, DEC-04]
+bloqueos: []
 updated: 2026-10-03
 ---
 
 # F4-BE-02 — Gestion de clientes y revinculacion
 
-Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote de trabajo]]. **No iniciado.** Índice: [[05-Desarrollo/Lotes F1-F7 - indice]].
+Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote de trabajo]]. **Resultado 2026-10-03:** Implementado: `/admin/clientes` con búsqueda exacta por correo, filtros de marca, estado y vínculo, detalle con saldos e historial, edición de nombre, correo y estado (el correo recalcula el vínculo, exige verificar y revoca sesiones) y baja + anonimización (DEC-04/08). Evidencia en [[05-Desarrollo/Testing]] «Corridas F4». Índice: [[05-Desarrollo/Lotes F1-F7 - indice]].
 
 | Campo | Contenido |
 | --- | --- |
@@ -24,7 +24,7 @@ Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote d
 | Dependencias | [[05-Desarrollo/Lotes/F1-BE-03 - Normalizacion de correo y vinculo legacy\|F1-BE-03]]; DEC-04/08. |
 | Aceptación | Ver lista siguiente. |
 | Prueba y evidencia | T-LINK, T-HISTORY, T-AUTHZ · resultados en [[05-Desarrollo/Testing]] con fecha, revisión FE/BE y datos sintéticos |
-| Estado | **Bloqueado por decisión: DEC-08, DEC-04** · 2026-10-03 |
+| Estado | **Implementado y verificado (dobles + Firestore real; Auth con doble); recorrido integrado parcial (F4-T07)** · 2026-10-03 |
 
 ## Aceptación
 

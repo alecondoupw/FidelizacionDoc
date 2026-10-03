@@ -113,3 +113,24 @@ Implementado según DEC-07 y ADR-13; evidencia en [[05-Desarrollo/Testing]] «Co
 **Estados:** `emitido` → `entregado` (admin) · `emitido`/`vencido` → `anulado` (admin, con motivo, auditado). `vencido` no se guarda: se deriva al leer cuando `venceEn` pasó sin entrega. **Disponibilidad:** `agotado` (stock 0), `ultimas` (≤ 5), `proximamente` (antes de `disponibleDesde`), `disponible`; el beneficio está `agotado` si todas sus variantes lo están, `disponible` si alguna lo está y, si no, `ultimas`.
 
 **Modelo Firestore F3 (sin índices compuestos):** `beneficios/{id}`, `usuarios/{uid}/canjes/{idInvertido}`, `codigos/{codigo}` → `{ uid, canjeId }` (unicidad y búsqueda por código), movimiento `canje` (−puntos) y, al anular, otro movimiento `canje` (+puntos, motivo «Anulación del canje …») con la reposición de los lotes consumidos; las porciones ya caducadas vuelven a vencer de inmediato. La carga inicial usa `npm run catalogo:cargar -- --archivo <ruta.json>` (ejemplo sintético en `datos/catalogo.ejemplo.json`) (crea los nuevos, no pisa los existentes).
+
+## 9. I-06 — gestión de identidades, implementado en F4 (2026-10-03)
+
+Implementado según DEC-03 (alta por invitación), DEC-04 (cambio de correo) y DEC-08 (edición y baja); evidencia en [[05-Desarrollo/Testing]] «Corridas F4». Todas las rutas `/admin/*` exigen rol administrador activo; un cliente recibe 403.
+
+| Actor | Endpoint | Respuesta | Errores |
+| --- | --- | --- | --- |
+| Cualquiera autenticado | `PATCH /me` `{ nombre (2–80) }` | 204; cambia el nombre en Firebase Auth y audita `perfil.actualizado` | 422 (otros campos) |
+| Admin | `GET /admin/administradores` | `{ items: [{ uid, nombre, correo, activo, creadoEn, ultimoAcceso, invitacionPendiente }] }` sin eliminados | — |
+| Admin | `POST /admin/administradores` `{ nombre, apellido, correo }` | 201 administrador; cuenta de Auth sin contraseña. El navegador pide luego a Firebase el correo para definirla | 409 `EMAIL_IN_USE` (correo de cliente o de una cuenta de Auth sin perfil), 422 |
+| Admin | `PATCH /admin/administradores/{uid}` `{ nombre?, activo? }` | administrador | 409 `SELF_ACTION` (desactivarse), 409 `LAST_ADMIN`, 404, 422 (correo u otros campos) |
+| Admin | `DELETE /admin/administradores/{uid}` | 204; perfil anonimizado, correo liberado, cuenta de Auth borrada | 409 `SELF_ACTION`, 409 `LAST_ADMIN`, 404 |
+| Admin | `GET /admin/clientes?correo&marca&activo&vinculo&limite(1–100)&cursor` | `{ items: [{ uid, nombre, correo, marcas, vinculo, activo, puntos, creadoEn, ultimoAcceso, verificacionPendiente }], siguiente }`; `correo` busca coincidencia exacta normalizada; `puntos` = saldo de marcas vinculadas | 422 |
+| Admin | `GET /admin/clientes/{uid}` | cliente + `saldos: [{ marca, disponible, vinculada }]` + `historial` (auditoría de la persona, más reciente primero, con nombre del actor) | 404 (no existe, eliminado o es admin) |
+| Admin | `PATCH /admin/clientes/{uid}` `{ nombre?, correo?, activo? }` | detalle; al cambiar el correo: vínculo recalculado sólo con el correo nuevo, `verificacionPendiente: true`, sesiones revocadas | 409 `EMAIL_IN_USE`, 404, 422 |
+| Admin | `DELETE /admin/clientes/{uid}` | 204; baja + anonimización (DEC-08) | 404 |
+| Admin | `GET /admin/auditoria?objetivo={uid}` | `{ items: historial }` | 422 |
+
+**Tras un cambio de correo**, toda ruta protegida responde 403 `EMAIL_NOT_VERIFIED` hasta que el token del cliente traiga el correo verificado; el FE lleva a `/verificar-correo`.
+
+**Modelo Firestore F4 (sin índices compuestos):** los perfiles se leen y escriben por el mismo almacén transaccional que puntos y canjes (`usuarios/{uid}`, `correos/{sha256}`, `auditoria/{id}`). Campos nuevos del perfil: `verificarCorreo: true` y `eliminado: true`. La protección del último administrador lee dentro de la transacción la consulta de administradores activos; Firestore bloquea esos documentos y una desactivación cruzada simultánea se reintenta y se rechaza (verificado contra el proyecto real). El filtro por marca usa `array-contains` combinado con igualdades y orden por id, sin índice adicional (verificado contra el proyecto real). Nombre y último acceso se leen de Firebase Auth.

@@ -61,6 +61,8 @@ Fuentes oficiales consultadas el 2026-10-03: instalación de Next.js (docs versi
 
 **F3:** BE añade `pdfkit` 0.20.2 (comprobante PDF) y `qrcode` 1.5.4 (QR del código), con `@types/pdfkit` y `@types/qrcode` en desarrollo, y el comando `npm run catalogo:cargar -- --archivo <ruta.json>` (crea beneficios nuevos y no pisa los existentes; ejemplo sintético en `datos/catalogo.ejemplo.json`; lo ejecuta Paulo contra el proyecto de desarrollo). FE sin dependencias nuevas; el cliente HTTP añade `descargar()` para PDF y SVG con el mismo token.
 
+**F4:** sin dependencias nuevas. Usa más de Firebase Auth desde el BE (Admin SDK: crear, editar, borrar cuentas y revocar sesiones) y desde el FE el correo de restablecimiento de contraseña (`sendPasswordResetEmail`) para invitar administradores y cambiar la propia contraseña. Requiere el proveedor Correo/contraseña activo y el dominio de la app entre los autorizados de Firebase Auth (`localhost` lo está por defecto); el correo usa la plantilla estándar de Firebase y puede llegar a spam.
+
 ## Variables de entorno (sólo nombres)
 
 | Repo | Variable | Uso | Valor en F0 |

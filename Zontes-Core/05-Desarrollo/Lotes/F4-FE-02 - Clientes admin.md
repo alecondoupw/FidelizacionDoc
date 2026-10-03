@@ -1,16 +1,16 @@
 ---
 title: "F4-FE-02 — Clientes admin"
 tags: [zontes, lote, f4, frontend]
-status: bloqueado-por-decision
+status: verificado-con-recorrido-parcial
 fase: F4
 frente: FE
-bloqueos: [DEC-08, DEC-04]
+bloqueos: []
 updated: 2026-10-03
 ---
 
 # F4-FE-02 — Clientes admin
 
-Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote de trabajo]]. **No iniciado.** Índice: [[05-Desarrollo/Lotes F1-F7 - indice]].
+Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote de trabajo]]. **Resultado 2026-10-03:** Implementado: `/admin/clientes` y `/admin/clientes/[uid]` (UI-07) con filtros, búsqueda exacta, edición con confirmación del cambio de correo, saldos (incluidas marcas desvinculadas), historial y baja confirmada; `/verificar-correo` (UI-27 propuesta). Evidencia en [[05-Desarrollo/Testing]] «Corridas F4». Índice: [[05-Desarrollo/Lotes F1-F7 - indice]].
 
 | Campo | Contenido |
 | --- | --- |
@@ -24,7 +24,7 @@ Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote d
 | Dependencias | [[05-Desarrollo/Lotes/F4-BE-02 - Gestion de clientes y revinculacion\|F4-BE-02]]. |
 | Aceptación | Ver lista siguiente. |
 | Prueba y evidencia | T-LINK, T-UI · resultados en [[05-Desarrollo/Testing]] con fecha, revisión FE/BE y datos sintéticos |
-| Estado | **Bloqueado por decisión: DEC-08, DEC-04** · 2026-10-03 |
+| Estado | **Implementado y verificado (dobles + Firestore real; Auth con doble); recorrido integrado parcial (F4-T07)** · 2026-10-03 |
 
 ## Aceptación
 

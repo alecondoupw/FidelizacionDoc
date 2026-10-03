@@ -1,16 +1,16 @@
 ---
 title: "F4-BE-01 — Gestion de administradores y ultimo activo"
 tags: [zontes, lote, f4, backend]
-status: bloqueado-por-decision
+status: verificado-con-recorrido-parcial
 fase: F4
 frente: BE
-bloqueos: [DEC-03]
+bloqueos: []
 updated: 2026-10-03
 ---
 
 # F4-BE-01 — Gestion de administradores y ultimo activo
 
-Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote de trabajo]]. **No iniciado.** Índice: [[05-Desarrollo/Lotes F1-F7 - indice]].
+Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote de trabajo]]. **Resultado 2026-10-03:** Implementado: `/admin/administradores` con alta por invitación (cuenta de Auth sin contraseña), edición de nombre, activación y baja anonimizada; último activo protegido dentro de la transacción (desactivación cruzada simultánea verificada contra Firestore real) y cuenta propia protegida (ADR-14 propuesta). Evidencia en [[05-Desarrollo/Testing]] «Corridas F4». Índice: [[05-Desarrollo/Lotes F1-F7 - indice]].
 
 | Campo | Contenido |
 | --- | --- |
@@ -24,7 +24,7 @@ Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote d
 | Dependencias | [[05-Desarrollo/Lotes/F1-BE-01 - Verificacion de token y frontera de autorizacion\|F1-BE-01]], [[05-Desarrollo/Lotes/F1-BE-02 - Bootstrap del administrador inicial\|F1-BE-02]]; DEC-03. |
 | Aceptación | Ver lista siguiente. |
 | Prueba y evidencia | T-ROLE, T-AUTHZ · resultados en [[05-Desarrollo/Testing]] con fecha, revisión FE/BE y datos sintéticos |
-| Estado | **Bloqueado por decisión: DEC-03** · 2026-10-03 |
+| Estado | **Implementado y verificado (dobles + Firestore real; Auth con doble); recorrido integrado parcial (F4-T07)** · 2026-10-03 |
 
 ## Aceptación
 

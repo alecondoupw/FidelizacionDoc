@@ -1,16 +1,16 @@
 ---
 title: "F4-FE-04 — Importacion CSV de clientes condicionada"
 tags: [zontes, lote, f4, frontend]
-status: condicionado
+status: descartado-dec-16
 fase: F4
 frente: FE
-bloqueos: [DEC-16]
+bloqueos: []
 updated: 2026-10-03
 ---
 
 # F4-FE-04 — Importacion CSV de clientes condicionada
 
-Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote de trabajo]]. **No iniciado.** Índice: [[05-Desarrollo/Lotes F1-F7 - indice]].
+Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote de trabajo]]. **Resultado 2026-10-03:** Paulo dejó la importación CSV fuera de alcance (DEC-16); no se construye ni aparece en el menú. Índice: [[05-Desarrollo/Lotes F1-F7 - indice]].
 
 | Campo | Contenido |
 | --- | --- |
@@ -24,7 +24,7 @@ Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote d
 | Dependencias | DEC-16; [[05-Desarrollo/Lotes/F4-BE-02 - Gestion de clientes y revinculacion\|F4-BE-02]]. |
 | Aceptación | Ver lista siguiente. |
 | Prueba y evidencia | T-LINK si se aprueba · resultados en [[05-Desarrollo/Testing]] con fecha, revisión FE/BE y datos sintéticos |
-| Estado | **Condicionado: fuera de alcance hasta DEC-16** · 2026-10-03 |
+| Estado | **Fuera de alcance por DEC-16 (decisión de Paulo, 2026-10-03); no se construye** · 2026-10-03 |
 
 ## Aceptación
 
