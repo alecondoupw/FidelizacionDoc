@@ -1,10 +1,10 @@
 ---
 title: "F1-I-01 — Integracion de identidad y vinculo"
 tags: [zontes, lote, f1, integracion]
-status: bloqueado-por-entorno
+status: verificado-con-salvedades
 fase: F1
 frente: Integración
-bloqueos: [DEC-02, DEC-03, DEC-04]
+bloqueos: []
 updated: 2026-10-03
 ---
 
@@ -24,7 +24,7 @@ Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote d
 | Dependencias | [[05-Desarrollo/Lotes/F1-BE-01 - Verificacion de token y frontera de autorizacion\|F1-BE-01]]/02/03, [[05-Desarrollo/Lotes/F1-FE-01 - Login registro y verificacion cliente y login admin\|F1-FE-01]]/02/03. |
 | Aceptación | Ver lista siguiente. |
 | Prueba y evidencia | T-ROLE, T-LINK, T-AUTHZ · evidencia en [[05-Desarrollo/Testing]] · resultados en [[05-Desarrollo/Testing]] con fecha, revisión FE/BE y datos sintéticos |
-| Estado | **Bloqueado: proyecto conectado y Firestore verificado (F1-T08/T10); faltan admin inicial, usuarios de prueba y el recorrido con inicio de sesión que hace Paulo** · 2026-10-03 |
+| Estado | **Verificado con salvedades (2026-10-03): F1-T01…T11; salvedades: cambio de correo sin probar (política abierta en DEC-04; se cubre en F4-BE-02) y revisión visual de las vistas protegidas en tres tamaños sólo en pruebas de componentes y en el recorrido de Paulo, sin capturas registradas** · 2026-10-03 |
 
 ## Aceptación
 

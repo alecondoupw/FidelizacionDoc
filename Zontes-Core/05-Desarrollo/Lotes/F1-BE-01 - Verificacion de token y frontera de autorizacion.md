@@ -1,10 +1,10 @@
 ---
 title: "F1-BE-01 — Verificacion de token y frontera de autorizacion"
 tags: [zontes, lote, f1, backend]
-status: implementado-sin-integracion
+status: verificado-con-salvedades
 fase: F1
 frente: BE
-bloqueos: [entorno-firebase]
+bloqueos: []
 updated: 2026-10-03
 ---
 
@@ -24,7 +24,7 @@ Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote d
 | Dependencias | F0 verificada. DEC-02 y autorización para usar Firebase Auth Emulator (requiere `firebase-tools`, no instalado) o un proyecto de prueba sin datos reales. |
 | Aceptación | Ver lista siguiente. |
 | Prueba y evidencia | T-AUTHZ, T-ROLE · unitarias con `verifyIdToken` simulado (Vitest+Supertest) + integración con emulador o proyecto autorizado · `npm run check` · resultados en [[05-Desarrollo/Testing]] con fecha, revisión FE/BE y datos sintéticos |
-| Estado | **Implementado y probado con dobles; integración con Firebase real pendiente (F1-I-01)** · 2026-10-03 |
+| Estado | **Verificado con salvedades (2026-10-03): F1-T01…T11; salvedades: cambio de correo sin probar (política abierta en DEC-04; se cubre en F4-BE-02) y revisión visual de las vistas protegidas en tres tamaños sólo en pruebas de componentes y en el recorrido de Paulo, sin capturas registradas** · 2026-10-03 |
 
 ## Aceptación
 
