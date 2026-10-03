@@ -152,7 +152,7 @@ Escenarios cubiertos: **T-HISTORY/conciliación** (13 movimientos = 13 asientos,
 
 ## Corridas F6 — 2026-10-03
 
-Mismo entorno; código F6 **sin commit** sobre BE `a4f5014` y FE `7d8e3ce`. Firestore real = proyecto de desarrollo de Paulo con colecciones temporales `prueba_*` borradas al terminar; Auth con doble en las pruebas y sesiones reales de Paulo en el navegador.
+Mismo entorno; código publicado en `main` como BE `713e39e` y FE `bb93380`. Firestore real = proyecto de desarrollo de Paulo con colecciones temporales `prueba_*` borradas al terminar; Auth con doble en las pruebas y sesiones reales de Paulo en el navegador.
 
 | ID | Prueba | Comando | Resultado | Límite |
 | --- | --- | --- | --- | --- |
