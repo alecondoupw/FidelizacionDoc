@@ -7,7 +7,7 @@ updated: 2026-10-03
 
 # Zontes — Core del proyecto
 
-Baúl canónico del proyecto de fidelización Zontes / Kiden / NIU en `C:\Users\aleco\Documents\Fidelizacion\FidelizacionDoc\Zontes-Core` (repositorio FidelizacionDoc). **Estado: F0 verificada (2026-10-03) y publicada en la rama `f0/base-tecnica` de cada repo; ninguna función de producto implementada.** Repositorios operativos: FidelizacionFronted (Next.js) y FidelizacionBackend (Express); rutas en [[05-Desarrollo/Entorno local]]. Propietario: Paulo.
+Baúl canónico del proyecto de fidelización Zontes / Kiden / NIU en `C:\Users\aleco\Documents\Fidelizacion\FidelizacionDoc\Zontes-Core` (repositorio FidelizacionDoc). **Estado: F0 verificada (2026-10-03) y fusionada en `main` de cada repo; ninguna función de producto implementada.** Repositorios operativos: FidelizacionFronted (Next.js) y FidelizacionBackend (Express); rutas en [[05-Desarrollo/Entorno local]]. Propietario: Paulo.
 
 | Para | Leer |
 | --- | --- |
