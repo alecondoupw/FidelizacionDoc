@@ -65,6 +65,8 @@ Fuentes oficiales consultadas el 2026-10-03: instalación de Next.js (docs versi
 
 **F5:** BE añade `write-excel-file` 4.1.1 (MIT, una dependencia: `fflate`) para exportar .xlsx; se descartaron `exceljs` (nueve dependencias, entre ellas `uuid` con avisos) y `xlsx` de npm (versión antigua con CVE). `npm audit --omit=dev` sin cambios (2 moderadas de `uuid`/`gaxios` ya aceptadas). Nuevo comando `npm run reportes:conciliar [-- --reparar]`: sin argumento sólo informa; con `--reparar` completa el libro y el índice de canjes con los datos anteriores a F5 (lo ejecuta Paulo o el agente con su autorización). FE sin dependencias nuevas; usa `recharts` instalado en F0.
 
+**F6:** sin dependencias nuevas en FE ni BE (carrusel e ilustraciones con componentes propios, shadcn/ui y Lucide ya instalados). Para la revisión visual se usó el navegador integrado de la app, sin instalar herramientas.
+
 ## Variables de entorno (sólo nombres)
 
 | Repo | Variable | Uso | Valor en F0 |

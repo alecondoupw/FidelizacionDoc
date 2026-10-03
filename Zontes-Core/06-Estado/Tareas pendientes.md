@@ -27,7 +27,9 @@ updated: 2026-10-03
 - [ ] F3: resolver DEC-07 antes de canje real.
 - [ ] F4: resolver DEC-08 antes de borrado o edición sensible.
 - [ ] F5: resolver DEC-09 antes de fijar semántica de dashboard/export.
-- [ ] F6: resolver DEC-10/11 antes de contenido e identidad final; no publicar fotos/logos de mockup sin permiso.
+- [x] F6: DEC-10 resuelta y contenido implementado (2026-10-03).
+- [ ] F6: Paulo revisa las diferencias con los mockups de [[06-Estado/Evidencias/F6-revision-visual]] y entrega logos, fuentes y fotos autorizados (DEC-11); no publicar fotos/logos de mockup sin permiso.
+- [ ] F7: medir y reducir la espera de `GET /me` (~1,7 s por pantalla protegida).
 - [ ] F7: resolver DEC-13 antes de servicios/despliegue/backup.
 
 - [x] Commit y push de F0 autorizados por Paulo el 2026-10-03: rama `f0/base-tecnica` en los tres repos (FE `f29da45`, BE `747e191`).

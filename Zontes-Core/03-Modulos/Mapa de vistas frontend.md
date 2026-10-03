@@ -2,7 +2,7 @@
 title: "Mapa de vistas frontend"
 tags: [zontes]
 status: planificado
-updated: 2026-10-02
+updated: 2026-10-03
 ---
 
 # Mapa de vistas frontend
@@ -22,7 +22,7 @@ Las pantallas siguientes son **superficies de tarea**, no UI implementada. SRC-0
 | UI-09 | Canjes admin · `/admin/reporte-canjes` (F5) | tabla, filtros, detalle/comprobante | canjes autorizados | F5-FE-01 | A08 |
 | UI-10 | Tendencias admin · `/admin/tendencias` (F5) | líneas/barras, periodos/marcas | series temporales | F5-FE-02 | A11 |
 | UI-11 | Exportaciones admin · `/admin/exportar` (F5) | filtro, formato, descarga/estado | export autorizado | F5-FE-03 | A12 |
-| UI-12 | Contenido por marca admin | lista/editor/estado/vista previa si se decide | contenido aislado por marca | F6-FE-01 | A09 |
+| UI-12 | Contenido por marca admin · `/admin/contenido` (F6) | pestañas por marca, filtros de estado y ventana, interruptor, editor con vista previa, eliminar con confirmación | `/admin/contenidos` (I-08, DEC-10) | F6-FE-01 | A09 |
 | UI-13 | Inicio cliente | resumen, saldo, vencimiento, marcas y accesos | saldos, vínculos y reglas activas | F2-FE-01 | C08 |
 | UI-14 | Historial cliente | filtros, resumen y movimientos | ledger del propietario | F2-FE-01 | C01 |
 | UI-15 | Mis canjes cliente | lista, filtros, detalle y estado | canjes del propietario | F3-FE-01 | C04 |
@@ -37,8 +37,9 @@ Las pantallas siguientes son **superficies de tarea**, no UI implementada. SRC-0
 | UI-24 | Registrar puntos admin **propuesto en F2** | registro manual de eventos y ajustes con motivo | `/admin/eventos`, `/admin/ajustes` (DEC-05/14) | F2-FE-02 | sin mockup; línea visual de A05/A06 |
 | UI-25 | Beneficios admin **propuesto en F3** | lista por marca, crear/editar con opciones y stock (sin límite), vigencia del cupón, disponible desde, activo | `/admin/beneficios` (DEC-07) | F3-FE-01 | sin mockup; línea visual de A05 |
 | UI-26 | Canjes por código admin **propuesto en F3** | buscar por código, marcar entregado, anular con motivo | `/admin/canjes/{codigo}` (DEC-07) | F3-FE-01 | sin mockup; el reporte de canjes (A08) sigue en F5 |
+| UI-28 | Novedades cliente · `/novedades?marca=` **propuesto en F6** | publicaciones visibles de las marcas vinculadas con filtro por marca; las destacadas también en el carrusel de Inicio (UI-13) | `/contenidos` (I-08, DEC-10) | F6-FE-01 | sin mockup propio; tarjetas del carrusel de C08 |
 | UI-27 | Verificar nuevo correo **propuesto en F4** | aviso, enviar enlace, confirmar verificación, cerrar sesión | 403 `EMAIL_NOT_VERIFIED` tras cambio de correo (DEC-04) | F4-FE-02 | sin mockup; composición de C09/C10 |
 
 UI-23 quedó fuera de alcance por decisión de Paulo (DEC-16, 2026-10-03). Los mockups de C04/C05 reúnen etapas distintas; la FE debe separarlas en estados o rutas coherentes. Las imágenes admin no demuestran el diseño móvil. No hay imagen de login de ningún rol.
 
-Cada UI-ID necesita estado vacío, carga, error, falta de permiso, éxito, confirmación de acción irreversible cuando aplique, escritorio/tablet/móvil, teclado/foco y texto accesible. Para cliente aplicar SRC-03 pp. 2, 9–10 y las dos proporciones dibujadas; para admin aplicar SRC-02 pp. 8–9 y diseñar/verificar sus variantes tablet/móvil. Aplicar [[02-Arquitectura/Guia visual y criterios anti slop]] y los criterios de [[03-Modulos/Referencias UI cliente y administrador - 2026-10-02]]. Una nueva referencia se registra por versión; nunca sobrescribir una decisión silenciosamente.
+Cada UI-ID necesita estado vacío, carga, error, falta de permiso, éxito, confirmación de acción irreversible cuando aplique, escritorio/tablet/móvil, teclado/foco y texto accesible. Para cliente aplicar SRC-03 pp. 2, 9–10 y las dos proporciones dibujadas; para admin aplicar SRC-02 pp. 8–9 y diseñar/verificar sus variantes tablet/móvil. Aplicar [[02-Arquitectura/Guia visual y criterios anti slop]] y los criterios de [[03-Modulos/Referencias UI cliente y administrador - 2026-10-02]]. Capturas de las vistas construidas (F6) en [[06-Estado/Evidencias/F6-revision-visual]]. Una nueva referencia se registra por versión; nunca sobrescribir una decisión silenciosamente.

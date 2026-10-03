@@ -150,3 +150,18 @@ Implementado según DEC-09 y ADR-15; evidencia en [[05-Desarrollo/Testing]] «Co
 | `GET /admin/exportaciones/{tipo}?formato(csv\|xlsx)&…` | archivo adjunto; CSV UTF-8 con BOM, separador `;`, CRLF y textos que empiezan con `= + - @` neutralizados; `.xlsx` con encabezado | `422 TOO_MANY_ROWS` sobre 10.000 filas; audita `exportacion.generada` con formato, filas y filtros (sin correos) |
 
 **Modelo Firestore F5 (sin índices compuestos):** `libro/{id del movimiento}` — copia global de cada movimiento (uid, marca, tipo, puntos, fecha, evento, origen, motivo, actor) escrita en la misma transacción que el movimiento del cliente; `codigos/{codigo}` amplía el índice con marca, beneficio, puntos, estado y fechas, actualizado al canjear, entregar y anular. Los reportes leen rangos de un único campo (`libro.fecha`, `codigos.emitidoEn`, `usuarios.creadoEn`) y filtran el resto en memoria con tope de 50.000 documentos; los totales de clientes usan la agregación `count()`. `npm run reportes:conciliar [-- --reparar]` compara el libro y el índice con los datos de cada cliente y completa lo que falte (datos anteriores a F5); nunca borra.
+
+## 11. I-08 — contenido por marca, implementado en F6 (2026-10-03)
+
+Implementado según DEC-10; evidencia en [[05-Desarrollo/Testing]] «Corridas F6». Respuestas de lectura con `Cache-Control: no-store`. Sin archivos: la imagen es una ilustración por marca generada en el FE (DEC-10/11); Storage queda para cuando haya activos autorizados.
+
+| Endpoint | Rol | Cuerpo / respuesta | Notas |
+| --- | --- | --- | --- |
+| `GET /contenidos?marca&destacadas&limite(1–50, 20)` | cliente | `{ items: [{ id, marca, categoria, titulo, texto, enlace, destacada, publicarDesde }] }` | Sólo activas, dentro de su ventana y de marcas vinculadas; `marca` no vinculada → `403 FORBIDDEN` |
+| `GET /admin/contenidos?marca` | admin | `{ items: [Publicacion + { estado: programada\|publicada\|finalizada, visible }] }` | `visible` = activa y dentro de la ventana hoy |
+| `POST /admin/contenidos` | admin | `{ marca, categoria(noticia\|evento\|promocion), titulo(3–90), texto(≤600), enlace(https\|null), destacada, activa, publicarDesde, publicarHasta }` estricto → `201` | Fechas AAAA-MM-DD en hora de Bolivia, ambas incluidas; `hasta` anterior a `desde` → 422 |
+| `PUT /admin/contenidos/{id}` | admin | mismo cuerpo → publicación | Audita sólo los campos cambiados |
+| `PATCH /admin/contenidos/{id}` | admin | `{ activa }` estricto | Interruptor de la lista |
+| `DELETE /admin/contenidos/{id}` | admin | `204` | Inexistente → 404 |
+
+**Modelo Firestore F6:** `contenidos/{id}` con los campos del cuerpo más `creadoEn`, `actualizadoEn` y `actualizadoPor` (uid). Lecturas por igualdad de `marca` (una por marca vinculada del cliente) o de la colección completa en el panel, sin índices compuestos; ventana, destacadas, orden (más recientes primero) y límite se aplican en memoria. Auditoría: `contenido.creado`, `contenido.actualizado` (con `campos`) y `contenido.eliminado`, sin correos.

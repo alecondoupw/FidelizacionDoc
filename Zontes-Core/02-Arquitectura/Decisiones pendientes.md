@@ -20,8 +20,8 @@ Las reglas consolidadas de SRC-02 ya están definidas; esta lista sólo recoge h
 | DEC-07 | **Resuelta 2026-10-03:** catálogo por script + pantalla admin; stock por variante; Emitido/Entregado/Vencido/Anulado; PDF con QR en backend. Ver [[02-Arquitectura/Decisiones tecnicas]]. | F3 (resuelto) |
 | DEC-08 | **Resuelta 2026-10-03:** eliminar = baja + anonimización conservando movimientos, canjes y auditoría; admin edita nombre, correo y estado; cliente sólo su nombre. Ver [[02-Arquitectura/Decisiones tecnicas]]. | F4 (resuelto) |
 | DEC-09 | **Resuelta 2026-10-03:** al instante + «Actualizar»; presets y rango de hasta 12 meses en hora de Bolivia; CSV + Excel; hasta 10.000 filas con nombre y correo, auditado. Ver [[02-Arquitectura/Decisiones tecnicas]]. | F5 (resuelto) |
-| DEC-10 | Tipo de contenido por marca (banners, noticias, eventos, promociones), visibilidad y assets autorizados | F6 |
-| DEC-11 | Identidad final de MOTO LOYALTY/Zontes/Kiden/NIU, logotipos, fotos y fuentes licenciadas; autorizar activos reales distintos de las referencias SRC-04/05 | F0 diseño y F1–F6 UI |
+| DEC-10 | **Resuelta 2026-10-03:** «Publicación» con categoría y destacada; visible si activa y dentro de su ventana (hora de Bolivia); ilustración por marca sin subida de archivos. Ver [[02-Arquitectura/Decisiones tecnicas]]. | F6 (resuelto) |
+| DEC-11 | **Parcial 2026-10-03:** F6 se pule con la línea visual provisional. **Sigue abierto:** Identidad final de MOTO LOYALTY/Zontes/Kiden/NIU, logotipos, fotos y fuentes licenciadas; autorizar activos reales distintos de las referencias SRC-04/05 | F0 diseño y F1–F6 UI |
 | DEC-12 | Prioridad/detalle de vistas cliente frente a administrador; alcance de prototipo e hitos/fecha de hackathon | F0 plan |
 | DEC-13 | Entorno de despliegue, backups/restauración, integraciones CRM/facturación y acceso a datos reales | F7 |
 | DEC-14 | **Resuelta 2026-10-03:** movimientos definitivos; corrección por ajuste con motivo y auditoría. | F2/F3 (resuelto) |
