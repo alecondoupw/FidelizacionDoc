@@ -1,0 +1,52 @@
+---
+title: "Especificación consolidada y trazabilidad de los PDF"
+tags: [zontes, requisitos, trazabilidad]
+status: base-documental
+updated: 2026-10-02
+---
+
+# Especificación consolidada y trazabilidad de los PDF
+
+Paulo indicó el 2026-10-02 que los tres PDF son información concreta para definir el avance e integración del proyecto. Esta nota fija **qué está definido por fuente**, dónde se resuelve y qué detalle sigue abierto. SRC-01 es el enunciado del reto; SRC-02 concreta administración y la base técnica; SRC-03 concreta vista cliente y vuelve a exponer la base técnica. Las instrucciones dirigidas a una herramienta de diseño en SRC-03 pp. 3 y 10 describen cómo generar mockups; no sustituyen el pedido actual ni ordenan generar más imágenes. Los JPEG son referencias visuales, no evidencia de implementación.
+
+**Leyenda:** `R` = requisito o regla expresamente descrita; `B` = base técnica documentada; `O` = opción o detalle condicional del PDF; `P` = decisión de implementación aún pendiente. Ningún `R` o `B` significa que exista código o servicio operativo. En caso de diferencia, conservar el pasaje y consultar a Paulo antes de cambiar alcance, permisos o datos.
+
+## Matriz de requisitos y resolución
+
+| ID | Fuente | Contenido fijado o delimitado | Tipo | Superficie de resolución / prueba |
+| --- | --- | --- | --- | --- |
+| REQ-01 | SRC-01 p. 1 | Plataforma web responsiva multimarca Zontes/Kiden/NIU, mercado Bolivia y escalabilidad internacional; centraliza usuarios, puntos, beneficios y canjes. | R | [[01-Contexto/Definicion del proyecto]], F0–F7, T-BRAND/T-UI |
+| REQ-02 | SRC-01 p. 1; SRC-02 pp. 1–3; SRC-03 pp. 3–4 | Registro/autenticación de cliente y admin separados; admin inicial precreado, nuevos admins sólo por admin, sin registro público ni promoción cliente→admin. | R | UI-01/02/06; F1/F4; T-ROLE/T-AUTHZ |
+| REQ-03 | SRC-02 pp. 1–2 | Acceso admin requiere credenciales, rol y estado activo; rutas y acciones protegidas también en BE; sesión expira y permite logout; errores sin filtración de datos. Recuperación de contraseña segura es opcional en SRC-02 p. 2. | R/O | F1-FE-01/F1-BE-01; T-ROLE/T-AUTHZ |
+| REQ-04 | SRC-02 p. 2; SRC-03 p. 4 | Vinculación a la base existente **únicamente por correo normalizado**, automática al coincidir; sin coincidencia queda no vinculada; correo único y sin dos cuentas de fidelización para el mismo correo. Recuperar sólo campos disponibles en la fuente real. | R | UI-02/07/17; F1-BE-03; DEC-04; T-LINK |
+| REQ-05 | SRC-03 pp. 3–4 | Login cliente, registro por pasos, verificación/sincronización y estados visibles; rol Cliente y rechazo de acceso admin. Documento/teléfono son campos opcionales, no criterios de vínculo. | R | UI-02; F1-FE-01; T-LINK/T-AUTHZ/T-UI |
+| REQ-06 | SRC-03 pp. 4–5, 8–9 | Cuenta cliente unificada con marcas vinculadas, marca activa, inicio, Mis marcas y perfil; mostrar sólo marcas realmente vinculadas. La semántica de nueva vinculación y campos editables depende de DEC-04/08. | R/P | UI-13/17/18; F1/F2/F4; T-BRAND/T-UI |
+| REQ-07 | SRC-01 p. 1; SRC-02 pp. 3–5 | Reglas de puntos por Compra, Referido, Mantenimiento y Asistencia a eventos, diferenciadas por marca; campos evento+marca+puntos+estado, **sin condición adicional**; impedir duplicados y valores inválidos. | R | UI-04; F2-BE-01; T-RULE |
+| REQ-08 | SRC-02 pp. 4–5 | Admin crea, filtra, edita, activa/desactiva o elimina reglas con confirmación; resumen dinámico singular/plural. Cambios y eliminación afectan sólo eventos futuros, nunca puntos ya otorgados. | R | UI-04; F2; T-RULE/T-HISTORY |
+| REQ-09 | SRC-01 p. 1; SRC-02 p. 5 | Vigencia configurable por marca en días/meses/años, con activación; inicia por defecto al otorgar; cambios futuros no reescriben vencimientos previos; puntos vencidos salen del saldo y generan movimiento; auditar cambios. | R | UI-03/19; F2; DEC-06; T-EXP/T-HISTORY |
+| REQ-10 | SRC-01 p. 1; SRC-03 pp. 5–6, 9 | Saldo actualizado, por marca, movimientos y vencimientos visibles en Inicio/Mis puntos/Historial; filtros y tablas convertidas a listas/tarjetas móviles; una fuente autorizada debe mantener coherencia entre vistas. | R | UI-03/13/14; F2; T-POINTS/T-HISTORY/T-UI |
+| REQ-11 | SRC-01 p. 1; SRC-03 pp. 6–7 | Catálogo independiente por marca vinculada; búsqueda, filtros, disponibilidad, detalle, costo y saldo; validar stock y saldo antes del canje. Categorías y variantes del PDF deben corresponder a catálogo real. | R/P | UI-05; F3; DEC-07; T-REDEEM/T-BRAND |
+| REQ-12 | SRC-01 p. 1; SRC-03 pp. 7–9 | Canje exitoso descuenta puntos y aparece en saldo, historial y Mis canjes; comprobante/cupón con código y trazabilidad, QR cuando corresponda; sólo el propietario ve su información. Estados/reversa/vigencia exactos dependen de DEC-07. | R/P | UI-05/15/16; F3; T-REDEEM/T-AUTHZ |
+| REQ-13 | SRC-02 pp. 2–3 | Admin gestiona otros admins: listado, alta, edición autorizada, activar/desactivar, eliminar con confirmación y protección del último admin activo; auditar actor/fecha/hora. | R | UI-06; F4; T-ROLE/T-AUTHZ |
+| REQ-14 | SRC-02 p. 3 | Admin gestiona clientes: buscar/filtrar, detalle, editar campos permitidos, reevaluar vínculo al cambiar correo, activar/desactivar y eliminar sin inconsistencias en puntos/canjes. Campos, retención y borrado exactos dependen de DEC-08. | R/P | UI-07; F4; T-LINK/T-HISTORY/T-AUTHZ |
+| REQ-15 | SRC-02 pp. 5–6 | Reportes de actividad, canjes y tendencias, filtrados por marca/periodo; KPI rastreables a movimientos; series de tiempo y comparación por marca. Granularidad y significado operativo de “tiempo real” dependen de DEC-09. | R/P | UI-08/09/10/20/21; F5; T-EXPORT/T-HISTORY |
+| REQ-16 | SRC-02 pp. 6–7 | Exportar clientes, movimientos, canjes y reportes con filtros efectivos, autorización, encabezados claros y volumen controlado. Excel/CSV/PDF son formatos posibles; el definitivo queda en DEC-09. | R/O | UI-11; F5; T-EXPORT/T-AUTHZ |
+| REQ-17 | SRC-01 p. 1; SRC-02 p. 7 | Contenido aislado por marca, CRUD y visibilidad según estado; título/cuerpo/fecha cuando corresponda. Tipo de contenido, vista previa y programación no están fijados: DEC-10. | R/O/P | UI-12; F6; T-BRAND/T-UI |
+| REQ-18 | SRC-01 p. 1; SRC-02 pp. 8–9; SRC-03 pp. 2, 9–10 | Escritorio/tablet/móvil y navegación accesible. Cliente: sidebar escritorio, header compacto/barra inferior+menú móvil, tablas a tarjetas. Admin: menú compacto, formularios de una columna y tablas legibles/scroll justificado. | R | Todos los UI-ID; F0-FE-02 y F1–F6; T-UI |
+| REQ-19 | SRC-02 pp. 8–9; SRC-03 pp. 2, 10 | Línea SaaS coherente: superficies claras, acento índigo/violeta, tarjetas y estados semánticos; densidad y navegación propias de cada rol. SRC-02 especifica admin; SRC-03 especifica cliente. Identidad/activos finales quedan en DEC-11. | R/P | [[02-Arquitectura/Guia visual y criterios anti slop]], F0-FE-02; T-UI |
+| REQ-20 | SRC-01 p. 2; SRC-02 pp. 1, 11–15; SRC-03 pp. 11–13 | Auth, roles, datos sensibles, reglas, saldo y canje se verifican en BE; FE presenta sólo respuestas autorizadas. Transacciones y movimientos auditables para evitar inconsistencias; no sólo saldo mutable. | R/B | [[02-Arquitectura/Vision general]], [[02-Arquitectura/Modelo de datos y contratos]], T-AUTHZ/T-POINTS/T-REDEEM |
+| REQ-21 | SRC-01 p. 2; SRC-02 p. 2 | Seguridad, datos sensibles protegidos, API preparada para facturación/CRM, arquitectura modular, disponibilidad, backups, código documentado y control de versiones. Integraciones reales, infraestructura y acceso requieren DEC-04/13. | R/P | F0 integración, F7 operación; T-AUTHZ/T-DEMO |
+| REQ-22 | SRC-01 p. 2 | Entregables: arquitectura/diseño técnico, prototipo funcional con núcleo usuarios+puntos, código fuente en repositorio compartido, manual de despliegue y uso administrativo. El objetivo general incluye despliegue; entorno y ejecución dependen de DEC-13. | R/P | [[05-Desarrollo/Criterio de terminado]], F7; evidencia por entregable |
+| REQ-23 | SRC-01 p. 2 | Cronograma e hitos en reunión de arranque; revisiones periódicas del avance. El PDF no fija fecha, frecuencia ni responsable: DEC-12. | R/P | [[05-Desarrollo/Plan por fases]], [[06-Estado/Bitacora]] |
+| REQ-24 | SRC-02 pp. 11–15; SRC-03 pp. 11–13 | Next.js/TypeScript + Express/TypeScript + Firebase Auth/Firestore/Admin SDK y Storage para archivos son la base técnica documentada; herramientas complementarias y alternativas se detallan en [[02-Arquitectura/Base tecnica documentada]]. | B/O | F0 contrato, repos/entorno; DEC-01/02 para recursos concretos |
+
+## Orden de integración que se desprende de las fuentes
+
+1. **F0 — fundamento:** acordar repositorio compartido frente a FE_REPO/BE_REPO, entornos, responsables, hitos y contrato de identidad/errores/fechas; fijar tokens, navegación y estados responsive por rol. El inventario UI ya existe. No hay conexión a servicios ni código verificado.
+2. **F1 — identidad y vínculo:** Firebase Auth identifica; Next.js obtiene ID token; Express verifica token/rol/estado, protege recursos y vincula por correo normalizado con la fuente existente mediante contrato autorizado. Probar usuario vinculado/no vinculado, duplicados y acceso cruzado.
+3. **F2 — puntos:** Express recibe eventos válidos de origen definido, consulta regla activa marca+evento, registra movimiento y fecha de vencimiento, y ofrece saldo/historial reconciliables. Probar reintentos, cambios prospectivos y vencimiento.
+4. **F3 — canje:** catálogo autorizado por marca; Express valida saldo/disponibilidad y registra descuento, stock, canje y comprobante de forma consistente; FE actualiza todas las vistas dependientes con datos del servidor.
+5. **F4/F5/F6 — administración y contenido:** CRUD sujeto a permisos/auditoría; reportes derivados de movimientos/canjes; exportación filtrada en API; contenido aislado por marca. A02/CSV sigue condicionado a DEC-16.
+6. **F7 — entregables y operación:** recorrido integrado cliente/admin, evidencias, manuales, código compartido, preparación de backup/restauración y despliegue cuando el entorno y autorización estén definidos. Registrar revisiones periódicas contra hitos acordados.
+
+La secuencia es una **organización del trabajo** derivada de dependencias, no una fecha ni una prueba realizada. Las decisiones abiertas precisan valores, formatos y acceso reales; no reabren las reglas ya expresadas en los PDF. Ver [[02-Arquitectura/Decisiones pendientes]], [[05-Desarrollo/Plan por fases]], [[05-Desarrollo/Testing]] y [[03-Modulos/Referencias UI cliente y administrador - 2026-10-02]].

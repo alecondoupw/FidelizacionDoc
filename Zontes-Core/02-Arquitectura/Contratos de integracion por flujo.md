@@ -1,0 +1,26 @@
+---
+title: "Contratos de integración por flujo"
+tags: [zontes, arquitectura, integracion]
+status: borrador-para-F0
+updated: 2026-10-02
+---
+
+# Contratos de integración por flujo
+
+Esta nota convierte SRC-01/02/03 en una **lista de contratos a concretar en F0**, sin inventar rutas HTTP, esquemas de la empresa, credenciales ni datos reales. Base: [[02-Arquitectura/Base tecnica documentada]]. Cada contrato implementado debe fijar identificador/versionado, productor y consumidor, actor/rol, entrada/salida, marca, errores, autorización, idempotencia cuando corresponda, paginación, fechas y prueba FE↔BE. `FE_REPO` y `BE_REPO` son frentes lógicos hasta DEC-01.
+
+| Flujo | Productor → consumidor | Garantía expresada por PDF | Información pendiente antes de codificar | Evidencia de integración |
+| --- | --- | --- | --- | --- |
+| I-01 Identidad y sesión | Next.js/Firebase Auth → Express/Admin SDK | ID token verificado; rol y estado activo; rutas protegidas; cliente no accede a admin; logout/expiración (SRC-02 pp. 1, 11, 14–15; SRC-03 p. 3). | DEC-02/03: proyecto Auth, bootstrap admin, política de sesión, custodia. | T-ROLE/T-AUTHZ con token válido, ausente, expirado y rol cruzado. |
+| I-02 Registro y enlace legacy | Registro cliente → Express → fuente existente autorizada | Correo normalizado y único como **único** criterio de coincidencia; vinculado/no vinculado; recuperar sólo datos realmente existentes (SRC-02 p. 2; SRC-03 pp. 3–4). | DEC-04: API/esquema, acceso, duplicados, cambio de correo, multiplicidad de marcas y nueva vinculación. | T-LINK con coincidencia, ausencia, duplicado y cambio de correo; sin usar nombre/teléfono. |
+| I-03 Eventos y reglas | Sistema emisor → Express → Firestore; admin FE → Express | Evento válido Compra/Referido/Mantenimiento/Asistencia consulta regla activa marca+evento sin condición extra; cambio de regla sólo futuro (SRC-02 pp. 4–5, 14). | DEC-05: emisor, autenticidad, ID estable, momento definitivo y política de reintentos; DEC-14 corrección. | T-RULE/T-POINTS con evento repetido, regla inactiva, duplicado y cambio futuro. |
+| I-04 Saldo, movimientos y vencimiento | Express/Firestore → cliente/admin Next.js | Movimientos auditables y saldo coherente; vencimiento por marca deja movimiento y sale del saldo; misma fuente para Inicio, Mis puntos, Mis marcas y canje (SRC-01 p. 1; SRC-02 p. 5; SRC-03 pp. 5, 9, 12). | DEC-06: zona horaria, periodo, consumo de lotes y saldo parcialmente canjeado; índices/consultas reales. | T-HISTORY/T-EXP/T-BRAND; conciliación por marca y límites de fecha. |
+| I-05 Catálogo y canje | Cliente Next.js → Express → Firestore/Storage | Sólo beneficios de marcas autorizadas; saldo y disponibilidad validados por BE; operación crítica consistente; canje visible en historial/Mis canjes/comprobante (SRC-01 p. 1; SRC-03 pp. 6–9, 12). | DEC-07: catálogo, stock, variantes, estados, cupón, QR, vigencia, reversa y generación de archivo. | T-REDEEM con saldo/stock insuficiente y dos canjes concurrentes; comprobante vinculado al canje. |
+| I-06 Gestión administrativa | Admin Next.js → Express/Auth/Firestore | Altas separadas, último admin activo protegido; gestión de clientes con validación/re-vinculación y auditoría (SRC-02 pp. 2–3). | DEC-03/08: permisos por acción, campos editables, borrado/retención. DEC-16 sólo para importación CSV opcional. | T-ROLE/T-LINK/T-AUTHZ con acción prohibida por BE y auditoría de cambios. |
+| I-07 Reportes y exportación | Express/Firestore → admin Next.js/archivo | Actividad, canjes, tendencias y desglose basados en datos autorizados; exportación filtrada y protegida (SRC-02 pp. 5–7, 14). | DEC-09: “tiempo real”, periodos/granularidad, formatos, volumen y paginación/colas. | T-EXPORT: cifras concilian con ledger/canjes; filtros del archivo coinciden con pantalla y permisos. |
+| I-08 Contenido y archivos | Admin Next.js → Express → Firestore/Storage → cliente Next.js | Contenido aislado por marca y sólo visible si activo; archivos privados con acceso autorizado (SRC-02 pp. 7, 11–12; SRC-03 pp. 3, 12). | DEC-10/11: tipos, publicación/programación, licencias y recursos finales. | T-BRAND/T-AUTHZ/T-UI con marcas cruzadas y contenido inactivo. |
+| I-09 Facturación/CRM y operación | Sistemas existentes ↔ API; entorno → respaldo/restore | Arquitectura permite conexión mediante API; seguridad, disponibilidad, backup y despliegue (SRC-01 p. 2; SRC-02 p. 2). | DEC-04/05/13: interfaces reales, permisos, entorno, backups, restauración, despliegue. | Contrato externo probado en entorno autorizado y T-DEMO/restore según F7. |
+
+**Política transversal:** Next.js valida para ayudar al usuario; Express repite validación y decide permisos/saldo/stock/fechas. Admin SDK omite las reglas Firestore, por lo que la autorización por recurso es responsabilidad de Express (SRC-02 pp. 11, 14–15). No entregar al cliente datos de otra cuenta o marca. Un resultado visual o fixture no prueba I-01–I-09.
+
+**Salida esperada de F0-I-01:** contratos iniciales I-01/I-02 versionados y revisados por FE/BE, esquema de error y fechas, fuente de datos de prueba, criterios de aceptación y responsables. Los contratos I-03–I-09 se detallan antes de su fase con las decisiones indicadas. Evidencias en [[05-Desarrollo/Testing]] y [[06-Estado/Bitacora]]; secuencia en [[05-Desarrollo/Plan por fases]].
