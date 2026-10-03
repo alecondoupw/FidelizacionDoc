@@ -28,12 +28,12 @@ Esta hoja permite revisar las diferencias entre las referencias C01–C10 (clien
 | Fase o lote | Estado | Qué falta para empezar o cerrar |
 | --- | --- | --- |
 | F0-FE-01 · inventario de referencias | **Documentado y verificado** para este lote | Las 23 imágenes tienen fuente, hash, UI-ID y tarea en [[03-Modulos/Referencias UI cliente y administrador - 2026-10-02]]; A02 sigue condicionada. |
-| F0 · instalación y fundaciones | **Verificada 2026-10-03; publicado en la rama `f0/base-tecnica` (FE `f29da45`, BE `747e191`)** | Rutas confirmadas (DEC-01), Next.js y Express instalados y verificados por separado, contrato v0 y evidencia en [[05-Desarrollo/Lote F0 - instalacion separada frontend y backend]] y [[05-Desarrollo/Testing]]. DEC-02 precede a conexiones reales; DEC-11/12 a diseño final/prioridades. |
+| F0 · instalación y fundaciones | **Verificada 2026-10-03; en `main` (FE `f29da45`, BE `747e191`)** | Rutas confirmadas (DEC-01), Next.js y Express instalados y verificados por separado, contrato v0 y evidencia en [[05-Desarrollo/Lote F0 - instalacion separada frontend y backend]] y [[05-Desarrollo/Testing]]. DEC-02 precede a conexiones reales; DEC-11/12 a diseño final/prioridades. |
 | F1 · identidad y vínculo | **Lotes creados; sin código ni pruebas** | Gate F0 cumplido; faltan DEC-02/03/04 y aprobación del contrato I-01/I-02. |
 | F2 · puntos | **Planificada; sin código ni pruebas** | F1 y DEC-05/06/14; ledger y reglas verificables. |
 | F3–F6 · canje, administración, reportes y contenido | **Planificadas; sin código ni pruebas** | Gates de sus fases y decisiones específicas DEC-07/08/09/10. |
 | F7 · entrega | **Planificada; sin despliegue** | Producto integrado y probado; DEC-13. |
 
-**Conclusión operativa (2026-10-03):** F0 está verificada y publicado en la rama `f0/base-tecnica` (FE `f29da45`, BE `747e191`) y los lotes ejecutables F1–F7 están creados en [[05-Desarrollo/Lotes F1-F7 - indice]]; ninguno iniciado. Para abrir F1 hacen falta DEC-02, DEC-03 y DEC-04. No se debe presentar F1 ni otra fase como lista o completada por disponer de mockups.
+**Conclusión operativa (2026-10-03):** F0 está verificada y publicada en `main` (FE `f29da45`, BE `747e191`) y los lotes ejecutables F1–F7 están creados en [[05-Desarrollo/Lotes F1-F7 - indice]]; ninguno iniciado. Para abrir F1 hacen falta DEC-02, DEC-03 y DEC-04. No se debe presentar F1 ni otra fase como lista o completada por disponer de mockups.
 
 Ver [[05-Desarrollo/Plan por fases]], [[02-Arquitectura/Decisiones pendientes]], [[03-Modulos/Mapa de vistas frontend]] y [[05-Desarrollo/Progreso]].

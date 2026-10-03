@@ -32,6 +32,7 @@ updated: 2026-10-03
 
 - [x] Commit y push de F0 autorizados por Paulo el 2026-10-03: rama `f0/base-tecnica` en los tres repos (FE `f29da45`, BE `747e191`).
 - [x] `f0/base-tecnica` fusionada en `main` en los tres repos por avance rápido (decisión de Paulo, 2026-10-03).
+- [x] Rama `f0/base-tecnica` borrada en local y remoto de los tres repos (decisión de Paulo, 2026-10-03).
 - [ ] Decidir si se configura CI (no incluida en F0).
 
 La casilla de inventario visual refleja sólo documentación ya verificada; F0 está verificada y publicada en `f0/base-tecnica`. Al iniciar una tarea, anotar aceptación, evidencia y fuente mínima; al terminar, actualizar [[05-Desarrollo/Progreso]] y [[06-Estado/Bitacora]].
