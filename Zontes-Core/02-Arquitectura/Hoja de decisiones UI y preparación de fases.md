@@ -2,7 +2,7 @@
 title: "Hoja de decisiones UI y preparación de fases"
 tags: [zontes, decisiones, ui]
 status: pendiente-de-paulo
-updated: 2026-10-02
+updated: 2026-10-03
 ---
 
 # Hoja de decisiones UI y preparación de fases
@@ -23,17 +23,17 @@ Esta hoja permite revisar las diferencias entre las referencias C01–C10 (clien
 
 **No requieren una decisión nueva para documentarlos:** el panel admin debe funcionar en móvil aunque A01–A13 no tengan versión móvil (SRC-02 p. 8); los mockups de cliente ya muestran un patrón móvil que se debe verificar al construirlo. También faltan imágenes de login para ambos roles: SRC-02 p. 1 y SRC-03 p. 3 permiten especificar el flujo, pero el diseño concreto se revisa dentro de F0-FE-02/F1-FE-01. Ninguna de estas ausencias autoriza a marcar una vista como probada.
 
-## Estado real de las fases al 2026-10-02
+## Estado real de las fases al 2026-10-03
 
 | Fase o lote | Estado | Qué falta para empezar o cerrar |
 | --- | --- | --- |
 | F0-FE-01 · inventario de referencias | **Documentado y verificado** para este lote | Las 23 imágenes tienen fuente, hash, UI-ID y tarea en [[03-Modulos/Referencias UI cliente y administrador - 2026-10-02]]; A02 sigue condicionada. |
-| F0 · instalación y fundaciones | **Planificada, no iniciada** | Al abrirla, pedir rutas FE/BE a Paulo (DEC-01), instalar y verificar Next.js y Express por separado, fijar contrato inicial y documentar evidencia en [[05-Desarrollo/Lote F0 - instalacion separada frontend y backend]]. DEC-02 precede a conexiones reales; DEC-11/12 a diseño final/prioridades. |
-| F1 · identidad y vínculo | **Planificada; sin código ni pruebas** | Gate F0 y DEC-03/04; repositorios/servicios autorizados y contrato FE↔BE. |
+| F0 · instalación y fundaciones | **Verificada 2026-10-03; publicado en la rama `f0/base-tecnica` (FE `f29da45`, BE `747e191`)** | Rutas confirmadas (DEC-01), Next.js y Express instalados y verificados por separado, contrato v0 y evidencia en [[05-Desarrollo/Lote F0 - instalacion separada frontend y backend]] y [[05-Desarrollo/Testing]]. DEC-02 precede a conexiones reales; DEC-11/12 a diseño final/prioridades. |
+| F1 · identidad y vínculo | **Lotes creados; sin código ni pruebas** | Gate F0 cumplido; faltan DEC-02/03/04 y aprobación del contrato I-01/I-02. |
 | F2 · puntos | **Planificada; sin código ni pruebas** | F1 y DEC-05/06/14; ledger y reglas verificables. |
 | F3–F6 · canje, administración, reportes y contenido | **Planificadas; sin código ni pruebas** | Gates de sus fases y decisiones específicas DEC-07/08/09/10. |
 | F7 · entrega | **Planificada; sin despliegue** | Producto integrado y probado; DEC-13. |
 
-**Conclusión operativa:** hoy están listos el inventario, la trazabilidad PDF y el **plan de F0**, no una fase de desarrollo de producto. Paulo indicó que F0 no se inicia todavía y que las rutas se preguntan cuando comience. Al completar su instalación y verificación se crearán los lotes ejecutables F1–F7 dentro del Core. No se debe presentar F1 ni otra fase como lista o completada por disponer de mockups.
+**Conclusión operativa (2026-10-03):** F0 está verificada y publicado en la rama `f0/base-tecnica` (FE `f29da45`, BE `747e191`) y los lotes ejecutables F1–F7 están creados en [[05-Desarrollo/Lotes F1-F7 - indice]]; ninguno iniciado. Para abrir F1 hacen falta DEC-02, DEC-03 y DEC-04. No se debe presentar F1 ni otra fase como lista o completada por disponer de mockups.
 
 Ver [[05-Desarrollo/Plan por fases]], [[02-Arquitectura/Decisiones pendientes]], [[03-Modulos/Mapa de vistas frontend]] y [[05-Desarrollo/Progreso]].

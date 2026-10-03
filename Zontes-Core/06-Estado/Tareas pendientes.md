@@ -2,23 +2,23 @@
 title: "Tareas pendientes — Zontes"
 tags: [zontes, tareas]
 status: activo
-updated: 2026-10-02
+updated: 2026-10-03
 ---
 
 # Tareas pendientes
 
-## F0 planificada, no iniciada
+## F0 — verificada localmente el 2026-10-03
 
-- [ ] **Al iniciar F0**, preguntar a Paulo las dos rutas FE/BE, si ya existen y su organización Git (DEC-01); no solicitarlas antes. Seguir [[05-Desarrollo/Lote F0 - instalacion separada frontend y backend]].
-- [ ] Instalar y verificar por separado Next.js/TypeScript frontend y Express/TypeScript backend en las rutas indicadas; registrar manifiestos, lockfiles, versiones y resultados de smoke/lint/build.
+- [x] Rutas FE/BE y organización Git confirmadas por Paulo el 2026-10-03 (DEC-01): ver [[05-Desarrollo/Entorno local]].
+- [x] FE y BE instalados y verificados por separado (npm ci, check, smoke, FE→BE): ver [[05-Desarrollo/Testing]] F0-T01…T11.
 - [ ] Resolver recursos Firebase de DEC-02 antes de conectar servicios. DEC-11/12 se resuelven antes de identidad visual final y de abrir los lotes funcionales que dependan de prioridad/hitos.
 - [ ] Revisar con Paulo la [[02-Arquitectura/Hoja de decisiones UI y preparación de fases]]; registrar sus respuestas en [[02-Arquitectura/Decisiones tecnicas]] antes de cambiar alcance o implementar.
 - [ ] Acordar calendario, hitos y prioridad cliente/admin para los entregables que ya fija SRC-01 p. 2: arquitectura, prototipo usuarios+puntos, código compartido y manuales; no inventar fechas.
-- [ ] Definir contrato inicial FE↔BE y responsables al abrir F0; no inferir rutas ni entorno.
+- [x] Contrato inicial FE↔BE v0 definido: [[02-Arquitectura/Contrato API v0 - F0]]. Responsables por repo: pendientes de Paulo.
 - [x] Inventariar SRC-03/04/05 y asignar C01–C10/A01–A13 a UI-ID y lotes FE en [[03-Modulos/Referencias UI cliente y administrador - 2026-10-02]]. Sólo está completo el inventario de este lote, no el diseño ni la implementación.
 - [ ] Resolver DEC-16 para A02/importación CSV antes de incluir UI-23 como implementación.
 - [ ] Diseñar variantes admin tablet/móvil: SRC-05 sólo aporta escritorio; verificar cada UI-ID en tres tamaños.
-- [ ] **Después de verificar F0**, crear en este Core los lotes ejecutables F1–F7 con [[05-Desarrollo/Plantilla de lote de trabajo]], fuente PDF, dueño, contrato, criterios, dependencia y prueba.
+- [x] Lotes ejecutables F1–F7 creados: [[05-Desarrollo/Lotes F1-F7 - indice]].
 
 ## Próximos gates de negocio
 
@@ -30,4 +30,8 @@ updated: 2026-10-02
 - [ ] F6: resolver DEC-10/11 antes de contenido e identidad final; no publicar fotos/logos de mockup sin permiso.
 - [ ] F7: resolver DEC-13 antes de servicios/despliegue/backup.
 
-La casilla de inventario visual refleja sólo documentación ya verificada; F0 no ha comenzado como instalación. Al iniciar una tarea, anotar aceptación, evidencia y fuente mínima; al terminar, actualizar [[05-Desarrollo/Progreso]] y [[06-Estado/Bitacora]].
+- [x] Commit y push de F0 autorizados por Paulo el 2026-10-03: rama `f0/base-tecnica` en los tres repos (FE `f29da45`, BE `747e191`).
+- [ ] Decidir la fusión de `f0/base-tecnica` en `main` en los tres repos (merge directo o PR).
+- [ ] Decidir si se configura CI (no incluida en F0).
+
+La casilla de inventario visual refleja sólo documentación ya verificada; F0 está verificada y publicada en `f0/base-tecnica`. Al iniciar una tarea, anotar aceptación, evidencia y fuente mínima; al terminar, actualizar [[05-Desarrollo/Progreso]] y [[06-Estado/Bitacora]].

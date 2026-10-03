@@ -2,7 +2,7 @@
 title: "Decisiones pendientes"
 tags: [zontes]
 status: planificado
-updated: 2026-10-02
+updated: 2026-10-03
 ---
 
 # Decisiones pendientes
@@ -11,7 +11,7 @@ Las reglas consolidadas de SRC-02 ya están definidas; esta lista sólo recoge h
 
 | ID | Decisión solicitada a Paulo | Desbloquea |
 | --- | --- | --- |
-| DEC-01 | FE y BE deben instalarse por separado. **Al iniciar F0**, preguntar rutas/nombres reales de `FE_REPO` y `BE_REPO`, si ya existen, organización Git (dos repos o dos paquetes) y responsables; no pedir ni inferir rutas antes de ese momento. | Inicio de F0, contratos y CI |
+| DEC-01 | **Resuelta 2026-10-03** por Paulo: dos repos Git independientes en rutas confirmadas; ver [[02-Arquitectura/Decisiones tecnicas]] y [[05-Desarrollo/Entorno local]]. Sigue abierto: responsables por repo y CI. | F0 (cerrada); CI pendiente |
 | DEC-02 | El stack Next.js + Express + Firebase ya está documentado como base de desarrollo en SRC-02 pp. 11–15 y reiterado en SRC-03 pp. 11–13. Falta identificar proyecto Firebase, cuenta/custodio, permisos, límites/costos y ambientes; cualquier excepción al stack requiere decisión expresa. | F0/F1; no asumir servicios disponibles |
 | DEC-03 | ¿Cómo crear de forma segura al administrador inicial, sin registro público? ¿Quién custodia su acceso? | F1 |
 | DEC-04 | Contrato real de base de clientes: API/esquema, permisos, correos duplicados, cambio de correo, fuente de verdad, multiplicidad de marcas y semántica de “Vincular nueva marca” en C02 | F1 sincronización/UI-17 |

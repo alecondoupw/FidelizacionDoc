@@ -2,7 +2,7 @@
 title: "Contratos de integración por flujo"
 tags: [zontes, arquitectura, integracion]
 status: borrador-para-F0
-updated: 2026-10-02
+updated: 2026-10-03
 ---
 
 # Contratos de integración por flujo
@@ -22,5 +22,7 @@ Esta nota convierte SRC-01/02/03 en una **lista de contratos a concretar en F0**
 | I-09 Facturación/CRM y operación | Sistemas existentes ↔ API; entorno → respaldo/restore | Arquitectura permite conexión mediante API; seguridad, disponibilidad, backup y despliegue (SRC-01 p. 2; SRC-02 p. 2). | DEC-04/05/13: interfaces reales, permisos, entorno, backups, restauración, despliegue. | Contrato externo probado en entorno autorizado y T-DEMO/restore según F7. |
 
 **Política transversal:** Next.js valida para ayudar al usuario; Express repite validación y decide permisos/saldo/stock/fechas. Admin SDK omite las reglas Firestore, por lo que la autorización por recurso es responsabilidad de Express (SRC-02 pp. 11, 14–15). No entregar al cliente datos de otra cuenta o marca. Un resultado visual o fixture no prueba I-01–I-09.
+
+**Estado 2026-10-03:** la salida de F0 está en [[02-Arquitectura/Contrato API v0 - F0]] (convenciones, errores, fechas y salud implementados; I-01/I-02 como propuesta pendiente de DEC-02/03/04).
 
 **Salida esperada de F0-I-01:** contratos iniciales I-01/I-02 versionados y revisados por FE/BE, esquema de error y fechas, fuente de datos de prueba, criterios de aceptación y responsables. Los contratos I-03–I-09 se detallan antes de su fase con las decisiones indicadas. Evidencias en [[05-Desarrollo/Testing]] y [[06-Estado/Bitacora]]; secuencia en [[05-Desarrollo/Plan por fases]].

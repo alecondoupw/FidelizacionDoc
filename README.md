@@ -10,6 +10,6 @@ Documentación y referencias del proyecto de fidelización multimarca. El baúl 
 
 ## Avance
 
-La [fase F0](Zontes-Core/05-Desarrollo/Lote%20F0%20-%20instalacion%20separada%20frontend%20y%20backend.md) está **planificada, no iniciada**. Cuando Paulo indique iniciarla, se le pedirán las rutas separadas de frontend Next.js y backend Express.js. Los lotes funcionales F1–F7 se crearán en el Core tras verificar F0, conforme al [plan por fases](Zontes-Core/05-Desarrollo/Plan%20por%20fases.md).
+La [fase F0](Zontes-Core/05-Desarrollo/Lote%20F0%20-%20instalacion%20separada%20frontend%20y%20backend.md) está **verificada (2026-10-03)** y publicada en la rama `f0/base-tecnica` de cada repo: frontend Next.js en [FidelizacionFronted](https://github.com/alecondoupw/FidelizacionFronted) y backend Express en [FidelizacionBackend](https://github.com/alecondoupw/FidelizacionBackend), dos repositorios independientes, con instalación limpia, lint, build, pruebas y llamada FE→BE comprobadas ([evidencia](Zontes-Core/05-Desarrollo/Testing.md)). Los lotes F1–F7 están en el [índice de lotes](Zontes-Core/05-Desarrollo/Lotes%20F1-F7%20-%20indice.md); ninguno se ha iniciado.
 
-El Core conserva requisitos, PDF y mockups aportados, asignación de vistas, contratos, pruebas planeadas y evidencia. No contiene una aplicación funcional ni credenciales. Consulta [`AGENTS.md`](AGENTS.md) antes de trabajar en el proyecto.
+El Core conserva requisitos, PDF y mockups aportados, asignación de vistas, contratos, pruebas y evidencia. No contiene código de producto ni credenciales; el código vive en los dos repositorios operativos. Consulta [`AGENTS.md`](AGENTS.md) antes de trabajar en el proyecto.

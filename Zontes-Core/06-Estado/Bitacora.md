@@ -2,7 +2,7 @@
 title: "Bitácora de Zontes"
 tags: [zontes, bitacora]
 status: activo
-updated: 2026-10-02
+updated: 2026-10-03
 ---
 
 # Bitácora
@@ -15,5 +15,12 @@ updated: 2026-10-02
 | 2026-10-02 | Paulo aclaró que los tres PDF son base concreta para procedimiento, integración y resolución | Se verificó igualdad SHA-256 entre adjuntos y copias SRC-01/02/03. [[01-Contexto/Especificacion consolidada y trazabilidad de PDF]] traza requisitos/entregables; [[02-Arquitectura/Base tecnica documentada]] distingue stack de recursos no habilitados; [[02-Arquitectura/Contratos de integracion por flujo]] define salidas de F0. No se creó código ni se ejecutaron pruebas de producto. |
 | 2026-10-02 | Paulo redefinió F0 como instalación separada FE/BE y aclaró que **no se inicia todavía** | [[05-Desarrollo/Lote F0 - instalacion separada frontend y backend]] deja pasos y pruebas; rutas se preguntarán al abrir F0. Tras verificarla se crearán lotes F1–F7 en el Core mediante [[05-Desarrollo/Plantilla de lote de trabajo]]. No se crearon repositorios ni se instalaron paquetes. |
 | 2026-10-02 | Se publicó el Core documental en [FidelizacionDoc](https://github.com/alecondoupw/FidelizacionDoc) | Commit inicial `2fbda295b33f8908cf99c1ef0d9fdd61495a90d9` en `main`, verificado por `git ls-remote`. Incluye README, contratos de agentes, 39 notas, tres PDF, dos ZIP y 23 JPEG; no contiene código de producto ni credenciales. |
+| 2026-10-03 | **Decisión de Paulo:** abrir F0; FE en `…\FidelizacionFronted`, BE en `…\FidelizacionBackend`, sólo README, dos repos Git independientes (DEC-01) | Respuesta registrada en [[05-Desarrollo/Entorno local]] y [[02-Arquitectura/Decisiones tecnicas]]. **Observación:** la raíz real es `C:\Users\aleco\Documents\Fidelizacion`, no `E:/Repositorios/Hackathon/Zontes` como decía la semilla; corregido. |
+| 2026-10-03 | **Implementación F0-FE-03:** Next.js 16.3.8 + TS 5.9 + Tailwind 4 + shadcn/ui + Lucide, RHF, Zod, Recharts, TanStack Table, date-fns, Firebase SDK cliente (sólo Auth); cliente `fetch` tipado; `/` y `/diagnostico` técnicas; ESLint+Prettier+Vitest | Sin commit sobre `4f8ad6e`. ESLint prohíbe Axios, Firestore/Storage cliente y `firebase-admin` en FE. No hay vistas de producto. |
+| 2026-10-03 | **Implementación F0-BE-03:** Express 5.2.1 + TS 5.9; helmet, CORS por lista, `X-Request-Id`, sobre de error, `GET /api/v1/health`, frontera `requireAuth` que falla cerrado, Admin SDK 14.5.0 perezoso; ESLint+Prettier+Vitest+Supertest | Sin commit sobre `e9e0dd2`. Firebase no conectado; sin credenciales ni datos. |
+| 2026-10-03 | **Decisiones operativas del agente** (revisables por Paulo): ADR-08 `fetch`, ADR-09 versiones/herramientas, ADR-10 contrato v0 | [[02-Arquitectura/Contrato API v0 - F0]]. I-01/I-02 quedan como propuesta no aprobada (DEC-02/03/04). |
+| 2026-10-03 | **Verificación F0-I-02:** `npm ci`, `check`, `smoke` PASS en ambos; FE→BE PASS en Node (3/3) y navegador; negativo con BE detenido PASS | [[05-Desarrollo/Testing]] F0-T01…T11. Fallos encontrados y corregidos durante la fase: validación de `*` en CORS, cierre del smoke en Windows, typecheck FE. Riesgos de `npm audit` aceptados y documentados en [[05-Desarrollo/Entorno local]]. |
+| 2026-10-03 | Puerta F0 cumplida según [[05-Desarrollo/Criterio de terminado]], con límite: código sin commit, reproducibilidad probada en un host Windows, sin CI | Se crearon los lotes F1–F7 en [[05-Desarrollo/Lotes F1-F7 - indice]]; ninguno iniciado. Siguiente acción: autorización de commit/push y respuestas a DEC-02/03/04 para abrir F1. |
+| 2026-10-03 | **Decisión de Paulo:** commit y push de F0 en los tres repos. **Implementación:** rama `f0/base-tecnica` en cada repo, sin tocar `main` | FE `f29da45`, BE `747e191`, verificados en el remoto con `git ls-remote`; Core publicado en la misma rama. Corrección: rutas Windows sin barras invertidas en [[00-Inicio]] y [[01-Contexto/Contexto activo]]. Pendiente: fusión en `main`. |
 
 En futuras entradas separar **observación**, **decisión de Paulo**, **implementación** y **verificación**. Una idea o recomendación no se registra como aprobada. Añadir links a notas y revisiones de FE/BE, evitando prompts completos y secretos. Ver [[09-Entradas/_Indice de entradas]] y [[05-Desarrollo/Progreso]].
