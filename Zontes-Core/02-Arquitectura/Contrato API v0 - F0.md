@@ -93,3 +93,23 @@ Implementado según DEC-05/06/14; evidencia en [[05-Desarrollo/Testing]] «Corri
 | Sistema externo | `POST /integracion/eventos` con `X-Api-Key` | igual que `/admin/eventos`; origen `api:{sistema}` | 401 clave ausente/inválida, 503 sin claves configuradas |
 
 **Modelo Firestore F2 (sin índices compuestos):** `reglas/{marca}__{evento}`, `vigencias/{marca}`, `eventos/{sha256(origen|idExterno)}` (idempotencia), `usuarios/{uid}/marcas/{marca}` (saldo materializado), `…/movimientos/{id}` (id con la fecha invertida para que el orden ascendente sea del más reciente al más antiguo), `…/lotes/{id}`, `vencimientos/{uid}__{marca}__{lote}` (pendientes), `auditoria`. Los ids invertidos se adoptaron tras comprobar contra Firestore real que ordenar por id de forma descendente exige un índice adicional.
+
+## 8. I-05 — catálogo y canje, implementado en F3 (2026-10-03)
+
+Implementado según DEC-07 y ADR-13; evidencia en [[05-Desarrollo/Testing]] «Corridas F3». Fechas ISO 8601 UTC; la vigencia del cupón termina a fin de día en America/La_Paz.
+
+| Actor | Endpoint | Respuesta | Errores |
+| --- | --- | --- | --- |
+| Cliente | `GET /catalogo?marca&categoria&q` | `{ items: [{ id, marca, nombre, descripcion, categoria, puntos, caracteristicas, disponibleDesde, vigenciaCuponDias, disponibilidad, variantes: [{ id, nombre, disponibilidad }] }] }` sólo activos de marcas vinculadas; búsqueda sin tildes; **no expone stock** | 403 marca no vinculada, 422 |
+| Cliente | `GET /catalogo/{id}` | un beneficio con la misma forma | 404 si no existe, está inactivo o es de marca no vinculada |
+| Cliente | `POST /canjes` `{ beneficioId, varianteId, idSolicitud }` | 201 `{ canje, disponible, repetido: false }`; 200 con `repetido: true` al reintentar el mismo `idSolicitud` | 404, 422 `NOT_AVAILABLE_YET`, 409 `OUT_OF_STOCK`, 409 `INSUFFICIENT_BALANCE`, 409 `IDEMPOTENCY_CONFLICT` |
+| Cliente | `GET /me/canjes?marca&limite(1–100)&cursor` | `{ items: [canje], siguiente }` del más reciente al más antiguo | 422 |
+| Cliente | `GET /me/canjes/{codigo}`, `…/comprobante` (PDF), `…/qr.svg` | canje `{ codigo, beneficioId, beneficioNombre, marca, varianteNombre, puntos, estado, emitidoEn, venceEn, entregadoEn, anuladoEn, motivoAnulacion }` | 404 si el canje es de otro cliente (no revela que existe) |
+| Admin | `GET/POST /admin/beneficios`, `PUT /admin/beneficios/{id}` | beneficio completo con `activo`, stock por variante (`null` = sin límite) y `actualizadoEn/Por`; cuerpo estricto | 409 `ALREADY_EXISTS`, 404, 422 |
+| Admin | `GET /admin/canjes/{codigo}` | canje | 404 |
+| Admin | `POST /admin/canjes/{codigo}/entregar` | canje en `entregado` | 409 `INVALID_STATE` (no emitido o ya vencido) |
+| Admin | `POST /admin/canjes/{codigo}/anular` `{ motivo (5–300) }` | `{ canje, disponible }`; devuelve puntos y una unidad de stock | 409 `INVALID_STATE` (entregado o anulado), 422 |
+
+**Estados:** `emitido` → `entregado` (admin) · `emitido`/`vencido` → `anulado` (admin, con motivo, auditado). `vencido` no se guarda: se deriva al leer cuando `venceEn` pasó sin entrega. **Disponibilidad:** `agotado` (stock 0), `ultimas` (≤ 5), `proximamente` (antes de `disponibleDesde`), `disponible`; el beneficio está `agotado` si todas sus variantes lo están, `disponible` si alguna lo está y, si no, `ultimas`.
+
+**Modelo Firestore F3 (sin índices compuestos):** `beneficios/{id}`, `usuarios/{uid}/canjes/{idInvertido}`, `codigos/{codigo}` → `{ uid, canjeId }` (unicidad y búsqueda por código), movimiento `canje` (−puntos) y, al anular, otro movimiento `canje` (+puntos, motivo «Anulación del canje …») con la reposición de los lotes consumidos; las porciones ya caducadas vuelven a vencer de inmediato. La carga inicial usa `npm run catalogo:cargar -- --archivo <ruta.json>` (ejemplo sintético en `datos/catalogo.ejemplo.json`) (crea los nuevos, no pisa los existentes).

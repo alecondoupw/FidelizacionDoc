@@ -59,6 +59,8 @@ Fuentes oficiales consultadas el 2026-10-03: instalación de Next.js (docs versi
 
 **F2:** BE añade `@date-fns/tz` 1.5.0 (zona America/La_Paz) y los comandos `npm run puntos:vencer` (proceso reejecutable de vencimientos) e `npm run integracion:clave`; `npm run test:firebase` ahora corre todos los contratos (`*.contract.test.ts`). FE añade componentes shadcn/ui switch, dialog, alert-dialog y textarea.
 
+**F3:** BE añade `pdfkit` 0.20.2 (comprobante PDF) y `qrcode` 1.5.4 (QR del código), con `@types/pdfkit` y `@types/qrcode` en desarrollo, y el comando `npm run catalogo:cargar -- --archivo <ruta.json>` (crea beneficios nuevos y no pisa los existentes; ejemplo sintético en `datos/catalogo.ejemplo.json`; lo ejecuta Paulo contra el proyecto de desarrollo). FE sin dependencias nuevas; el cliente HTTP añade `descargar()` para PDF y SVG con el mismo token.
+
 ## Variables de entorno (sólo nombres)
 
 | Repo | Variable | Uso | Valor en F0 |

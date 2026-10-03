@@ -1,16 +1,16 @@
 ---
 title: "F3-FE-01 — Catalogo canje mis canjes y comprobante cliente"
 tags: [zontes, lote, f3, frontend]
-status: bloqueado-por-decision
+status: verificado-con-recorrido-parcial
 fase: F3
 frente: FE
-bloqueos: [DEC-07]
+bloqueos: []
 updated: 2026-10-03
 ---
 
 # F3-FE-01 — Catalogo canje mis canjes y comprobante cliente
 
-Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote de trabajo]]. **No iniciado.** Índice: [[05-Desarrollo/Lotes F1-F7 - indice]].
+Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote de trabajo]]. **Resultado 2026-10-03:** Implementado: `/catalogo`, `/catalogo/[id]` (confirmación y resultado), `/canjes`, `/canjes/[codigo]` (QR y descarga), «Ver beneficios» en Mis marcas, menú «Más» en móvil; admin `/admin/beneficios` (UI-25) y `/admin/canjes` (UI-26), propuestas sin mockup. Evidencia en [[05-Desarrollo/Testing]] «Corridas F3». Índice: [[05-Desarrollo/Lotes F1-F7 - indice]].
 
 | Campo | Contenido |
 | --- | --- |
@@ -24,7 +24,7 @@ Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote d
 | Dependencias | [[05-Desarrollo/Lotes/F3-BE-01 - Catalogo de beneficios por marca\|F3-BE-01]]/02/03, [[05-Desarrollo/Lotes/F2-FE-01 - Inicio saldo e historial cliente\|F2-FE-01]]. |
 | Aceptación | Ver lista siguiente. |
 | Prueba y evidencia | T-REDEEM, T-UI · resultados en [[05-Desarrollo/Testing]] con fecha, revisión FE/BE y datos sintéticos |
-| Estado | **Bloqueado por decisión: DEC-07** · 2026-10-03 |
+| Estado | **Implementado y verificado (dobles + Firestore real); recorrido integrado parcial (F3-T08)** · 2026-10-03 |
 
 ## Aceptación
 

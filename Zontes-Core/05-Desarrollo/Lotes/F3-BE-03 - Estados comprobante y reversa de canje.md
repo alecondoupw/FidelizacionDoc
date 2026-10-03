@@ -1,16 +1,16 @@
 ---
 title: "F3-BE-03 — Estados comprobante y reversa de canje"
 tags: [zontes, lote, f3, backend]
-status: bloqueado-por-decision
+status: verificado-con-recorrido-parcial
 fase: F3
 frente: BE
-bloqueos: [DEC-07]
+bloqueos: []
 updated: 2026-10-03
 ---
 
 # F3-BE-03 — Estados comprobante y reversa de canje
 
-Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote de trabajo]]. **No iniciado.** Índice: [[05-Desarrollo/Lotes F1-F7 - indice]].
+Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote de trabajo]]. **Resultado 2026-10-03:** Implementado: estados Emitido/Entregado/Vencido (derivado)/Anulado, comprobante PDF con QR generado en el backend, QR SVG y código `ML-XXXX-XXXX-XX`, sólo para el propietario; entrega y anulación admin con motivo, devolución de puntos y stock, auditadas. Evidencia en [[05-Desarrollo/Testing]] «Corridas F3». Índice: [[05-Desarrollo/Lotes F1-F7 - indice]].
 
 | Campo | Contenido |
 | --- | --- |
@@ -24,7 +24,7 @@ Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote d
 | Dependencias | [[05-Desarrollo/Lotes/F3-BE-02 - Canje atomico con saldo stock e idempotencia\|F3-BE-02]]; DEC-07. |
 | Aceptación | Ver lista siguiente. |
 | Prueba y evidencia | T-REDEEM, T-AUTHZ · resultados en [[05-Desarrollo/Testing]] con fecha, revisión FE/BE y datos sintéticos |
-| Estado | **Bloqueado por decisión: DEC-07** · 2026-10-03 |
+| Estado | **Implementado y verificado (dobles + Firestore real); recorrido integrado parcial (F3-T08)** · 2026-10-03 |
 
 ## Aceptación
 

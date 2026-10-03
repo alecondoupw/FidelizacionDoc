@@ -1,16 +1,16 @@
 ---
 title: "F3-I-01 — Integracion de canje concurrente y aislamiento"
 tags: [zontes, lote, f3, integracion]
-status: bloqueado-por-decision
+status: verificado-con-recorrido-parcial
 fase: F3
 frente: Integración
-bloqueos: [DEC-07]
+bloqueos: []
 updated: 2026-10-03
 ---
 
 # F3-I-01 — Integracion de canje concurrente y aislamiento
 
-Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote de trabajo]]. **No iniciado.** Índice: [[05-Desarrollo/Lotes F1-F7 - indice]].
+Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote de trabajo]]. **Resultado 2026-10-03:** Verificado con dobles y contra Firestore real (canje concurrente, aislamiento por marca y propietario); falta el recorrido FE↔BE en navegador por Paulo. Evidencia en [[05-Desarrollo/Testing]] «Corridas F3». Índice: [[05-Desarrollo/Lotes F1-F7 - indice]].
 
 | Campo | Contenido |
 | --- | --- |
@@ -24,7 +24,7 @@ Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote d
 | Dependencias | [[05-Desarrollo/Lotes/F3-BE-01 - Catalogo de beneficios por marca\|F3-BE-01]]/02/03, [[05-Desarrollo/Lotes/F3-FE-01 - Catalogo canje mis canjes y comprobante cliente\|F3-FE-01]]. |
 | Aceptación | Ver lista siguiente. |
 | Prueba y evidencia | T-REDEEM, T-BRAND · resultados en [[05-Desarrollo/Testing]] con fecha, revisión FE/BE y datos sintéticos |
-| Estado | **Bloqueado por decisión: DEC-07** · 2026-10-03 |
+| Estado | **Implementado y verificado (dobles + Firestore real); recorrido integrado parcial (F3-T08)** · 2026-10-03 |
 
 ## Aceptación
 

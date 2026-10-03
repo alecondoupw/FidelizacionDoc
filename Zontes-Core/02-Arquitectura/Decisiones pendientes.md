@@ -17,7 +17,7 @@ Las reglas consolidadas de SRC-02 ya están definidas; esta lista sólo recoge h
 | DEC-04 | **Parcial 2026-10-03:** adaptador + doble sintético en F1; 1–3 marcas por correo; «Vincular nueva marca» deshabilitado. **Sigue abierto:** Contrato real de base de clientes: API/esquema, permisos, correos duplicados, cambio de correo, fuente de verdad, multiplicidad de marcas y semántica de “Vincular nueva marca” en C02 | F1 sincronización/UI-17 |
 | DEC-05 | **Resuelta 2026-10-03:** panel admin + API de integración con clave; idempotencia origen + id externo. Ver [[02-Arquitectura/Decisiones tecnicas]]. | F2 (resuelto) |
 | DEC-06 | **Resuelta 2026-10-03:** America/La_Paz, vence a fin de día; lotes consumidos primero por vencimiento más próximo. | F2/F3 (resuelto) |
-| DEC-07 | Beneficios/catálogo por marca, disponibilidad, estados de canje, comprobante o cupón y política de reversa | F3 |
+| DEC-07 | **Resuelta 2026-10-03:** catálogo por script + pantalla admin; stock por variante; Emitido/Entregado/Vencido/Anulado; PDF con QR en backend. Ver [[02-Arquitectura/Decisiones tecnicas]]. | F3 (resuelto) |
 | DEC-08 | Qué datos de cliente pueden editarse/borrarse y cómo conservar auditoría, puntos y canjes; retención y privacidad | F4 |
 | DEC-09 | Definición operativa de “tiempo real”, filtros, volúmenes, granularidad de tendencias y formatos de exportación | F5 |
 | DEC-10 | Tipo de contenido por marca (banners, noticias, eventos, promociones), visibilidad y assets autorizados | F6 |

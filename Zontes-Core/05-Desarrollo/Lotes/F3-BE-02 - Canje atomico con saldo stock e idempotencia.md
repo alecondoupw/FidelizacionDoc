@@ -1,16 +1,16 @@
 ---
 title: "F3-BE-02 — Canje atomico con saldo stock e idempotencia"
 tags: [zontes, lote, f3, backend]
-status: bloqueado-por-decision
+status: verificado-con-recorrido-parcial
 fase: F3
 frente: BE
-bloqueos: [DEC-07, DEC-06]
+bloqueos: []
 updated: 2026-10-03
 ---
 
 # F3-BE-02 — Canje atomico con saldo stock e idempotencia
 
-Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote de trabajo]]. **No iniciado.** Índice: [[05-Desarrollo/Lotes F1-F7 - indice]].
+Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote de trabajo]]. **Resultado 2026-10-03:** Implementado: `POST /canjes` transaccional con idempotencia por `idSolicitud`, stock por variante, saldo y lotes por vencimiento más próximo; concurrencia de la última unidad verificada contra Firestore real. Evidencia en [[05-Desarrollo/Testing]] «Corridas F3». Índice: [[05-Desarrollo/Lotes F1-F7 - indice]].
 
 | Campo | Contenido |
 | --- | --- |
@@ -24,7 +24,7 @@ Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote d
 | Dependencias | [[05-Desarrollo/Lotes/F2-BE-02 - Ledger idempotente y transacciones de otorgamiento\|F2-BE-02]], [[05-Desarrollo/Lotes/F3-BE-01 - Catalogo de beneficios por marca\|F3-BE-01]]; DEC-06/07. |
 | Aceptación | Ver lista siguiente. |
 | Prueba y evidencia | T-REDEEM, T-BRAND · concurrencia en emulador · resultados en [[05-Desarrollo/Testing]] con fecha, revisión FE/BE y datos sintéticos |
-| Estado | **Bloqueado por decisión: DEC-07, DEC-06** · 2026-10-03 |
+| Estado | **Implementado y verificado (dobles + Firestore real); recorrido integrado parcial (F3-T08)** · 2026-10-03 |
 
 ## Aceptación
 

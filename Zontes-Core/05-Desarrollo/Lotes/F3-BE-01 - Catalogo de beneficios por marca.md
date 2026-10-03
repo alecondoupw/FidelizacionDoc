@@ -1,16 +1,16 @@
 ---
 title: "F3-BE-01 — Catalogo de beneficios por marca"
 tags: [zontes, lote, f3, backend]
-status: bloqueado-por-decision
+status: verificado-con-recorrido-parcial
 fase: F3
 frente: BE
-bloqueos: [DEC-07, DEC-02]
+bloqueos: []
 updated: 2026-10-03
 ---
 
 # F3-BE-01 — Catalogo de beneficios por marca
 
-Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote de trabajo]]. **No iniciado.** Índice: [[05-Desarrollo/Lotes F1-F7 - indice]].
+Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote de trabajo]]. **Resultado 2026-10-03:** Implementado: `GET /catalogo` y `/catalogo/{id}` sólo de marcas vinculadas, sin exponer stock; administración `GET/POST/PUT /admin/beneficios` auditada y carga inicial `npm run catalogo:cargar` (DEC-07). Evidencia en [[05-Desarrollo/Testing]] «Corridas F3». Índice: [[05-Desarrollo/Lotes F1-F7 - indice]].
 
 | Campo | Contenido |
 | --- | --- |
@@ -24,7 +24,7 @@ Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote d
 | Dependencias | [[05-Desarrollo/Lotes/F1-BE-01 - Verificacion de token y frontera de autorizacion\|F1-BE-01]]; DEC-07; DEC-02. |
 | Aceptación | Ver lista siguiente. |
 | Prueba y evidencia | T-BRAND, T-AUTHZ · resultados en [[05-Desarrollo/Testing]] con fecha, revisión FE/BE y datos sintéticos |
-| Estado | **Bloqueado por decisión: DEC-07** · 2026-10-03 |
+| Estado | **Implementado y verificado (dobles + Firestore real); recorrido integrado parcial (F3-T08)** · 2026-10-03 |
 
 ## Aceptación
 

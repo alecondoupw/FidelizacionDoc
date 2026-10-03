@@ -35,6 +35,8 @@ Las pantallas siguientes son **superficies de tarea**, no UI implementada. SRC-0
 | UI-22 | Mi perfil admin | sesión y cambios permitidos | identidad, sesión y recuperación segura | F1-FE-03 | A04; detalle por decidir |
 | UI-23 | Importar clientes admin **propuesto** | carga CSV y resultado, si se aprueba | origen legacy e importación segura por definir | F0-FE-01 evaluación; F4-FE-04 condicionado | A02; DEC-16 |
 | UI-24 | Registrar puntos admin **propuesto en F2** | registro manual de eventos y ajustes con motivo | `/admin/eventos`, `/admin/ajustes` (DEC-05/14) | F2-FE-02 | sin mockup; línea visual de A05/A06 |
+| UI-25 | Beneficios admin **propuesto en F3** | lista por marca, crear/editar con opciones y stock (sin límite), vigencia del cupón, disponible desde, activo | `/admin/beneficios` (DEC-07) | F3-FE-01 | sin mockup; línea visual de A05 |
+| UI-26 | Canjes por código admin **propuesto en F3** | buscar por código, marcar entregado, anular con motivo | `/admin/canjes/{codigo}` (DEC-07) | F3-FE-01 | sin mockup; el reporte de canjes (A08) sigue en F5 |
 
 UI-23 no es requisito aprobado ni tarea de implementación autorizada. Los mockups de C04/C05 reúnen etapas distintas; la FE debe separarlas en estados o rutas coherentes. Las imágenes admin no demuestran el diseño móvil. No hay imagen de login de ningún rol.
 
