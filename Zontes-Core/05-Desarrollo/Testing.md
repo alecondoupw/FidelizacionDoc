@@ -170,4 +170,25 @@ Escenarios cubiertos: **T-BRAND** (contenido de otra marca nunca llega; `?marca`
 
 Observación para F7: cada pantalla protegida tarda ~2–2,5 s en mostrar contenido; `GET /me` tarda ~1,7 s (verificación de revocación del token + lectura del perfil). No se cambió en F6.
 
+## Corridas F7 — 2026-10-03
+
+Código F7 **sin commit** sobre BE `713e39e` y FE `bb93380`. Firestore real = proyecto de desarrollo de Paulo. Las mediciones de rendimiento se hicieron con los servidores de desarrollo que Paulo tenía en marcha (`next dev` + `tsx watch`, que recargaron los cambios) y su sesión de cliente en el navegador integrado.
+
+| ID | Prueba | Comando | Resultado | Límite |
+| --- | --- | --- | --- | --- |
+| F7-T01 | BE completo con dobles | `npm run check` (FidelizacionBackend) | PASS, exit 0; 261 pasadas, 71 omitidas (Firestore) | — |
+| F7-T02 | Contratos contra Firestore real | `FIRESTORE_INTEGRATION=1 npm run test:firebase` | PASS 149/149 (incluye el simulacro de respaldo con colecciones `prueba_*`); 0 colecciones `prueba_*` restantes | — |
+| F7-T03 | Mutaciones BE | usar el perfil adelantado sin comparar el uid verificado; colección Postman con un ejemplo inválido, un token de cliente en una ruta admin y un endpoint de menos | Fallan 1 y 3 pruebas respectivamente; restaurado todo pasa | — |
+| F7-T04 | FE completo | `npm run check` (FidelizacionFronted) | PASS, exit 0; 112 pasadas, 3 omitidas | Componentes con sesión simulada |
+| F7-T05 | Arranque | `npm run smoke` en FE y BE | FE PASS 29/29, ahora también exige `X-Frame-Options: DENY` y `X-Content-Type-Options: nosniff`; BE PASS 2/2 | — |
+| F7-T06 | Simulacro de respaldo y restauración con datos reales | `npm run respaldo:exportar`; `npm run respaldo:restaurar -- --archivo <json> --prefijo prueba_restauracion_ --limpiar` | **PASS:** 60 documentos de 10 colecciones (19 KB, archivo local ignorado por Git); restaurados 60 y el destino coincide documento a documento; colecciones temporales borradas; 8,5 s en total | No incluye cuentas de Firebase Auth (ver manual §6) |
+| F7-T07 | Rendimiento medido, antes y después | 5 cargas completas de `/inicio` (cliente) con Resource Timing y `Server-Timing` | **Antes:** contenido visible mediana 2.454 ms; `/me` 443 ms (token ≈ 290 ms, perfil ≈ 70–170 ms, el perfil se leía dos veces); petición de datos más lenta 1.609 ms. **Después** (perfil leído en paralelo con la verificación, verificación compartida entre peticiones simultáneas, `/me` sin segunda lectura): contenido 1.892 ms (−23 %), `/me` 298 ms (−33 %), datos 993 ms (−38 %) | Desde Bolivia contra Google y en modo desarrollo (React duplica los efectos: 7 peticiones por carga). Hay que repetirlo en el despliegue (F7-T10) |
+| F7-T08 | Reglas de Firestore | lecturas y una escritura REST anónimas a `beneficios`, `usuarios`, `contenidos` | 403 en todas; `firestore.rules` (todo denegado) listo para publicar | Sin probar con un usuario autenticado: confirmarlo en la consola al publicar las reglas |
+| F7-T09 | Dependencias | `npm audit --omit=dev` en ambos repos; búsqueda de gRPC/Firestore en `.next/static` | BE: 2 moderadas ya aceptadas (`uuid`/`gaxios`). FE: 4 altas de `@grpc/grpc-js` dentro de `@firebase/firestore`; el bundle del navegador no lo contiene (sólo un nombre en un mapa de `firebase/app`) y ESLint prohíbe importar Firestore; la «corrección» de npm bajaría a firebase 9. Riesgo aceptado y documentado | — |
+| F7-T10 | Despliegue en Vercel + Render | Manual de despliegue §4 | **PENDIENTE:** Paulo crea las cuentas y carga los secretos | — |
+
+Escenarios cubiertos: **T-AUTHZ** (el perfil leído antes de verificar sólo se usa si el uid verificado coincide; un token inválido sigue respondiendo 401 aunque falle la lectura adelantada; la verificación compartida no guarda resultados ni rechazos), **límites** (429 `RATE_LIMITED` con `Retry-After` y CORS; IP real tras un proxy de confianza; registro limitado a 20 cada 15 min), **observabilidad** (una línea JSON por petición sin consultas, tokens ni correos; `Server-Timing` y `Timing-Allow-Origin`; los 5xx muestran al usuario una referencia corta del `requestId`), **respaldo** (marcas de tiempo con microsegundos, padres sin datos con subcolecciones, rechazo de tipos sin uso y de destinos con datos, detección de cambios en el destino), **documentación** (la colección Postman cubre exactamente las 52 rutas de Express y cada ejemplo pasa la validación con el acceso documentado), **FE** (tiempo de espera de 75 s para `/me`, aviso a los 5 s, petición a `/health` al abrir el acceso).
+
+Fallo encontrado y corregido en F7: la primera prueba del simulacro esperaba nanosegundos exactos, pero Firestore guarda microsegundos; la prueba compara ahora con lo guardado en el origen. El manual de uso afirmaba que el usuario ve una referencia de error que la interfaz no mostraba; se implementó.
+
 Una captura o una compilación no es prueba de reglas. Los resultados se registrarán aquí o se enlazarán desde una nota de evidencia dentro de este Core. Ver [[05-Desarrollo/Criterio de terminado]] y [[06-Estado/Bitacora]].

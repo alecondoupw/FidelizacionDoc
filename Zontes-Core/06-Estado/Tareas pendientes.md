@@ -30,7 +30,12 @@ updated: 2026-10-03
 - [x] F6: DEC-10 resuelta y contenido implementado (2026-10-03).
 - [ ] F6: Paulo revisa las diferencias con los mockups de [[06-Estado/Evidencias/F6-revision-visual]] y entrega logos, fuentes y fotos autorizados (DEC-11); no publicar fotos/logos de mockup sin permiso.
 - [ ] F7: medir y reducir la espera de `GET /me` (~1,7 s por pantalla protegida).
-- [ ] F7: resolver DEC-13 antes de servicios/despliegue/backup.
+- [x] F7: DEC-13 resuelta e implementada en local (2026-10-03).
+- [ ] F7: Paulo crea las cuentas de Render y Vercel y sigue [[08-Produccion/Manual de despliegue y operacion]] §4; luego el agente verifica el despliegue (F7-T10) y repite la medición de rendimiento.
+- [ ] F7: ejecutar [[07-Manuales/Guion de demostracion]] completo (T-DEMO).
+- [ ] F7: confirmar ADR-16 y publicar `firestore.rules` comprobando el acceso con un usuario autenticado.
+- [ ] DEC-12: hitos y fecha de entrega.
+- [ ] Definir la retención de respaldos (propuesta: 8 semanales y 6 mensuales).
 
 - [x] Commit y push de F0 autorizados por Paulo el 2026-10-03: rama `f0/base-tecnica` en los tres repos (FE `f29da45`, BE `747e191`).
 - [x] `f0/base-tecnica` fusionada en `main` en los tres repos por avance rápido (decisión de Paulo, 2026-10-03).

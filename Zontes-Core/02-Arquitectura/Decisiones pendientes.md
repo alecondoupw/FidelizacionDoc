@@ -23,7 +23,7 @@ Las reglas consolidadas de SRC-02 ya están definidas; esta lista sólo recoge h
 | DEC-10 | **Resuelta 2026-10-03:** «Publicación» con categoría y destacada; visible si activa y dentro de su ventana (hora de Bolivia); ilustración por marca sin subida de archivos. Ver [[02-Arquitectura/Decisiones tecnicas]]. | F6 (resuelto) |
 | DEC-11 | **Parcial 2026-10-03:** F6 se pule con la línea visual provisional. **Sigue abierto:** Identidad final de MOTO LOYALTY/Zontes/Kiden/NIU, logotipos, fotos y fuentes licenciadas; autorizar activos reales distintos de las referencias SRC-04/05 | F0 diseño y F1–F6 UI |
 | DEC-12 | Prioridad/detalle de vistas cliente frente a administrador; alcance de prototipo e hitos/fecha de hackathon | F0 plan |
-| DEC-13 | Entorno de despliegue, backups/restauración, integraciones CRM/facturación y acceso a datos reales | F7 |
+| DEC-13 | **Resuelta 2026-10-03:** Vercel (FE) + Render (BE) gratis, cron de GitHub Actions, respaldo JSON propio con restauración probada, Postman + Markdown, integraciones sólo documentadas y datos sintéticos. Ver [[02-Arquitectura/Decisiones tecnicas]]. | F7 (resuelto) |
 | DEC-14 | **Resuelta 2026-10-03:** movimientos definitivos; corrección por ajuste con motivo y auditoría. | F2/F3 (resuelto) |
 | DEC-15 | ¿Se registra/asocia un cerebro de dominio específico o se mantiene sólo este Core con plantilla estructural? | Procedencia futura; no bloquea plan |
 | DEC-16 | **Resuelta 2026-10-03:** importación CSV fuera de alcance; UI-23/F4-FE-04 no se construyen. | — |

@@ -67,6 +67,8 @@ Fuentes oficiales consultadas el 2026-10-03: instalación de Next.js (docs versi
 
 **F6:** sin dependencias nuevas en FE ni BE (carrusel e ilustraciones con componentes propios, shadcn/ui y Lucide ya instalados). Para la revisión visual se usó el navegador integrado de la app, sin instalar herramientas.
 
+**F7:** sin dependencias nuevas. BE añade `render.yaml`, `firestore.rules`, `.github/workflows/vencer-puntos.yml`, `docs/` (API.md y colección Postman) y los comandos `respaldo:exportar`, `respaldo:restaurar` y `docs:postman`; variables nuevas `TRUST_PROXY` y `LIMITE_POR_MINUTO`; carpeta `respaldos/` ignorada por Git. FE: cabeceras de seguridad en `next.config.ts`.
+
 ## Variables de entorno (sólo nombres)
 
 | Repo | Variable | Uso | Valor en F0 |

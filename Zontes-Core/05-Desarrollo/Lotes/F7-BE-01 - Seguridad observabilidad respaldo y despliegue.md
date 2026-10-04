@@ -1,16 +1,16 @@
 ---
 title: "F7-BE-01 — Seguridad observabilidad respaldo y despliegue"
 tags: [zontes, lote, f7, backend]
-status: bloqueado-por-decision
+status: en-curso
 fase: F7
 frente: BE
-bloqueos: [DEC-13, DEC-02]
+bloqueos: []
 updated: 2026-10-03
 ---
 
 # F7-BE-01 — Seguridad observabilidad respaldo y despliegue
 
-Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote de trabajo]]. **No iniciado.** Índice: [[05-Desarrollo/Lotes F1-F7 - indice]].
+Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote de trabajo]]. **Resultado 2026-10-03:** DEC-13 resuelta. Implementado: registro JSON por petición, `Server-Timing`, límite de peticiones, `TRUST_PROXY`, `firestore.rules`, respaldo/restauración JSON con simulacro real sin diferencias, `render.yaml` y cron de vencimiento en GitHub Actions; revisión de dependencias. **Falta el despliegue**, que hace Paulo con [[08-Produccion/Manual de despliegue y operacion]]. Evidencia en [[05-Desarrollo/Testing]] «Corridas F7». Índice: [[05-Desarrollo/Lotes F1-F7 - indice]].
 
 | Campo | Contenido |
 | --- | --- |
@@ -24,12 +24,11 @@ Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote d
 | Dependencias | F1–F6; DEC-13. |
 | Aceptación | Ver lista siguiente. |
 | Prueba y evidencia | T-DEMO · resultados en [[05-Desarrollo/Testing]] con fecha, revisión FE/BE y datos sintéticos |
-| Estado | **Bloqueado por decisión: DEC-13** · 2026-10-03 |
-
+| Estado | **Implementado y verificado en local; despliegue pendiente de las cuentas de Paulo (F7-T10)** · 2026-10-03 |
 ## Aceptación
 
-- [ ] Restauración probada desde backup.
+- [x] Restauración probada desde backup. (F7-T06).
 - [ ] Despliegue sólo tras autorización expresa.
-- [ ] Positivos y negativos ejecutados; `npm run check` en el o los repos tocados; evidencia y estado actualizados en [[05-Desarrollo/Progreso]] y [[06-Estado/Bitacora]].
+- [x] Positivos y negativos ejecutados; `npm run check` en el o los repos tocados; evidencia y estado actualizados en [[05-Desarrollo/Progreso]] y [[06-Estado/Bitacora]].
 
 Cierre según [[05-Desarrollo/Criterio de terminado]]. Mientras un bloqueo siga abierto, el lote no está listo para implementar; una respuesta de Paulo se registra antes en [[02-Arquitectura/Decisiones tecnicas]].

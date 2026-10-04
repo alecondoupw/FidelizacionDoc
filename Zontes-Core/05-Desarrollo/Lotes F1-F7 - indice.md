@@ -82,10 +82,10 @@ Creados el 2026-10-03 tras verificar F0 ([[05-Desarrollo/Lote F0 - instalacion s
 
 | Lote | Frente | Objetivo | Estado | Depende de |
 | --- | --- | --- | --- | --- |
-| [[05-Desarrollo/Lotes/F7-FE-01 - Recorrido demo y optimizacion medida\|F7-FE-01]] | FE | Recorrido demo cliente y admin sin errores, con mejoras de rendimiento medidas, no supuestas. | Bloqueado: depende de F1–F6 y DEC-12/13 | F1–F6 verificadas. |
-| [[05-Desarrollo/Lotes/F7-BE-01 - Seguridad observabilidad respaldo y despliegue\|F7-BE-01]] | BE | Observabilidad, revisión de seguridad, backup y restauración probados y despliegue en un entorno autorizado. | Bloqueado por decisión: DEC-13 | F1–F6; DEC-13. |
-| [[05-Desarrollo/Lotes/F7-BE-02 - Documentacion API y operacion\|F7-BE-02]] | BE | Documentación de la API, colección de pruebas manuales y manual de despliegue y operación. | Pendiente: crece con cada fase; cierre bloqueado por DEC-13 | Endpoints implementados; [[05-Desarrollo/Lotes/F7-BE-01 - Seguridad observabilidad respaldo y despliegue\|F7-BE-01]]. |
-| [[05-Desarrollo/Lotes/F7-I-01 - Entregables y demostracion integrada\|F7-I-01]] | Integración | Entregar arquitectura, prototipo usuarios+puntos, código en repositorio compartido y manuales de despliegue y uso; ejecutar pruebas, back… | Bloqueado por decisión: DEC-12, DEC-13 | [[05-Desarrollo/Lotes/F7-FE-01 - Recorrido demo y optimizacion medida\|F7-FE-01]], [[05-Desarrollo/Lotes/F7-BE-01 - Seguridad observabilidad respaldo y despliegue\|F7-BE-01]]/02. |
+| [[05-Desarrollo/Lotes/F7-FE-01 - Recorrido demo y optimizacion medida\|F7-FE-01]] | FE | Recorrido demo cliente y admin sin errores, con mejoras de rendimiento medidas, no supuestas. | En curso: guion y medición hechos; T-DEMO pendiente | F1–F6 verificadas. |
+| [[05-Desarrollo/Lotes/F7-BE-01 - Seguridad observabilidad respaldo y despliegue\|F7-BE-01]] | BE | Observabilidad, revisión de seguridad, backup y restauración probados y despliegue en un entorno autorizado. | Implementado en local; despliegue pendiente de las cuentas de Paulo | F1–F6; DEC-13. |
+| [[05-Desarrollo/Lotes/F7-BE-02 - Documentacion API y operacion\|F7-BE-02]] | BE | Documentación de la API, colección de pruebas manuales y manual de despliegue y operación. | Verificado | Endpoints implementados; [[05-Desarrollo/Lotes/F7-BE-01 - Seguridad observabilidad respaldo y despliegue\|F7-BE-01]]. |
+| [[05-Desarrollo/Lotes/F7-I-01 - Entregables y demostracion integrada\|F7-I-01]] | Integración | Entregar arquitectura, prototipo usuarios+puntos, código en repositorio compartido y manuales de despliegue y uso; ejecutar pruebas, back… | En curso: despliegue, T-DEMO y DEC-12 pendientes | [[05-Desarrollo/Lotes/F7-FE-01 - Recorrido demo y optimizacion medida\|F7-FE-01]], [[05-Desarrollo/Lotes/F7-BE-01 - Seguridad observabilidad respaldo y despliegue\|F7-BE-01]]/02. |
 
 ## Evaluación de orquestación (2026-10-03)
 

@@ -1,16 +1,16 @@
 ---
 title: "F7-BE-02 — Documentacion API y operacion"
 tags: [zontes, lote, f7, backend]
-status: pendiente
+status: verificado
 fase: F7
 frente: BE
-bloqueos: [DEC-13]
+bloqueos: []
 updated: 2026-10-03
 ---
 
 # F7-BE-02 — Documentacion API y operacion
 
-Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote de trabajo]]. **No iniciado.** Índice: [[05-Desarrollo/Lotes F1-F7 - indice]].
+Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote de trabajo]]. **Resultado 2026-10-03:** `FidelizacionBackend/docs/API.md` (52 endpoints con acceso, entrada, respuesta y errores) y colección Postman generada (`npm run docs:postman`), comprobada por prueba contra las rutas de Express y la validación de cada ejemplo; manual de despliegue y operación en [[08-Produccion/Manual de despliegue y operacion]]. Índice: [[05-Desarrollo/Lotes F1-F7 - indice]].
 
 | Campo | Contenido |
 | --- | --- |
@@ -24,11 +24,10 @@ Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote d
 | Dependencias | Endpoints implementados; [[05-Desarrollo/Lotes/F7-BE-01 - Seguridad observabilidad respaldo y despliegue\|F7-BE-01]]. |
 | Aceptación | Ver lista siguiente. |
 | Prueba y evidencia | Revisión contra pruebas de contrato · resultados en [[05-Desarrollo/Testing]] con fecha, revisión FE/BE y datos sintéticos |
-| Estado | **Pendiente: crece con cada fase; cierre bloqueado por DEC-13** · 2026-10-03 |
-
+| Estado | **Verificado (F7-T01, F7-T03)** · 2026-10-03 |
 ## Aceptación
 
-- [ ] Cada endpoint documentado con actor, permisos, errores y ejemplo sintético.
-- [ ] Positivos y negativos ejecutados; `npm run check` en el o los repos tocados; evidencia y estado actualizados en [[05-Desarrollo/Progreso]] y [[06-Estado/Bitacora]].
+- [x] Cada endpoint documentado con actor, permisos, errores y ejemplo sintético.
+- [x] Positivos y negativos ejecutados; `npm run check` en el o los repos tocados; evidencia y estado actualizados en [[05-Desarrollo/Progreso]] y [[06-Estado/Bitacora]].
 
 Cierre según [[05-Desarrollo/Criterio de terminado]]. Mientras un bloqueo siga abierto, el lote no está listo para implementar; una respuesta de Paulo se registra antes en [[02-Arquitectura/Decisiones tecnicas]].

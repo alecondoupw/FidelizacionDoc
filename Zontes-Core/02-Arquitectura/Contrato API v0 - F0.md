@@ -165,3 +165,19 @@ Implementado según DEC-10; evidencia en [[05-Desarrollo/Testing]] «Corridas F6
 | `DELETE /admin/contenidos/{id}` | admin | `204` | Inexistente → 404 |
 
 **Modelo Firestore F6:** `contenidos/{id}` con los campos del cuerpo más `creadoEn`, `actualizadoEn` y `actualizadoPor` (uid). Lecturas por igualdad de `marca` (una por marca vinculada del cliente) o de la colección completa en el panel, sin índices compuestos; ventana, destacadas, orden (más recientes primero) y límite se aplican en memoria. Auditoría: `contenido.creado`, `contenido.actualizado` (con `campos`) y `contenido.eliminado`, sin correos.
+
+
+## 12. Operación transversal — implementado en F7 (2026-10-03)
+
+Según DEC-13; evidencia en [[05-Desarrollo/Testing]] «Corridas F7». Referencia completa de los 52 endpoints y colección Postman en `FidelizacionBackend/docs/` (la prueba `src/docs/postman.test.ts` exige que coincidan con las rutas de Express).
+
+| Aspecto | Regla |
+| --- | --- |
+| Límite de peticiones | 300 por minuto e IP en `/api/v1` (`LIMITE_POR_MINUTO`); `POST /clientes/registro` 20 cada 15 min por IP. Exceso → `429 RATE_LIMITED` con `Retry-After`, aplicado después de CORS. En memoria de la instancia |
+| IP real | `TRUST_PROXY` = saltos de proxy de confianza (Render: 1) |
+| `Server-Timing` | Fases `token`, `perfil` y `total` (ms) en cada respuesta; `Timing-Allow-Origin` = orígenes CORS |
+| Registro | Una línea JSON por petición `{ nivel, momento, requestId, metodo, ruta, estado, ms, rol? }` sin consulta, cuerpo, token ni correo; salud correcta omitida |
+| Autenticación | El perfil se lee en paralelo con la verificación del token y sólo se usa si el uid verificado coincide; peticiones simultáneas con el mismo token comparten una verificación (con revocación) en curso, sin guardar resultados (ADR-16) |
+| FE | `GET /me` espera hasta 75 s (backend gratuito suspendido) y avisa a los 5 s; la pantalla de acceso llama a `/health` para despertarlo; un 5xx muestra «(referencia xxxxxxxx)» con el inicio del `requestId` |
+| Cabeceras FE | `X-Frame-Options: DENY`, `X-Content-Type-Options: nosniff`, `Referrer-Policy: strict-origin-when-cross-origin`, `Permissions-Policy` restrictiva |
+| Firestore | `firestore.rules` deniega todo acceso directo; sólo el Admin SDK del BE accede |

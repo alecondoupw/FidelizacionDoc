@@ -1,16 +1,16 @@
 ---
 title: "F7-I-01 — Entregables y demostracion integrada"
 tags: [zontes, lote, f7, integracion]
-status: bloqueado-por-decision
+status: en-curso
 fase: F7
 frente: Integración
-bloqueos: [DEC-12, DEC-13]
+bloqueos: [DEC-12]
 updated: 2026-10-03
 ---
 
 # F7-I-01 — Entregables y demostracion integrada
 
-Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote de trabajo]]. **No iniciado.** Índice: [[05-Desarrollo/Lotes F1-F7 - indice]].
+Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote de trabajo]]. **Resultado 2026-10-03:** Entregables preparados: arquitectura en el Core, prototipo F1–F6, código en GitHub, manual de despliegue y operación, manual de uso y guion de demo. Pendientes: despliegue (F7-T10), T-DEMO y DEC-12 (hitos y fecha). Índice: [[05-Desarrollo/Lotes F1-F7 - indice]].
 
 | Campo | Contenido |
 | --- | --- |
@@ -24,8 +24,7 @@ Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote d
 | Dependencias | [[05-Desarrollo/Lotes/F7-FE-01 - Recorrido demo y optimizacion medida\|F7-FE-01]], [[05-Desarrollo/Lotes/F7-BE-01 - Seguridad observabilidad respaldo y despliegue\|F7-BE-01]]/02. |
 | Aceptación | Ver lista siguiente. |
 | Prueba y evidencia | T-DEMO · resultados en [[05-Desarrollo/Testing]] con fecha, revisión FE/BE y datos sintéticos |
-| Estado | **Bloqueado por decisión: DEC-12, DEC-13** · 2026-10-03 |
-
+| Estado | **En curso: despliegue, T-DEMO y DEC-12 pendientes** · 2026-10-03 |
 ## Aceptación
 
 - [ ] Cada entregable de SRC-01 p. 2 enlazado a su evidencia.
