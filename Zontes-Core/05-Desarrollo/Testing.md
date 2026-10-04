@@ -198,7 +198,7 @@ Fallo encontrado y corregido en F7: la primera prueba del simulacro esperaba nan
 
 ## Corridas F8 — 2026-10-04
 
-Código F8 **sin commit** sobre BE `1a46ea6` y FE `e83b92f`. Firestore real = proyecto de desarrollo de Usuario con colecciones temporales `prueba_*` borradas al terminar. Revisión en el navegador con los servidores de desarrollo de Usuario (`next dev` + `tsx watch`) y su sesión de cliente.
+Código publicado en `main` como BE `4e886e8` y FE `647012c`. Firestore real = proyecto de desarrollo de Usuario con colecciones temporales `prueba_*` borradas al terminar. Revisión en el navegador con los servidores de desarrollo de Usuario (`next dev` + `tsx watch`) y su sesión de cliente.
 
 | ID | Prueba | Comando | Resultado | Límite |
 | --- | --- | --- | --- | --- |
