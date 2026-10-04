@@ -19,7 +19,7 @@ Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote d
 | Fuente y página | SRC-01 p. 1; SRC-02 pp. 4–5, 14 (obs. 3–4); SRC-03 p. 12 (obs. 3) · REQ-07, REQ-10, REQ-20 · [[01-Contexto/Especificacion consolidada y trazabilidad de PDF]] |
 | Referencia visual | No aplica (BE). |
 | Reglas y decisiones | RN-05, RN-06 · ADR-06 · [[04-Reglas-de-negocio/Ciclo de puntos y canjes]] · **DEC-05 abierta** (emisor, autenticidad, ID estable, reintentos) · **DEC-06** (lotes) · **DEC-14** (corrección) · DEC-02 · [[04-Reglas-de-negocio/_Indice de reglas]] · [[02-Arquitectura/Decisiones pendientes]] |
-| Responsable y rutas | Responsable: por asignar por Paulo (DEC-01 no fijó responsables). Ejecutor sugerido: agente BE. BE_REPO `FidelizacionBackend`: módulos de eventos y movimientos. Rutas absolutas en [[05-Desarrollo/Entorno local]]. |
+| Responsable y rutas | Responsable: por asignar por Usuario (DEC-01 no fijó responsables). Ejecutor sugerido: agente BE. BE_REPO `FidelizacionBackend`: módulos de eventos y movimientos. Rutas absolutas en [[05-Desarrollo/Entorno local]]. |
 | Contrato FE↔BE | I-03 entrada de eventos e I-04 saldo/movimientos; idempotencia por origen+ID. · [[02-Arquitectura/Contratos de integracion por flujo]] |
 | Dependencias | [[05-Desarrollo/Lotes/F2-BE-01 - Reglas de puntos por marca y evento\|F2-BE-01]]; DEC-05/06/14; emulador Firestore autorizado para concurrencia. |
 | Aceptación | Ver lista siguiente. |
@@ -34,4 +34,4 @@ Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote d
 - [ ] Una corrección crea un movimiento nuevo; nunca borra historia.
 - [ ] Positivos y negativos ejecutados; `npm run check` en el o los repos tocados; evidencia y estado actualizados en [[05-Desarrollo/Progreso]] y [[06-Estado/Bitacora]].
 
-Cierre según [[05-Desarrollo/Criterio de terminado]]. Mientras un bloqueo siga abierto, el lote no está listo para implementar; una respuesta de Paulo se registra antes en [[02-Arquitectura/Decisiones tecnicas]].
+Cierre según [[05-Desarrollo/Criterio de terminado]]. Mientras un bloqueo siga abierto, el lote no está listo para implementar; una respuesta de Usuario se registra antes en [[02-Arquitectura/Decisiones tecnicas]].

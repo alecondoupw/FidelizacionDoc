@@ -7,7 +7,7 @@ updated: 2026-10-02
 
 # Base técnica documentada por los PDF
 
-SRC-02 pp. 11–15 incorpora estas tecnologías como **base de desarrollo**; SRC-03 pp. 11–13 las reitera como stack propuesto y precisa observaciones. Paulo indicó que los PDF definen el avance del proyecto. Se toma esta base como referencia del plan y los contratos, sin confundirla con paquetes instalados, cuentas disponibles o despliegue aprobado. Una sustitución de proveedor/arquitectura requiere decisión de Paulo. La estructura heredada `nextjs+nestjs` es sólo plantilla del Core: **el backend documentado es Express, no NestJS**.
+SRC-02 pp. 11–15 incorpora estas tecnologías como **base de desarrollo**; SRC-03 pp. 11–13 las reitera como stack propuesto y precisa observaciones. Usuario indicó que los PDF definen el avance del proyecto. Se toma esta base como referencia del plan y los contratos, sin confundirla con paquetes instalados, cuentas disponibles o despliegue aprobado. Una sustitución de proveedor/arquitectura requiere decisión de Usuario. La estructura heredada `nextjs+nestjs` es sólo plantilla del Core: **el backend documentado es Express, no NestJS**.
 
 | Capa | Tecnología documentada | Responsabilidad y límite |
 | --- | --- | --- |
@@ -30,7 +30,7 @@ SRC-02 pp. 11–15 incorpora estas tecnologías como **base de desarrollo**; SRC
 ## Distinciones que siguen abiertas
 
 - **DEC-01:** la forma física del repositorio compartido de SRC-01 p. 2 y las rutas/ownership reales de FE_REPO y BE_REPO. Dos líneas de trabajo no prueban dos repos Git.
-- **DEC-02:** proyecto(s) Firebase, cuentas, ambientes, cuotas/costes, permisos y custodio. La pregunta ya no es si los PDF contienen el stack, sino cómo habilitarlo y si Paulo ordena alguna excepción.
+- **DEC-02:** proyecto(s) Firebase, cuentas, ambientes, cuotas/costes, permisos y custodio. La pregunta ya no es si los PDF contienen el stack, sino cómo habilitarlo y si Usuario ordena alguna excepción.
 - **DEC-04/05:** contrato de base legacy y origen de eventos; la documentación no entrega API/esquema ni credenciales.
 - **DEC-07/09/13:** generación autorizada de comprobantes, formatos exportables y despliegue/operación.
 

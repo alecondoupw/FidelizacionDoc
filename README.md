@@ -4,7 +4,7 @@ Documentación y referencias del proyecto de fidelización multimarca. El baúl 
 
 ## Decisiones
 
-- [Hoja de decisiones UI y preparación de fases](Zontes-Core/02-Arquitectura/Hoja%20de%20decisiones%20UI%20y%20preparación%20de%20fases.md): preguntas concretas para Paulo y estado de las fases.
+- [Hoja de decisiones UI y preparación de fases](Zontes-Core/02-Arquitectura/Hoja%20de%20decisiones%20UI%20y%20preparación%20de%20fases.md): preguntas concretas para Usuario y estado de las fases.
 - [Decisiones pendientes](Zontes-Core/02-Arquitectura/Decisiones%20pendientes.md): índice DEC-01–DEC-16.
 - [Decisiones técnicas y procedencia](Zontes-Core/02-Arquitectura/Decisiones%20tecnicas.md): base documentada y decisiones registradas.
 

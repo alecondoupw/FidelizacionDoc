@@ -7,7 +7,7 @@ updated: 2026-10-03
 
 # Contrato API v0 — F0
 
-Contrato HTTP inicial entre `FidelizacionFronted` (Next.js) y `FidelizacionBackend` (Express), salida de F0-I-02. Distingue tres niveles: **implementado y probado** (§1–§4), **propuesto para F1** (§5, no aprobado por Paulo) y **dependiente de decisión** (§6). Base: SRC-02 pp. 11–15, SRC-03 pp. 11–13, [[02-Arquitectura/Base tecnica documentada]], [[02-Arquitectura/Contratos de integracion por flujo]]. Rutas y evidencia: [[05-Desarrollo/Entorno local]], [[05-Desarrollo/Testing]].
+Contrato HTTP inicial entre `FidelizacionFronted` (Next.js) y `FidelizacionBackend` (Express), salida de F0-I-02. Distingue tres niveles: **implementado y probado** (§1–§4), **propuesto para F1** (§5, no aprobado por Usuario) y **dependiente de decisión** (§6). Base: SRC-02 pp. 11–15, SRC-03 pp. 11–13, [[02-Arquitectura/Base tecnica documentada]], [[02-Arquitectura/Contratos de integracion por flujo]]. Rutas y evidencia: [[05-Desarrollo/Entorno local]], [[05-Desarrollo/Testing]].
 
 ## 1. Convenciones transversales — implementado
 
@@ -56,7 +56,7 @@ Público, sin token ni datos personales, `Cache-Control: no-store`.
 
 `requireAuth()` es el único punto donde Express verificará identidad. En F0: sin token → 401; con token → 501, el handler protegido nunca se alcanza. No está montada en rutas de producto. Orden previsto (F1-BE-01): verificar ID token con Admin SDK incluida revocación → cargar perfil (rol, estado) → autorizar rol → autorizar propietario y marca por recurso. El Admin SDK se inicializa de forma perezosa con Application Default Credentials y omite las reglas de Firestore, por eso nada lo invoca sin pasar por esta frontera.
 
-## 5. I-01 / I-02 v1 — aprobado por Paulo e implementado (2026-10-03)
+## 5. I-01 / I-02 v1 — aprobado por Usuario e implementado (2026-10-03)
 
 Aprobado como v1 el 2026-10-03 e implementado en F1 con dobles de prueba; la integración contra el proyecto Firebase de desarrollo está pendiente (DEC-02). Evidencia: [[05-Desarrollo/Testing]] «Corridas F1».
 
@@ -66,7 +66,7 @@ Aprobado como v1 el 2026-10-03 e implementado en F1 con dobles de prueba; la int
 | I-01 rol | `requireRole("administrador")` para futuras rutas `/api/v1/admin/*` | — | 403 `FORBIDDEN` |
 | I-02 registro/vínculo | `POST /api/v1/clientes/registro` (Bearer del usuario recién creado; **sin cuerpo**, el correo sale del token) | 201 `{ vinculo, marcas }` | 401 · 403 `EMAIL_NOT_VERIFIED` · 422 `VALIDATION_ERROR` (cuenta sin correo) · 409 `ALREADY_REGISTERED` · 409 `EMAIL_ALREADY_LINKED` |
 
-**Añadidos al implementar, confirmados por Paulo el 2026-10-03 (ADR-11):** los códigos `REGISTRATION_REQUIRED` y `ALREADY_REGISTERED`, y la **exigencia de correo verificado** antes del vínculo (`EMAIL_NOT_VERIFIED`). Sin ella, cualquiera podría registrarse con el correo de otro cliente y heredar sus marcas y puntos; es una medida de seguridad, no un cambio de alcance, pero modifica el flujo de registro (paso de verificación por enlace).
+**Añadidos al implementar, confirmados por Usuario el 2026-10-03 (ADR-11):** los códigos `REGISTRATION_REQUIRED` y `ALREADY_REGISTERED`, y la **exigencia de correo verificado** antes del vínculo (`EMAIL_NOT_VERIFIED`). Sin ella, cualquiera podría registrarse con el correo de otro cliente y heredar sus marcas y puntos; es una medida de seguridad, no un cambio de alcance, pero modifica el flujo de registro (paso de verificación por enlace).
 
 **Normalización:** `trim` + minúsculas; único criterio de vínculo (ADR-04).
 

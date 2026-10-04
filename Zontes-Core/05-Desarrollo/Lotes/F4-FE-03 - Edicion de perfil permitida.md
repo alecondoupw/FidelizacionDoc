@@ -19,7 +19,7 @@ Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote d
 | Fuente y página | SRC-03 pp. 8–9; SRC-02 pp. 1–3 · REQ-06, REQ-14 · [[01-Contexto/Especificacion consolidada y trazabilidad de PDF]] |
 | Referencia visual | UI-18 · C03 · UI-22 · A04 |
 | Reglas y decisiones | **DEC-08 abierta** · DEC-03 (contraseña admin) · [[04-Reglas-de-negocio/_Indice de reglas]] · [[02-Arquitectura/Decisiones pendientes]] |
-| Responsable y rutas | Responsable: por asignar por Paulo (DEC-01 no fijó responsables). Ejecutor sugerido: agente FE. FE_REPO `FidelizacionFronted`: vistas de perfil. Rutas absolutas en [[05-Desarrollo/Entorno local]]. |
+| Responsable y rutas | Responsable: por asignar por Usuario (DEC-01 no fijó responsables). Ejecutor sugerido: agente FE. FE_REPO `FidelizacionFronted`: vistas de perfil. Rutas absolutas en [[05-Desarrollo/Entorno local]]. |
 | Contrato FE↔BE | Mutaciones de perfil a definir con DEC-08. · [[02-Arquitectura/Contratos de integracion por flujo]] |
 | Dependencias | [[05-Desarrollo/Lotes/F1-FE-03 - Mi perfil cliente y admin en consulta\|F1-FE-03]]; [[05-Desarrollo/Lotes/F4-BE-02 - Gestion de clientes y revinculacion\|F4-BE-02]]; DEC-08. |
 | Aceptación | Ver lista siguiente. |
@@ -35,4 +35,4 @@ Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote d
 - [ ] Todo dato mostrado proviene de la respuesta del BE; ninguna regla sensible se calcula en el navegador.
 - [ ] Positivos y negativos ejecutados; `npm run check` en el o los repos tocados; evidencia y estado actualizados en [[05-Desarrollo/Progreso]] y [[06-Estado/Bitacora]].
 
-Cierre según [[05-Desarrollo/Criterio de terminado]]. Mientras un bloqueo siga abierto, el lote no está listo para implementar; una respuesta de Paulo se registra antes en [[02-Arquitectura/Decisiones tecnicas]].
+Cierre según [[05-Desarrollo/Criterio de terminado]]. Mientras un bloqueo siga abierto, el lote no está listo para implementar; una respuesta de Usuario se registra antes en [[02-Arquitectura/Decisiones tecnicas]].

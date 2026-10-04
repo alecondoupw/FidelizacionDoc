@@ -7,21 +7,21 @@ updated: 2026-10-03
 
 # F0 — Instalación separada de frontend y backend
 
-> **Resultado 2026-10-03 — puerta F0 verificada localmente.** Rutas confirmadas por Paulo (DEC-01): FE `C:\Users\aleco\Documents\Fidelizacion\FidelizacionFronted`, BE `C:\Users\aleco\Documents\Fidelizacion\FidelizacionBackend`, dos repos Git independientes. Ambos instalan con `npm ci`, pasan `npm run check` y `npm run smoke`; la llamada FE→BE funciona desde Node y desde el navegador. Evidencia: [[05-Desarrollo/Testing]] F0-T01…T11; versiones y problemas: [[05-Desarrollo/Entorno local]]; contrato: [[02-Arquitectura/Contrato API v0 - F0]]; criterios: [[05-Desarrollo/Progreso]]. **Publicación:** con autorización de Paulo, publicado y fusionado en `main` (FE `f29da45`, BE `747e191`) por avance rápido el 2026-10-03; la rama temporal `f0/base-tecnica` se borró. Parcial deliberado: la «navegación para roles» se limita al tipo `Rol` y a la frontera de autorización; no se crearon rutas porque el [[03-Modulos/Mapa de vistas frontend]] no fija rutas y hacerlo sería inventar navegación antes de F1. Inventario de origen legacy y recursos Firebase (F0-BE-02 del plan): **no hay ninguno disponible ni autorizado**; sigue en DEC-02/04.
+> **Resultado 2026-10-03 — puerta F0 verificada localmente.** Rutas confirmadas por Usuario (DEC-01): FE `C:\Users\aleco\Documents\Fidelizacion\FidelizacionFronted`, BE `C:\Users\aleco\Documents\Fidelizacion\FidelizacionBackend`, dos repos Git independientes. Ambos instalan con `npm ci`, pasan `npm run check` y `npm run smoke`; la llamada FE→BE funciona desde Node y desde el navegador. Evidencia: [[05-Desarrollo/Testing]] F0-T01…T11; versiones y problemas: [[05-Desarrollo/Entorno local]]; contrato: [[02-Arquitectura/Contrato API v0 - F0]]; criterios: [[05-Desarrollo/Progreso]]. **Publicación:** con autorización de Usuario, publicado y fusionado en `main` (FE `f29da45`, BE `747e191`) por avance rápido el 2026-10-03; la rama temporal `f0/base-tecnica` se borró. Parcial deliberado: la «navegación para roles» se limita al tipo `Rol` y a la frontera de autorización; no se crearon rutas porque el [[03-Modulos/Mapa de vistas frontend]] no fija rutas y hacerlo sería inventar navegación antes de F1. Inventario de origen legacy y recursos Firebase (F0-BE-02 del plan): **no hay ninguno disponible ni autorizado**; sigue en DEC-02/04.
 >
 > El texto siguiente conserva el plan original; las casillas marcan lo ejecutado.
 
-Paulo pidió el 2026-10-02 que F0, **cuando se inicie**, instale y verifique **frontend Next.js** y **backend Express.js** en ubicaciones separadas que indicará **al abrir esa fase**. F0 está planificada, **no iniciada**: no se definieron rutas, no se creó código y no se instalaron paquetes. `Zontes-Core/` sigue siendo el **baúl de Obsidian y memoria canónica**: aquí van decisiones, tareas y evidencias; el código y los paquetes van sólo en las ubicaciones operativas que confirme. Los PDF SRC-01/02/03 definen el producto y la [[02-Arquitectura/Base tecnica documentada]], pero no proporcionan rutas ni proyectos Firebase.
+Usuario pidió el 2026-10-02 que F0, **cuando se inicie**, instale y verifique **frontend Next.js** y **backend Express.js** en ubicaciones separadas que indicará **al abrir esa fase**. F0 está planificada, **no iniciada**: no se definieron rutas, no se creó código y no se instalaron paquetes. `Zontes-Core/` sigue siendo el **baúl de Obsidian y memoria canónica**: aquí van decisiones, tareas y evidencias; el código y los paquetes van sólo en las ubicaciones operativas que confirme. Los PDF SRC-01/02/03 definen el producto y la [[02-Arquitectura/Base tecnica documentada]], pero no proporcionan rutas ni proyectos Firebase.
 
 ## Al iniciar F0, antes de escribir código
 
-- [x] **Preguntar entonces a Paulo**, no antes: ruta absoluta de frontend y de backend, si ya existen, y si serán dos repositorios Git o dos carpetas de un repositorio compartido (DEC-01). Registrar literalmente su respuesta en [[05-Desarrollo/Entorno local]] y [[02-Arquitectura/Decisiones tecnicas]].
+- [x] **Preguntar entonces a Usuario**, no antes: ruta absoluta de frontend y de backend, si ya existen, y si serán dos repositorios Git o dos carpetas de un repositorio compartido (DEC-01). Registrar literalmente su respuesta en [[05-Desarrollo/Entorno local]] y [[02-Arquitectura/Decisiones tecnicas]].
 - [x] Inspeccionar ambas rutas antes de escribir: contenido existente, manifiestos, estado Git y versiones de runtime. Conservar cambios previos y resolver cualquier conflicto antes de inicializar.
 - [x] Elegir una versión de Node.js y un gestor de paquetes compatibles con las versiones actuales de Next.js/Express y documentarlos junto con lockfiles. Verificar requisitos en documentación oficial al ejecutar F0; no fijar números desde los PDF.
 
 ## F0-FE-03 · instalación frontend
 
-**Ubicación:** ruta FE que indique Paulo. **Base:** SRC-02 pp. 11–13 y SRC-03 p. 11. **Salida:** aplicación Next.js/TypeScript que compila y arranca localmente, con estructura para cliente/admin y sin pantallas presentadas como producto terminado.
+**Ubicación:** ruta FE que indique Usuario. **Base:** SRC-02 pp. 11–13 y SRC-03 p. 11. **Salida:** aplicación Next.js/TypeScript que compila y arranca localmente, con estructura para cliente/admin y sin pantallas presentadas como producto terminado.
 
 - [x] Inicializar o adaptar Next.js + TypeScript en la ruta FE, con gestor/lockfile acordados y scripts reproducibles.
 - [x] Configurar Tailwind CSS y base de componentes shadcn/ui según versiones compatibles; instalar Lucide React, React Hook Form, Zod, Recharts, TanStack Table y date-fns donde corresponda. Registrar qué se instaló y por qué.
@@ -32,7 +32,7 @@ Paulo pidió el 2026-10-02 que F0, **cuando se inicie**, instale y verifique **f
 
 ## F0-BE-03 · instalación backend
 
-**Ubicación:** ruta BE que indique Paulo. **Base:** SRC-02 pp. 11–15 y SRC-03 pp. 11–13. **Salida:** API Express/TypeScript que compila y arranca localmente, con validación/errores y frontera de autorización preparados, sin eventos ni saldos ficticios presentados como funcionales.
+**Ubicación:** ruta BE que indique Usuario. **Base:** SRC-02 pp. 11–15 y SRC-03 pp. 11–13. **Salida:** API Express/TypeScript que compila y arranca localmente, con validación/errores y frontera de autorización preparados, sin eventos ni saldos ficticios presentados como funcionales.
 
 - [x] Inicializar o adaptar Express.js + TypeScript con scripts de desarrollo, build y arranque reproducibles.
 - [x] Instalar Firebase Admin SDK, Zod y date-fns; configurar ESLint + Prettier y dependencias de desarrollo estrictamente necesarias. Mantener Admin SDK sólo en backend.
@@ -42,7 +42,7 @@ Paulo pidió el 2026-10-02 que F0, **cuando se inicie**, instale y verifique **f
 
 ## F0-I-02 · instalación integrada y puerta de salida
 
-- [x] Confirmar que FE y BE viven en ubicaciones distintas, con manifiesto y lockfile propios; si Paulo elige un Git compartido, mantener paquetes y scripts separados.
+- [x] Confirmar que FE y BE viven en ubicaciones distintas, con manifiesto y lockfile propios; si Usuario elige un Git compartido, mantener paquetes y scripts separados.
 - [x] Correr instalación limpia, lint, build y pruebas/smoke de **cada lado**; registrar comando, versión, salida y revisión. Una compilación no demuestra reglas de negocio.
 - [x] Probar una llamada local FE→BE a un endpoint de salud sin token ni datos personales; documentar URL/configuración por nombre y errores de conectividad. El flujo protegido Firebase requiere DEC-02/03 y se prueba en F1.
 - [x] Fijar contrato inicial I-01/I-02 de [[02-Arquitectura/Contratos de integracion por flujo]] con roles, errores, fechas y respuestas; identificar lo que depende de DEC-04 sin inventar el esquema legacy.

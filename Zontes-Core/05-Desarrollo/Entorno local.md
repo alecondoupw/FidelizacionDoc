@@ -7,7 +7,7 @@ updated: 2026-10-03
 
 # Entorno local y repositorios
 
-## Rutas confirmadas por Paulo (DEC-01, 2026-10-03)
+## Rutas confirmadas por Usuario (DEC-01, 2026-10-03)
 
 Respuesta literal al abrir F0: frontend `…\FidelizacionFronted`; backend `…\FidelizacionBackend`; contenido «Sólo README; inicializar»; Git «Dos repos independientes».
 
@@ -17,7 +17,7 @@ Respuesta literal al abrir F0: frontend `…\FidelizacionFronted`; backend `…\
 | FE_REPO | `C:\Users\aleco\Documents\Fidelizacion\FidelizacionFronted` | [FidelizacionFronted](https://github.com/alecondoupw/FidelizacionFronted), rama `main` | F0 `f29da45`, F1 `71184a5`, F2 `e4278a2` (`main`) |
 | BE_REPO | `C:\Users\aleco\Documents\Fidelizacion\FidelizacionBackend` | [FidelizacionBackend](https://github.com/alecondoupw/FidelizacionBackend), rama `main` | F0 `747e191`, F1 `8fce35e`, F2 `7e5589a` (`main`) |
 
-Paulo autorizó commit y push el 2026-10-03. Se publicó primero en la rama `f0/base-tecnica` de cada repo y, por decisión de Paulo el mismo día, se fusionó en `main` por avance rápido (sin commits de fusión). Desde entonces `main` de FE y BE apunta a la revisión F0. La rama `f0/base-tecnica` se borró en local y remoto en los tres repos tras comprobar que estaba contenida en `main`; cada repo queda sólo con `main`. Remotos verificados con `git ls-remote`.
+Usuario autorizó commit y push el 2026-10-03. Se publicó primero en la rama `f0/base-tecnica` de cada repo y, por decisión de Usuario el mismo día, se fusionó en `main` por avance rápido (sin commits de fusión). Desde entonces `main` de FE y BE apunta a la revisión F0. La rama `f0/base-tecnica` se borró en local y remoto en los tres repos tras comprobar que estaba contenida en `main`; cada repo queda sólo con `main`. Remotos verificados con `git ls-remote`.
 
 El nombre `FidelizacionFronted` conserva la grafía del repositorio existente. La raíz `E:/Repositorios/Hackathon/Zontes` que figuraba en la semilla no corresponde a este host; las rutas válidas son las de la tabla. Estas rutas son de este equipo: en otro host se registra su propia fila.
 
@@ -52,18 +52,18 @@ Fuentes oficiales consultadas el 2026-10-03: instalación de Next.js (docs versi
 | Arranque de prueba | `npm run smoke` (tras build; puerto 3100) | `npm run smoke` (tras build; puerto 4100) |
 | FE→BE | `INTEGRATION_API_BASE_URL=http://localhost:4000 npm run test:integration` con el BE en marcha | — |
 
-**Comandos de F1 (BE, los ejecuta Paulo contra el proyecto de desarrollo):** `npm run admin:bootstrap -- --email <correo>` crea el administrador inicial una sola vez e imprime un enlace para definir la contraseña; `npm run dev:usuario-prueba -- --email <nombre>@ejemplo.test` crea un usuario de prueba con correo verificado (sólo dominio `ejemplo.test`, nunca con `NODE_ENV=production`); `FIRESTORE_INTEGRATION=1 npm run test:firebase` corre el contrato del repositorio contra Firestore real con prefijo temporal y lo borra al terminar.
+**Comandos de F1 (BE, los ejecuta Usuario contra el proyecto de desarrollo):** `npm run admin:bootstrap -- --email <correo>` crea el administrador inicial una sola vez e imprime un enlace para definir la contraseña; `npm run dev:usuario-prueba -- --email <nombre>@ejemplo.test` crea un usuario de prueba con correo verificado (sólo dominio `ejemplo.test`, nunca con `NODE_ENV=production`); `FIRESTORE_INTEGRATION=1 npm run test:firebase` corre el contrato del repositorio contra Firestore real con prefijo temporal y lo borra al terminar.
 
 **Dependencias añadidas en F1 (FE, desarrollo):** `@testing-library/react` 16.3.3, `@testing-library/dom` 10.4.2, `@testing-library/user-event` 14.6.7, `jsdom` 29.1.1 (jsdom 30 exige Node ≥ 24.15 y aquí hay 24.14.1; `@vitejs/plugin-react` descartado por conflicto Babel 7/8 y porque Vite 8 ya transforma JSX). Componentes shadcn/ui añadidos: input, label, card, badge, alert, skeleton. Ambos repos llevan `.gitattributes` con `eol=lf`.
 
 
 **F2:** BE añade `@date-fns/tz` 1.5.0 (zona America/La_Paz) y los comandos `npm run puntos:vencer` (proceso reejecutable de vencimientos) e `npm run integracion:clave`; `npm run test:firebase` ahora corre todos los contratos (`*.contract.test.ts`). FE añade componentes shadcn/ui switch, dialog, alert-dialog y textarea.
 
-**F3:** BE añade `pdfkit` 0.20.2 (comprobante PDF) y `qrcode` 1.5.4 (QR del código), con `@types/pdfkit` y `@types/qrcode` en desarrollo, y el comando `npm run catalogo:cargar -- --archivo <ruta.json>` (crea beneficios nuevos y no pisa los existentes; ejemplo sintético en `datos/catalogo.ejemplo.json`; lo ejecuta Paulo contra el proyecto de desarrollo). FE sin dependencias nuevas; el cliente HTTP añade `descargar()` para PDF y SVG con el mismo token.
+**F3:** BE añade `pdfkit` 0.20.2 (comprobante PDF) y `qrcode` 1.5.4 (QR del código), con `@types/pdfkit` y `@types/qrcode` en desarrollo, y el comando `npm run catalogo:cargar -- --archivo <ruta.json>` (crea beneficios nuevos y no pisa los existentes; ejemplo sintético en `datos/catalogo.ejemplo.json`; lo ejecuta Usuario contra el proyecto de desarrollo). FE sin dependencias nuevas; el cliente HTTP añade `descargar()` para PDF y SVG con el mismo token.
 
 **F4:** sin dependencias nuevas. Usa más de Firebase Auth desde el BE (Admin SDK: crear, editar, borrar cuentas y revocar sesiones) y desde el FE el correo de restablecimiento de contraseña (`sendPasswordResetEmail`) para invitar administradores y cambiar la propia contraseña. Requiere el proveedor Correo/contraseña activo y el dominio de la app entre los autorizados de Firebase Auth (`localhost` lo está por defecto); el correo usa la plantilla estándar de Firebase y puede llegar a spam.
 
-**F5:** BE añade `write-excel-file` 4.1.1 (MIT, una dependencia: `fflate`) para exportar .xlsx; se descartaron `exceljs` (nueve dependencias, entre ellas `uuid` con avisos) y `xlsx` de npm (versión antigua con CVE). `npm audit --omit=dev` sin cambios (2 moderadas de `uuid`/`gaxios` ya aceptadas). Nuevo comando `npm run reportes:conciliar [-- --reparar]`: sin argumento sólo informa; con `--reparar` completa el libro y el índice de canjes con los datos anteriores a F5 (lo ejecuta Paulo o el agente con su autorización). FE sin dependencias nuevas; usa `recharts` instalado en F0.
+**F5:** BE añade `write-excel-file` 4.1.1 (MIT, una dependencia: `fflate`) para exportar .xlsx; se descartaron `exceljs` (nueve dependencias, entre ellas `uuid` con avisos) y `xlsx` de npm (versión antigua con CVE). `npm audit --omit=dev` sin cambios (2 moderadas de `uuid`/`gaxios` ya aceptadas). Nuevo comando `npm run reportes:conciliar [-- --reparar]`: sin argumento sólo informa; con `--reparar` completa el libro y el índice de canjes con los datos anteriores a F5 (lo ejecuta Usuario o el agente con su autorización). FE sin dependencias nuevas; usa `recharts` instalado en F0.
 
 **F6:** sin dependencias nuevas en FE ni BE (carrusel e ilustraciones con componentes propios, shadcn/ui y Lucide ya instalados). Para la revisión visual se usó el navegador integrado de la app, sin instalar herramientas.
 
@@ -80,7 +80,7 @@ Fuentes oficiales consultadas el 2026-10-03: instalación de Next.js (docs versi
 | BE | `FIREBASE_PROJECT_ID`, `GOOGLE_APPLICATION_CREDENTIALS` | Admin SDK vía ADC; el archivo de credenciales vive fuera del repo | vacías (DEC-02) |
 | BE | `LEGACY_SOURCE` | Fuente de clientes existentes; sólo `sintetica` en F1 (DEC-04) | `sintetica` |
 | BE | `FIRESTORE_PREFIX` | Prefijo de colecciones; aísla pruebas | vacío |
-| BE | `INTEGRACION_CLAVES` | Claves de la API de integración como `sistema:sha256`; se generan con `npm run integracion:clave -- --sistema <nombre>` (lo ejecuta Paulo) | vacía → la API responde 503 |
+| BE | `INTEGRACION_CLAVES` | Claves de la API de integración como `sistema:sha256`; se generan con `npm run integracion:clave -- --sistema <nombre>` (lo ejecuta Usuario) | vacía → la API responde 503 |
 
 Custodio de valores reales: pendiente de DEC-02. `.env*` (salvo `.env.example`), `*.pem` y archivos de cuenta de servicio están ignorados por Git en ambos repos. No registrar aquí valores, tokens ni correos reales.
 
@@ -96,7 +96,7 @@ Custodio de valores reales: pendiente de DEC-02. `.env*` (salvo `.env.example`),
 | `TaskStop` de la sesión no termina el hijo `node` en Windows | Procesos verificados por línea de comandos y cerrados por PID |
 | `typecheck` del FE sin `LayoutProps` antes del primer build | Script `next typegen && tsc --noEmit` |
 | `npm ls` marca 6 paquetes WASM opcionales como *extraneous* | Están en el lockfile como opcionales de respaldo; peculiaridad de npm en win32, sin efecto |
-| Next.js activa telemetría anónima por defecto | No se modificó configuración del usuario; desactivable con `npx next telemetry disable` si Paulo lo decide |
+| Next.js activa telemetría anónima por defecto | No se modificó configuración del usuario; desactivable con `npx next telemetry disable` si Usuario lo decide |
 | Con el BE detenido, Chrome tarda ~5–10 s en mostrar `NETWORK_ERROR` en `/diagnostico` (reintentos a `localhost`) | Aceptable en F0; el tiempo de espera del cliente es 10 s |
 
 Ver [[05-Desarrollo/Testing]] para resultados, [[02-Arquitectura/Contrato API v0 - F0]] para el contrato y [[05-Desarrollo/Ramas y entregas]] para la política de entrega.

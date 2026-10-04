@@ -19,7 +19,7 @@ Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote d
 | Fuente y página | SRC-03 pp. 6–9 · REQ-11, REQ-12, REQ-18 · [[01-Contexto/Especificacion consolidada y trazabilidad de PDF]] |
 | Referencia visual | UI-05 · C06, C05 · UI-15 · C04 · UI-16 (sin imagen aislada) |
 | Reglas y decisiones | RN-08, RN-09 · DEC-07 · [[04-Reglas-de-negocio/_Indice de reglas]] · [[02-Arquitectura/Decisiones pendientes]] |
-| Responsable y rutas | Responsable: por asignar por Paulo (DEC-01 no fijó responsables). Ejecutor sugerido: agente FE. FE_REPO `FidelizacionFronted`: área cliente. Rutas absolutas en [[05-Desarrollo/Entorno local]]. |
+| Responsable y rutas | Responsable: por asignar por Usuario (DEC-01 no fijó responsables). Ejecutor sugerido: agente FE. FE_REPO `FidelizacionFronted`: área cliente. Rutas absolutas en [[05-Desarrollo/Entorno local]]. |
 | Contrato FE↔BE | I-05 (F3-BE-01/02/03). · [[02-Arquitectura/Contratos de integracion por flujo]] |
 | Dependencias | [[05-Desarrollo/Lotes/F3-BE-01 - Catalogo de beneficios por marca\|F3-BE-01]]/02/03, [[05-Desarrollo/Lotes/F2-FE-01 - Inicio saldo e historial cliente\|F2-FE-01]]. |
 | Aceptación | Ver lista siguiente. |
@@ -37,4 +37,4 @@ Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote d
 - [ ] Todo dato mostrado proviene de la respuesta del BE; ninguna regla sensible se calcula en el navegador.
 - [ ] Positivos y negativos ejecutados; `npm run check` en el o los repos tocados; evidencia y estado actualizados en [[05-Desarrollo/Progreso]] y [[06-Estado/Bitacora]].
 
-Cierre según [[05-Desarrollo/Criterio de terminado]]. Mientras un bloqueo siga abierto, el lote no está listo para implementar; una respuesta de Paulo se registra antes en [[02-Arquitectura/Decisiones tecnicas]].
+Cierre según [[05-Desarrollo/Criterio de terminado]]. Mientras un bloqueo siga abierto, el lote no está listo para implementar; una respuesta de Usuario se registra antes en [[02-Arquitectura/Decisiones tecnicas]].

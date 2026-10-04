@@ -10,7 +10,7 @@ updated: 2026-10-03
 
 # F6-I-01 — Integracion de contenido y revision visual
 
-Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote de trabajo]]. **Resultado 2026-10-03:** Contenido integrado FE↔BE con el proyecto de desarrollo: publicaciones creadas por la interfaz con la sesión admin de Paulo y vistas con su sesión de cliente (aislamiento y ventana correctos); recorrido visual de ambos roles en tres tamaños. Evidencia en [[05-Desarrollo/Testing]] F6-T07…T09. Índice: [[05-Desarrollo/Lotes F1-F7 - indice]].
+Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote de trabajo]]. **Resultado 2026-10-03:** Contenido integrado FE↔BE con el proyecto de desarrollo: publicaciones creadas por la interfaz con la sesión admin de Usuario y vistas con su sesión de cliente (aislamiento y ventana correctos); recorrido visual de ambos roles en tres tamaños. Evidencia en [[05-Desarrollo/Testing]] F6-T07…T09. Índice: [[05-Desarrollo/Lotes F1-F7 - indice]].
 
 | Campo | Contenido |
 | --- | --- |
@@ -19,7 +19,7 @@ Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote d
 | Fuente y página | SRC-02 pp. 7–9 · REQ-17–REQ-19 · [[01-Contexto/Especificacion consolidada y trazabilidad de PDF]] |
 | Referencia visual | UI-12 y todas las UI-ID |
 | Reglas y decisiones | RN-09 · DEC-10 resuelta · DEC-11 parcial · [[04-Reglas-de-negocio/_Indice de reglas]] · [[02-Arquitectura/Decisiones pendientes]] |
-| Responsable y rutas | Responsable: por asignar por Paulo (DEC-01 no fijó responsables). Integrador único. FE_REPO `FidelizacionFronted` y BE_REPO `FidelizacionBackend`. Rutas absolutas en [[05-Desarrollo/Entorno local]]. |
+| Responsable y rutas | Responsable: por asignar por Usuario (DEC-01 no fijó responsables). Integrador único. FE_REPO `FidelizacionFronted` y BE_REPO `FidelizacionBackend`. Rutas absolutas en [[05-Desarrollo/Entorno local]]. |
 | Contrato FE↔BE | I-08 implementado: [[02-Arquitectura/Contrato API v0 - F0]] §11. · [[02-Arquitectura/Contratos de integracion por flujo]] |
 | Dependencias | [[05-Desarrollo/Lotes/F6-BE-01 - Contenido por marca\|F6-BE-01]], [[05-Desarrollo/Lotes/F6-FE-01 - Contenido por marca admin\|F6-FE-01]]/02/03. |
 | Aceptación | Ver lista siguiente. |
@@ -30,4 +30,4 @@ Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote d
 - [x] Recorridos reales por rol completados en tres tamaños sin bloqueos de accesibilidad.
 - [x] Positivos y negativos ejecutados; `npm run check` en el o los repos tocados; evidencia y estado actualizados en [[05-Desarrollo/Progreso]] y [[06-Estado/Bitacora]].
 
-Cierre según [[05-Desarrollo/Criterio de terminado]]. Mientras un bloqueo siga abierto, el lote no está listo para implementar; una respuesta de Paulo se registra antes en [[02-Arquitectura/Decisiones tecnicas]].
+Cierre según [[05-Desarrollo/Criterio de terminado]]. Mientras un bloqueo siga abierto, el lote no está listo para implementar; una respuesta de Usuario se registra antes en [[02-Arquitectura/Decisiones tecnicas]].

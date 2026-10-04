@@ -7,7 +7,7 @@ updated: 2026-10-03
 
 # Manual de despliegue y operación
 
-Entregable de SRC-01 p. 2 (REQ-21, REQ-22) según **DEC-13**: frontend en **Vercel** y backend en **Render**, ambos en plan gratuito; vencimiento diario con **GitHub Actions**; respaldo propio en JSON. Paulo crea las cuentas, conecta GitHub y carga los secretos; ningún secreto vive en Git ni en este Core. Estado: **preparado y probado en local; despliegue pendiente de que Paulo cree las cuentas** (ver [[05-Desarrollo/Testing]] «Corridas F7»).
+Entregable de SRC-01 p. 2 (REQ-21, REQ-22) según **DEC-13**: frontend en **Vercel** y backend en **Render**, ambos en plan gratuito; vencimiento diario con **GitHub Actions**; respaldo propio en JSON. Usuario crea las cuentas, conecta GitHub y carga los secretos; ningún secreto vive en Git ni en este Core. Estado: **preparado y probado en local; despliegue pendiente de que Usuario cree las cuentas** (ver [[05-Desarrollo/Testing]] «Corridas F7»).
 
 ## 1. Arquitectura desplegada
 
@@ -40,10 +40,10 @@ El navegador nunca toca Firestore: las reglas lo deniegan todo y el backend usa 
 | `PORT` | la asigna Render | Render |
 | `TRUST_PROXY` | `1` | render.yaml |
 | `GOOGLE_APPLICATION_CREDENTIALS` | `/etc/secrets/firebase-admin.json` | render.yaml + archivo secreto |
-| `FIREBASE_PROJECT_ID` | id del proyecto Firebase | Paulo en Render |
-| `CORS_ALLOWED_ORIGINS` | URL de producción de Vercel, sin barra final | Paulo en Render |
-| `INTEGRACION_CLAVES` | vacío, o `sistema:sha256` por sistema | Paulo en Render |
-| `LIMITE_POR_MINUTO` | opcional (300) | Paulo en Render |
+| `FIREBASE_PROJECT_ID` | id del proyecto Firebase | Usuario en Render |
+| `CORS_ALLOWED_ORIGINS` | URL de producción de Vercel, sin barra final | Usuario en Render |
+| `INTEGRACION_CLAVES` | vacío, o `sistema:sha256` por sistema | Usuario en Render |
+| `LIMITE_POR_MINUTO` | opcional (300) | Usuario en Render |
 
 **Frontend (Vercel)** — se insertan al compilar; cambiar una exige volver a desplegar:
 
@@ -54,7 +54,7 @@ El navegador nunca toca Firestore: las reglas lo deniegan todo y el backend usa 
 
 **GitHub (repo FidelizacionBackend → Settings → Secrets and variables → Actions):** secretos `FIREBASE_SERVICE_ACCOUNT` (contenido del JSON) y `FIREBASE_PROJECT_ID`; variable `VENCIMIENTO_ACTIVO` = `true`.
 
-## 4. Despliegue paso a paso (lo hace Paulo)
+## 4. Despliegue paso a paso (lo hace Usuario)
 
 1. **Cuenta de servicio de producción.** Firebase Console → Configuración del proyecto → Cuentas de servicio → «Generar nueva clave privada». Guardar el JSON fuera de cualquier repositorio. Usar una clave distinta de la de desarrollo permite revocarla sin afectar el trabajo local.
 2. **Reglas de Firestore.** Firestore Database → Reglas → pegar el contenido de `FidelizacionBackend/firestore.rules` → Publicar. (El 2026-10-03 se comprobó que las lecturas y escrituras anónimas ya reciben 403; falta confirmar con un usuario autenticado, ver F7-T08).
@@ -76,7 +76,7 @@ El navegador nunca toca Firestore: las reglas lo deniegan todo y el backend usa 
 
 ## 6. Respaldos y restauración
 
-| Tarea | Cuándo | Comando (en el equipo de Paulo, con `.env` de producción) |
+| Tarea | Cuándo | Comando (en el equipo de Usuario, con `.env` de producción) |
 | --- | --- | --- |
 | Respaldo | Semanal y antes de cada despliegue que toque datos | `npm run respaldo:exportar -- --salida <carpeta segura>` |
 | Simulacro de restauración | Mensual | `npm run respaldo:restaurar -- --archivo <json> --prefijo prueba_restauracion_ --limpiar` |

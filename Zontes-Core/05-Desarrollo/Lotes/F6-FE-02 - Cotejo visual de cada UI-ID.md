@@ -10,7 +10,7 @@ updated: 2026-10-03
 
 # F6-FE-02 — Cotejo visual de cada UI-ID
 
-Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote de trabajo]]. **Resultado 2026-10-03:** Consolidado: 25 UI-ID construidas revisadas en escritorio, tablet y móvil con 78 capturas, hallazgos corregidos y diferencias con los mockups anotadas en [[06-Estado/Evidencias/F6-revision-visual]]. Las diferencias que se mantienen esperan la revisión de Paulo. Índice: [[05-Desarrollo/Lotes F1-F7 - indice]].
+Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote de trabajo]]. **Resultado 2026-10-03:** Consolidado: 25 UI-ID construidas revisadas en escritorio, tablet y móvil con 78 capturas, hallazgos corregidos y diferencias con los mockups anotadas en [[06-Estado/Evidencias/F6-revision-visual]]. Las diferencias que se mantienen esperan la revisión de Usuario. Índice: [[05-Desarrollo/Lotes F1-F7 - indice]].
 
 | Campo | Contenido |
 | --- | --- |
@@ -19,16 +19,16 @@ Lote ejecutable creado tras la puerta F0 con [[05-Desarrollo/Plantilla de lote d
 | Fuente y página | SRC-02 pp. 8–9; SRC-03 pp. 2, 9–10 · REQ-18, REQ-19 · [[01-Contexto/Especificacion consolidada y trazabilidad de PDF]] |
 | Referencia visual | Todas: C01–C10, A01–A13 según [[03-Modulos/Referencias UI cliente y administrador - 2026-10-02]] |
 | Reglas y decisiones | ADR-07 · DEC-11 parcial (línea provisional) · [[04-Reglas-de-negocio/_Indice de reglas]] · [[02-Arquitectura/Decisiones pendientes]] |
-| Responsable y rutas | Responsable: por asignar por Paulo (DEC-01 no fijó responsables). Ejecutor sugerido: agente FE + revisión de Paulo. FE_REPO `FidelizacionFronted`. Rutas absolutas en [[05-Desarrollo/Entorno local]]. |
+| Responsable y rutas | Responsable: por asignar por Usuario (DEC-01 no fijó responsables). Ejecutor sugerido: agente FE + revisión de Usuario. FE_REPO `FidelizacionFronted`. Rutas absolutas en [[05-Desarrollo/Entorno local]]. |
 | Contrato FE↔BE | No aplica. · [[02-Arquitectura/Contratos de integracion por flujo]] |
 | Dependencias | UI-ID implementadas en F1–F5. |
 | Aceptación | Ver lista siguiente. |
 | Prueba y evidencia | T-UI · resultados en [[05-Desarrollo/Testing]] con fecha, revisión FE/BE y datos sintéticos |
-| Estado | **Ejecutado (F6-T09); diferencias pendientes de aprobación de Paulo** · 2026-10-03 |
+| Estado | **Ejecutado (F6-T09); diferencias pendientes de aprobación de Usuario** · 2026-10-03 |
 ## Aceptación
 
 - [x] Captura de implementación por UI-ID en escritorio, tablet y móvil enlazada desde el Core.
 - [ ] Diferencias con la referencia anotadas y aprobadas o corregidas.
 - [x] Positivos y negativos ejecutados; `npm run check` en el o los repos tocados; evidencia y estado actualizados en [[05-Desarrollo/Progreso]] y [[06-Estado/Bitacora]].
 
-Cierre según [[05-Desarrollo/Criterio de terminado]]. Mientras un bloqueo siga abierto, el lote no está listo para implementar; una respuesta de Paulo se registra antes en [[02-Arquitectura/Decisiones tecnicas]].
+Cierre según [[05-Desarrollo/Criterio de terminado]]. Mientras un bloqueo siga abierto, el lote no está listo para implementar; una respuesta de Usuario se registra antes en [[02-Arquitectura/Decisiones tecnicas]].

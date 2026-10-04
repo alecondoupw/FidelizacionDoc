@@ -7,7 +7,7 @@ updated: 2026-10-03
 
 # Skills y herramientas — evaluación, no instalación
 
-Las siguientes son **capacidades a considerar**, no dependencias instaladas. Antes de habilitar una skill, MCP, CLI, extensión o servicio, pedir permiso explícito a Paulo: origen y mantenedor, código/permisos/red, datos que verá, coste, riesgo, alternativa sin instalación y forma de reversión. Recomendarla o citarla no la activa. Impeccable puede evaluarse para UI si Paulo lo pide, pero **nunca instalarse sin preguntar primero**.
+Las siguientes son **capacidades a considerar**, no dependencias instaladas. Antes de habilitar una skill, MCP, CLI, extensión o servicio, pedir permiso explícito a Usuario: origen y mantenedor, código/permisos/red, datos que verá, coste, riesgo, alternativa sin instalación y forma de reversión. Recomendarla o citarla no la activa. Impeccable puede evaluarse para UI si Usuario lo pide, pero **nunca instalarse sin preguntar primero**.
 
 | Momento | Capacidad útil | Resultado esperado sin acoplarse a proveedor |
 | --- | --- | --- |

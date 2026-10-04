@@ -7,7 +7,7 @@ updated: 2026-10-03
 
 # Revisión visual F6 — capturas por UI-ID
 
-Cotejo de F6-FE-02 y pulido de F6-FE-03 hechos por el agente el 2026-10-03 en el navegador integrado, contra FE (:3000) y BE (:4000) con el proyecto de desarrollo y sesiones reales iniciadas por Paulo (admin y cliente de prueba). Identidad: línea provisional (DEC-11 parcial). Tamaños: escritorio 1280×800, tablet 768×1024 y móvil 375×812. Capturas en `06-Estado/Evidencias/F6-revision-visual/` con el nombre `UI-xx-pantalla-{escritorio|tablet|movil}.jpg` (recortadas al área de la página; el panel del navegador mide ~736 px, por eso el escritorio se ve reducido).
+Cotejo de F6-FE-02 y pulido de F6-FE-03 hechos por el agente el 2026-10-03 en el navegador integrado, contra FE (:3000) y BE (:4000) con el proyecto de desarrollo y sesiones reales iniciadas por Usuario (admin y cliente de prueba). Identidad: línea provisional (DEC-11 parcial). Tamaños: escritorio 1280×800, tablet 768×1024 y móvil 375×812. Capturas en `06-Estado/Evidencias/F6-revision-visual/` con el nombre `UI-xx-pantalla-{escritorio|tablet|movil}.jpg` (recortadas al área de la página; el panel del navegador mide ~736 px, por eso el escritorio se ve reducido).
 
 ## Método
 
@@ -43,7 +43,7 @@ Resultado final: barrido limpio en las 26 pantallas y los tres tamaños; foco vi
 | Encabezado sin buscador global, campana de notificaciones ni avatar (A01–A13, C08) | No hay requisito de notificaciones ni de búsqueda global en SRC-01/02/03; la búsqueda de clientes vive en Clientes |
 | Sin «Importar clientes» (A02) | DEC-16: fuera de alcance |
 | Sin pantalla «Auditoría» en el menú | La auditoría se consulta por persona en el detalle del cliente y por API (F4-BE-03); una vista global no tiene requisito propio |
-| Sin «Contraer menú» en la barra lateral | No aporta a los requisitos; se puede agregar en F7 si Paulo lo pide |
+| Sin «Contraer menú» en la barra lateral | No aporta a los requisitos; se puede agregar en F7 si Usuario lo pide |
 | Inicio del cliente sin «¿Cómo ganar puntos?» ni tarjetas de marcas con foto (C08) | El contenido de reglas por marca no está modelado para el cliente; Mis marcas cubre las marcas |
 | Listas en lugar de tablas en el panel | Legibles en tablet y móvil sin desplazamiento horizontal (SRC-02 p. 8) |
 | Nombres «Sin nombre» y correo en el encabezado | Datos: las cuentas de prueba no tienen nombre en Firebase Auth |

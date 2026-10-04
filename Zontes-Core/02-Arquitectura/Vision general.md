@@ -7,7 +7,7 @@ updated: 2026-10-02
 
 # Visión general de arquitectura
 
-**Frentes lógicos:** `FE_REPO` (Next.js/TypeScript) y `BE_REPO` (Express/TypeScript). La forma física del repositorio compartido pedido en SRC-01 p. 2 sigue en DEC-01: podrían ser dos repositorios Git o paquetes de uno, sin inventar rutas. Ambos frentes aún no existen en la raíz inspeccionada. Los contratos de API y revisión conjunta se guardan aquí; código, dependencias y configuración operativa van a las rutas que confirme Paulo.
+**Frentes lógicos:** `FE_REPO` (Next.js/TypeScript) y `BE_REPO` (Express/TypeScript). La forma física del repositorio compartido pedido en SRC-01 p. 2 sigue en DEC-01: podrían ser dos repositorios Git o paquetes de uno, sin inventar rutas. Ambos frentes aún no existen en la raíz inspeccionada. Los contratos de API y revisión conjunta se guardan aquí; código, dependencias y configuración operativa van a las rutas que confirme Usuario.
 
 ```text
 Cliente/Admin → Next.js UI → ID token Firebase Auth
@@ -26,4 +26,4 @@ Next.js presenta y valida formularios para UX; **Express vuelve a validar** iden
 
 **Frentes lógicos:** auth/perfiles y vinculación por correo; eventos y movimientos; reglas/vencimiento; beneficios/canjes; administración; reportes/exportes; contenido por marca. Modelo y contratos en [[02-Arquitectura/Modelo de datos y contratos]]. Pruebas cruzadas por versión FE+BE y datos sintéticos aislados.
 
-Esta es la [[02-Arquitectura/Base tecnica documentada]] de SRC-02 pp. 11–15 y SRC-03 pp. 11–13, no runtime comprobado. DEC-01 fija organización/rutas; DEC-02 fija recursos, cuentas y entornos de Firebase. Una excepción al stack documentado requiere decisión explícita de Paulo.
+Esta es la [[02-Arquitectura/Base tecnica documentada]] de SRC-02 pp. 11–15 y SRC-03 pp. 11–13, no runtime comprobado. DEC-01 fija organización/rutas; DEC-02 fija recursos, cuentas y entornos de Firebase. Una excepción al stack documentado requiere decisión explícita de Usuario.

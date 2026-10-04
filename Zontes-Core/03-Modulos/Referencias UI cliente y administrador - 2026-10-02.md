@@ -7,7 +7,7 @@ updated: 2026-10-02
 
 # Referencias UI cliente y administrador — lote 2026-10-02
 
-**Procedencia:** SRC-03 (PDF cliente), SRC-04 (ZIP cliente) y SRC-05 (ZIP administrador), conservados en [[09-Entradas/_Indice de entradas]]. Los JPEG extraídos son copias binarias de las entradas ZIP, con nombres estables C01–C10 y A01–A13; nombre original y SHA-256 individual en [[09-Entradas/Referencias UI 2026-10-02/Manifiesto de imagenes]]. Son **mockups de referencia aportados por Paulo**, no pantallas implementadas ni pruebas de comportamiento. Los textos, cifras, nombres, productos, fechas, logotipos y fotografías dentro de las imágenes son ilustrativos; su uso final como activos de producto y sus permisos siguen abiertos en DEC-11.
+**Procedencia:** SRC-03 (PDF cliente), SRC-04 (ZIP cliente) y SRC-05 (ZIP administrador), conservados en [[09-Entradas/_Indice de entradas]]. Los JPEG extraídos son copias binarias de las entradas ZIP, con nombres estables C01–C10 y A01–A13; nombre original y SHA-256 individual en [[09-Entradas/Referencias UI 2026-10-02/Manifiesto de imagenes]]. Son **mockups de referencia aportados por Usuario**, no pantallas implementadas ni pruebas de comportamiento. Los textos, cifras, nombres, productos, fechas, logotipos y fotografías dentro de las imágenes son ilustrativos; su uso final como activos de producto y sus permisos siguen abiertos en DEC-11.
 
 ## Cliente: diez imágenes, escritorio y móvil en cada una
 
@@ -54,11 +54,15 @@ updated: 2026-10-02
 4. En cliente comprobar al menos escritorio, tablet y móvil; la barra inferior móvil da accesos principales y el menú da acceso a todas las secciones. Las tablas de historial y canjes pasan a tarjetas legibles; filtros pueden desplazarse dentro de su fila sin provocar scroll horizontal de página.
 5. En admin comprobar los mismos tres tamaños aunque no haya capturas móviles. Ningún control funcional desaparece en el cambio de tamaño. Probar foco/teclado, contraste, controles táctiles, desbordes y estados reales con capturas de implementación por UI-ID.
 
+## Adenda visual SRC-06 (2026-10-03)
+
+[[09-Entradas/Referencias UI 2026-10-03/Manifiesto|SRC-06 p. 4]] aporta una nueva imagen de Inicio cliente para **UI-13/F8-FE-05**, complementaria de C08. Guía jerarquía, tarjetas claras, fondo suave y acento violeta; cifras, fotos y logotipos son ilustrativos y su uso como activos depende de DEC-11/19. No hay variante móvil de esta imagen: F8-I-04 prueba escritorio/tablet/móvil. El nuevo PDF convierte A02/UI-23 en requisito de importación propuesto para F8, sujeto a sustituir expresamente DEC-16; la tabla histórica A02 conserva su procedencia original. A06/UI-19 y A11/UI-10 quedan como referencias históricas de vistas que SRC-06 pide retirar del menú; A09/UI-12 se mantiene con nuevo nombre de menú y título. Ver [[02-Arquitectura/Impacto SRC-06 y decisiones F8]].
+
 ## Puntos que requieren decisión antes de implementar
 
 - **DEC-04:** si la fuente legacy asocia varias marcas por correo y qué hace exactamente “Vincular nueva marca”; la regla aprobada de coincidencia por correo sigue vigente. No implementar asociación manual por ver un botón en C02.
 - **DEC-07/08:** comprobante, variantes y estados de canje; campos de perfil editables, contraseña y preferencias; no inventar mutaciones o permisos.
 - **DEC-09/10/11:** semántica de KPI/exportación, tipo de contenido, identidad final, licencias de imágenes/logos/fuentes.
-- **DEC-16:** A02 propone una fuente/carga CSV de clientes existentes que no figura en los requisitos aprobados y puede alterar la integración legacy. Queda inventariada, fuera del alcance comprometido hasta decisión de Paulo.
+- **DEC-16:** A02 propone una fuente/carga CSV de clientes existentes que no figura en los requisitos aprobados y puede alterar la integración legacy. Queda inventariada, fuera del alcance comprometido hasta decisión de Usuario.
 
 [[03-Modulos/Mapa de vistas frontend]] contiene el inventario de UI-ID y [[05-Desarrollo/Plan por fases]] asigna los lotes FE. Ninguna imagen prueba que la app exista o que la responsividad ya esté verificada.
