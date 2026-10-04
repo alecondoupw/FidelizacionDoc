@@ -1,15 +1,15 @@
 ---
 title: "F8-D-01 — Conciliar decisiones y contratos SRC-06"
 tags: [zontes, lote, f8]
-status: planificado
+status: verificado
 fase: F8
 frente: Core
-updated: 2026-10-03
+updated: 2026-10-04
 ---
 
 # F8-D-01 — Conciliar decisiones y contratos SRC-06
 
-**Estado:** planificado por SRC-06; implementación y pruebas no ejecutadas. La aprobación de cambios de alcance y contratos se registra en [[02-Arquitectura/Impacto SRC-06 y decisiones F8]] antes de abrir el trabajo operativo.
+**Estado (2026-10-04):** DEC-17/18/19 resueltas por Usuario el 2026-10-03 y registradas en [[02-Arquitectura/Decisiones tecnicas]]; contratos en [[02-Arquitectura/Contrato API v0 - F0]] §13 y `FidelizacionBackend/docs/API.md`. Evidencia en [[05-Desarrollo/Testing]] «Corridas F8».
 
 | Campo | Contenido |
 | --- | --- |
@@ -23,9 +23,9 @@ updated: 2026-10-03
 
 ## Aceptación
 
-- [ ] DEC-17 resuelve importación frente a DEC-16, fuente de verdad, normalización de correo, conflictos y retención de archivos/reportes.
-- [ ] DEC-18 resuelve vencimiento por asignación frente a DEC-06, grants de integración, datos históricos y corrección sin resta manual.
-- [ ] DEC-19 delimita retirada de Tendencias, búsqueda/notificaciones y activos de Inicio; contratos con roles, errores e idempotencia quedan escritos.
+- [x] DEC-17 resuelve importación frente a DEC-16, fuente de verdad, normalización de correo, conflictos y retención de archivos/reportes.
+- [x] DEC-18 resuelve vencimiento por asignación frente a DEC-06, grants de integración, datos históricos y corrección sin resta manual.
+- [x] DEC-19 delimita retirada de Tendencias, búsqueda/notificaciones y activos de Inicio; contratos con roles, errores e idempotencia quedan escritos.
 
 ## Verificación prevista
 

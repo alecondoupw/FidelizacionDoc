@@ -1,15 +1,15 @@
 ---
 title: "F8-I-02 — Conciliar suma canje y vencimiento"
 tags: [zontes, lote, f8]
-status: planificado
+status: pendiente
 fase: F8
 frente: Integración
-updated: 2026-10-03
+updated: 2026-10-04
 ---
 
 # F8-I-02 — Conciliar suma canje y vencimiento
 
-**Estado:** planificado por SRC-06; implementación y pruebas no ejecutadas. La aprobación de cambios de alcance y contratos se registra en [[02-Arquitectura/Impacto SRC-06 y decisiones F8]] antes de abrir el trabajo operativo.
+**Estado (2026-10-04):** Cubierto por pruebas automáticas (asignación, canje y vencimiento del remanente); falta el recorrido con sesiones reales. Evidencia en [[05-Desarrollo/Testing]] «Corridas F8».
 
 | Campo | Contenido |
 | --- | --- |

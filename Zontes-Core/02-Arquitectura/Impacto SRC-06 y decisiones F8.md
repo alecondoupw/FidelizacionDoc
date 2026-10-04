@@ -1,13 +1,13 @@
 ---
 title: "Impacto de SRC-06 y decisiones de F8"
 tags: [zontes, decisiones, f8]
-status: pendiente-de-decision
+status: decidido
 updated: 2026-10-03
 ---
 
 # Impacto de SRC-06 y decisiones de F8
 
-**Procedencia:** [[09-Entradas/Requerimientos_Administrador_y_Cliente.pdf|SRC-06]], 5 páginas, aportado por Usuario el 2026-10-03 con encargo de crear cadenas de tareas. El PDF contiene requisitos de producto y una imagen ilustrativa; no autoriza por sí solo modificar repositorios operativos, datos existentes ni servicios. Los requisitos nuevos se trazan en [[01-Contexto/Especificacion consolidada y trazabilidad de PDF]] como REQ-25–28 y se planifican en [[05-Desarrollo/Lotes F8 - correcciones SRC-06]]. **Estado: tareas documentadas, implementación y pruebas pendientes.**
+**Procedencia:** [[09-Entradas/Requerimientos_Administrador_y_Cliente.pdf|SRC-06]], 5 páginas, aportado por Usuario el 2026-10-03 con encargo de crear cadenas de tareas. El PDF contiene requisitos de producto y una imagen ilustrativa; no autoriza por sí solo modificar repositorios operativos, datos existentes ni servicios. Los requisitos nuevos se trazan en [[01-Contexto/Especificacion consolidada y trazabilidad de PDF]] como REQ-25–28 y se planifican en [[05-Desarrollo/Lotes F8 - correcciones SRC-06]]. **Estado: DEC-17/18/19 resueltas por Usuario el 2026-10-03** (detalle en [[02-Arquitectura/Decisiones tecnicas]]); implementación en curso. El texto de SRC-06 se extrajo del PDF y coincide con la trazabilidad REQ-25–28.
 
 | Punto de SRC-06 | Estado anterior registrado | Resolución documental para planear | Puerta antes de implementar |
 | --- | --- | --- | --- |

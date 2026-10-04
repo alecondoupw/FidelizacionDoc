@@ -1,15 +1,15 @@
 ---
 title: "F8-FE-03 — Formulario unico Registrar puntos"
 tags: [zontes, lote, f8]
-status: planificado
+status: implementado
 fase: F8
 frente: FE
-updated: 2026-10-03
+updated: 2026-10-04
 ---
 
 # F8-FE-03 — Formulario unico Registrar puntos
 
-**Estado:** planificado por SRC-06; implementación y pruebas no ejecutadas. La aprobación de cambios de alcance y contratos se registra en [[02-Arquitectura/Impacto SRC-06 y decisiones F8]] antes de abrir el trabajo operativo.
+**Estado (2026-10-04):** Formulario único «Ajuste de puntos» con búsqueda del cliente, marcas vinculadas, fecha de hoy a 2 años, confirmación y bloqueo de doble envío; verificado con pruebas y mutación. Revisión visual pendiente con sesión de administrador. Evidencia en [[05-Desarrollo/Testing]] «Corridas F8».
 
 | Campo | Contenido |
 | --- | --- |
@@ -23,9 +23,9 @@ updated: 2026-10-03
 
 ## Aceptación
 
-- [ ] Campos: correo con búsqueda/nombre, marca vinculada, Puntos a sumar (>0), motivo y fecha obligatoria no pasada.
-- [ ] La confirmación muestra cliente, marca, cantidad, motivo y vencimiento; botón final Registrar puntos y bloqueo de envío doble.
-- [ ] Retira bloque Registrar evento, selector Evento, resta manual, Procesar ahora y textos de corregir con otro ajuste; usa el copy exacto de SRC-06 p. 3.
+- [x] Campos: correo con búsqueda/nombre, marca vinculada, Puntos a sumar (>0), motivo y fecha obligatoria no pasada.
+- [x] La confirmación muestra cliente, marca, cantidad, motivo y vencimiento; botón final Registrar puntos y bloqueo de envío doble.
+- [x] Retira bloque Registrar evento, selector Evento, resta manual, Procesar ahora y textos de corregir con otro ajuste; usa el copy exacto de SRC-06 p. 3.
 
 ## Verificación prevista
 

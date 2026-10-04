@@ -69,6 +69,8 @@ Fuentes oficiales consultadas el 2026-10-03: instalación de Next.js (docs versi
 
 **F7:** sin dependencias nuevas. BE añade `render.yaml`, `firestore.rules`, `.github/workflows/vencer-puntos.yml`, `docs/` (API.md y colección Postman) y los comandos `respaldo:exportar`, `respaldo:restaurar` y `docs:postman`; variables nuevas `TRUST_PROXY` y `LIMITE_POR_MINUTO`; carpeta `respaldos/` ignorada por Git. FE: cabeceras de seguridad en `next.config.ts`.
 
+**F8:** BE añade `read-excel-file` 9.3.10 (MIT; dependencias `fflate`, `saxen`, `unzipper-esm`, `worker-f`), autorizada en DEC-17 para leer XLSX; `npm audit --omit=dev` sin avisos nuevos. `LEGACY_SOURCE` admite `importacion` (por defecto) o `sintetica` (añade el doble `ejemplo.test`).
+
 ## Variables de entorno (sólo nombres)
 
 | Repo | Variable | Uso | Valor en F0 |

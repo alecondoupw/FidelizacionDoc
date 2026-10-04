@@ -1,15 +1,15 @@
 ---
 title: "F8-BE-01 — Validar archivos y previsualizar importacion"
 tags: [zontes, lote, f8]
-status: planificado
+status: verificado
 fase: F8
 frente: BE
-updated: 2026-10-03
+updated: 2026-10-04
 ---
 
 # F8-BE-01 — Validar archivos y previsualizar importacion
 
-**Estado:** planificado por SRC-06; implementación y pruebas no ejecutadas. La aprobación de cambios de alcance y contratos se registra en [[02-Arquitectura/Impacto SRC-06 y decisiones F8]] antes de abrir el trabajo operativo.
+**Estado (2026-10-04):** Implementado (`src/importacion/`, `POST /admin/importaciones/vista-previa`) y verificado con dobles y contra Firestore real (F8-T01/T02); mutaciones detectadas (F8-T03). Evidencia en [[05-Desarrollo/Testing]] «Corridas F8».
 
 | Campo | Contenido |
 | --- | --- |
@@ -23,9 +23,9 @@ updated: 2026-10-03
 
 ## Aceptación
 
-- [ ] Rechaza marca ausente, formato inválido y columnas nombre/correo faltantes; informa fila y motivo para obligatorios vacíos o correo inválido.
-- [ ] Distingue repetición dentro de la misma marca de correo ya presente en otra marca; muestra asociaciones existentes/nuevas y casos ambiguos sin resolverlos automáticamente.
-- [ ] La vista previa puede cancelarse; no escribe cuentas Firebase, vínculos ni saldos y limita tamaño/volumen según contrato autorizado.
+- [x] Rechaza marca ausente, formato inválido y columnas nombre/correo faltantes; informa fila y motivo para obligatorios vacíos o correo inválido.
+- [x] Distingue repetición dentro de la misma marca de correo ya presente en otra marca; muestra asociaciones existentes/nuevas y casos ambiguos sin resolverlos automáticamente.
+- [x] La vista previa puede cancelarse; no escribe cuentas Firebase, vínculos ni saldos y limita tamaño/volumen según contrato autorizado.
 
 ## Verificación prevista
 

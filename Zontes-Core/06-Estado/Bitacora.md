@@ -71,3 +71,12 @@ En futuras entradas separar **observación**, **decisión de Usuario**, **implem
 ## 2026-10-03 — planificación de SRC-06
 
 Usuario aportó SRC-06 y pidió nuevas cadenas de tareas. Se preservaron el PDF y la imagen de Inicio p. 4 en 09-Entradas; se trazaron REQ-25–28 y 14 tareas F8 en cuatro cadenas. DEC-17/18/19 registran conflictos con DEC-16, vigencia por marca, resta manual y Tendencias. Resultado: **plan documental creado, código FE/BE no tocado, pruebas de F8 no ejecutadas**. Siguiente: Usuario resuelve las puertas antes de comenzar implementación y confirma rutas operativas del host actual.
+
+
+## 2026-10-03/04 — ejecución de F8
+
+| Fecha | Hecho | Evidencia / límite |
+| --- | --- | --- |
+| 2026-10-03 | **Decisión de Usuario:** iniciar F8. **DEC-17:** recortar + minúsculas, backend lee el archivo con `read-excel-file`, conflictos conservados y señalados, resumen y detalle 90 días con 5.000 filas. **DEC-18:** la API de integración exige fecha, sin corrección manual, rutas antiguas retiradas también del backend, vencimiento hasta 2 años. **DEC-19:** Tendencias fuera (pantalla y API), avisos calculados, banner ilustrado sin fotos, destacadas en el banner | [[02-Arquitectura/Decisiones tecnicas]]. El texto de SRC-06 se extrajo del PDF y coincide con REQ-25–28. |
+| 2026-10-04 | **Implementación F8 (BE):** asignaciones con fecha propia, integración con `vence`, rutas retiradas, importación con vista previa, confirmación idempotente, reporte y pendientes, fuente del vínculo sobre los importados, `GET /reglas`; dependencia `read-excel-file`. **Verificación:** check 278; Firestore real 163/163 sin índices compuestos; 5 mutaciones detectadas; colección Postman al día | [[05-Desarrollo/Testing]] F8-T01…T04. Sin commit. |
+| 2026-10-04 | **Implementación F8 (FE):** Registrar puntos de un solo formulario, Importar clientes, pendientes de registro y marcas importadas en Clientes, menú sin Tendencias ni Vencimiento, «Publicaciones por marca», nuevo Inicio según SRC-06. **Verificación:** check 118, 2 mutaciones, smoke 29/29; Inicio revisado con la sesión de cliente de Usuario en tres tamaños | F8-T05…T08. Pendientes F8-I-01…I-03 y la revisión visual del panel. |

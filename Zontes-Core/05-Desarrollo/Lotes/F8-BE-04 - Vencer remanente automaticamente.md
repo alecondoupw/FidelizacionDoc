@@ -1,15 +1,15 @@
 ---
 title: "F8-BE-04 — Vencer remanente automaticamente"
 tags: [zontes, lote, f8]
-status: planificado
+status: verificado
 fase: F8
 frente: BE
-updated: 2026-10-03
+updated: 2026-10-04
 ---
 
 # F8-BE-04 — Vencer remanente automaticamente
 
-**Estado:** planificado por SRC-06; implementación y pruebas no ejecutadas. La aprobación de cambios de alcance y contratos se registra en [[02-Arquitectura/Impacto SRC-06 y decisiones F8]] antes de abrir el trabajo operativo.
+**Estado (2026-10-04):** Cada lote vence en su propia fecha; el cron diario (F7) y la consulta del saldo vencen sólo el remanente, sin repetir. La configuración por marca se retiró sin tocar los lotes existentes, que conservan su fecha. Evidencia en [[05-Desarrollo/Testing]] «Corridas F8».
 
 | Campo | Contenido |
 | --- | --- |
@@ -23,9 +23,9 @@ updated: 2026-10-03
 
 ## Aceptación
 
-- [ ] El vencimiento usa la fecha propia de cada lote; canjes consumen lotes según política vigente y sólo vence el remanente.
-- [ ] La ejecución programada y la lectura/reconciliación son idempotentes; la UI no depende de Procesar ahora.
-- [ ] Lotes históricos conservan su fecha original; transición/migración se verifica antes de cambiar o retirar configuración por marca.
+- [x] El vencimiento usa la fecha propia de cada lote; canjes consumen lotes según política vigente y sólo vence el remanente.
+- [x] La ejecución programada y la lectura/reconciliación son idempotentes; la UI no depende de Procesar ahora.
+- [x] Lotes históricos conservan su fecha original; transición/migración se verifica antes de cambiar o retirar configuración por marca. (sin migración: no se modifican lotes ni movimientos; la colección `vigencias` queda como histórico sin uso).
 
 ## Verificación prevista
 

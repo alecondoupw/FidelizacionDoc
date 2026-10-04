@@ -1,15 +1,15 @@
 ---
 title: "F8-FE-01 — Flujo de importacion administrador"
 tags: [zontes, lote, f8]
-status: planificado
+status: implementado
 fase: F8
 frente: FE
-updated: 2026-10-03
+updated: 2026-10-04
 ---
 
 # F8-FE-01 — Flujo de importacion administrador
 
-**Estado:** planificado por SRC-06; implementación y pruebas no ejecutadas. La aprobación de cambios de alcance y contratos se registra en [[02-Arquitectura/Impacto SRC-06 y decisiones F8]] antes de abrir el trabajo operativo.
+**Estado (2026-10-04):** Implementado en `/admin/clientes/importar` (UI-23) y verificado con pruebas de componentes. Falta la revisión visual en tres tamaños con una sesión de administrador. Evidencia en [[05-Desarrollo/Testing]] «Corridas F8».
 
 | Campo | Contenido |
 | --- | --- |
@@ -23,8 +23,8 @@ updated: 2026-10-03
 
 ## Aceptación
 
-- [ ] El flujo muestra nombre, correo, marca, asociaciones existentes/nuevas, filas excluidas y motivos antes de confirmar; permite cancelar.
-- [ ] Al confirmar, muestra indicadores no excluyentes, reporte descargable y errores por fila sin exponer datos de otra marca; no ofrece alta manual de clientes.
+- [x] El flujo muestra nombre, correo, marca, asociaciones existentes/nuevas, filas excluidas y motivos antes de confirmar; permite cancelar.
+- [x] Al confirmar, muestra indicadores no excluyentes, reporte descargable y errores por fila sin exponer datos de otra marca; no ofrece alta manual de clientes.
 - [ ] Estados de carga/error/permiso/éxito y diseño usable en escritorio, tablet y móvil con foco y controles accesibles.
 
 ## Verificación prevista

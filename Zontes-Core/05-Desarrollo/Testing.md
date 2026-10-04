@@ -196,4 +196,24 @@ Escenarios cubiertos: **T-AUTHZ** (el perfil leído antes de verificar sólo se 
 
 Fallo encontrado y corregido en F7: la primera prueba del simulacro esperaba nanosegundos exactos, pero Firestore guarda microsegundos; la prueba compara ahora con lo guardado en el origen. El manual de uso afirmaba que el usuario ve una referencia de error que la interfaz no mostraba; se implementó.
 
+## Corridas F8 — 2026-10-04
+
+Código F8 **sin commit** sobre BE `1a46ea6` y FE `e83b92f`. Firestore real = proyecto de desarrollo de Usuario con colecciones temporales `prueba_*` borradas al terminar. Revisión en el navegador con los servidores de desarrollo de Usuario (`next dev` + `tsx watch`) y su sesión de cliente.
+
+| ID | Prueba | Comando | Resultado | Límite |
+| --- | --- | --- | --- | --- |
+| F8-T01 | BE completo con dobles | `npm run check` (FidelizacionBackend) | PASS, exit 0; 278 pasadas, 78 omitidas (Firestore) | — |
+| F8-T02 | Contratos contra Firestore real | `FIRESTORE_INTEGRATION=1 npm run test:firebase` | PASS 163/163: importación (vista previa, confirmación, idempotencia, conflictos, revisión, pendientes con `uid == null` + `array-contains` + orden por id **sin índices compuestos**, reporte y purga a 90 días), asignaciones con fecha propia, eventos con `vence`, vencimiento del remanente; 0 colecciones `prueba_*` restantes | — |
+| F8-T03 | Mutaciones BE | permitir restas en la asignación; quitar el máximo de 2 años; importar correos de administradores; sobrescribir conflictos; reglas del cliente de otras marcas | Fallan 1, 2, 2, 1 y 1 pruebas; restaurado todo pasa | — |
+| F8-T04 | Documentación de la API | prueba de la colección Postman (52 rutas, 11 grupos) | PASS 54/54: la colección cubre exactamente las rutas de Express y cada ejemplo, incluidos los archivos de importación, pasa la validación | — |
+| F8-T05 | FE completo | `npm run check` (FidelizacionFronted) | PASS, exit 0; 118 pasadas, 3 omitidas | Componentes con sesión simulada |
+| F8-T06 | Mutaciones FE | ofrecer marcas no vinculadas en Registrar puntos; avisar vencimientos de más de 30 días | Fallan 1 y 2 pruebas; restaurado pasa | — |
+| F8-T07 | Arranque | `npm run smoke` en FE y BE | FE PASS 29/29 (incluye `/admin/clientes/importar`; sin `/admin/tendencias`); BE PASS 2/2 | — |
+| F8-T08 | Inicio cliente en el navegador | sesión de cliente de Usuario, 1280/768/375 px | **PASS:** saludo, banner con «Explorar catálogo» y 2 diapositivas (mensaje + destacada), saldo y por marca, «Ver detalles», accesos, marcas vinculadas y «¿Cómo ganar puntos?» con las reglas reales (Kiden 4, Zontes 3); campana con avisos; sin desbordes ni controles sin nombre | Cuenta con 0 puntos: el vencimiento con datos sólo en componentes. Pantallas de administración sin revisión visual (falta sesión de administrador) |
+| F8-T09 | Recorridos integrados F8-I-01…I-03 | — | **PENDIENTE:** importar un archivo sintético, registrar puntos y revisar la navegación con sesión de administrador | Requiere autorización de Usuario para escribir en el proyecto |
+
+Escenarios cubiertos: **T-IMPORT** (columnas obligatorias, filas con error, duplicados en el archivo y en la marca, conflictos conservados, correo de administrador o con verificación pendiente en revisión, CSV con `;`/`,`/tabulador, BOM y Windows-1252, XLSX, 5 MB y 5.000 filas, vista previa sin escrituras, confirmación idempotente, reporte CSV/XLSX), **T-LINK** (cuenta verificada vinculada en el acto, pendientes hasta registrarse, varias marcas acumuladas sin reemplazar, fuente del registro sobre los importados), **T-GRANT-DATE** (sólo sumas enteras > 0, motivo, fecha de hoy a 2 años con fin del día en Bolivia, auditoría con responsable y vencimiento, una sola vez por solicitud), **T-EXP** (sólo vence el remanente, sin doble descuento), **T-NAV** (rutas retiradas → 404; menú sin Tendencias ni Vencimiento; «Publicaciones por marca»), **T-HOME** (datos reales, avisos calculados, buscador, estados vacíos y error parcial).
+
+Fallos encontrados y corregidos en F8: el reporte de actividad devolvía `-0` en «ajustes negativos» cuando no había ninguno; las asignaciones se guardaban como «ajuste» y no habrían contado en «puntos otorgados» del Dashboard (ahora son otorgamientos sin evento); el correo con espacios alrededor no pasaba la validación (SRC-06 pide recortarlos).
+
 Una captura o una compilación no es prueba de reglas. Los resultados se registrarán aquí o se enlazarán desde una nota de evidencia dentro de este Core. Ver [[05-Desarrollo/Criterio de terminado]] y [[06-Estado/Bitacora]].

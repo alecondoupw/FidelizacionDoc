@@ -1,15 +1,15 @@
 ---
 title: "F8-FE-04 — Limpiar menu y renombrar publicaciones"
 tags: [zontes, lote, f8]
-status: planificado
+status: implementado
 fase: F8
 frente: FE
-updated: 2026-10-03
+updated: 2026-10-04
 ---
 
 # F8-FE-04 — Limpiar menu y renombrar publicaciones
 
-**Estado:** planificado por SRC-06; implementación y pruebas no ejecutadas. La aprobación de cambios de alcance y contratos se registra en [[02-Arquitectura/Impacto SRC-06 y decisiones F8]] antes de abrir el trabajo operativo.
+**Estado (2026-10-04):** Menú sin Tendencias ni Vencimiento (páginas retiradas; sin enlaces huérfanos), «Publicaciones por marca» en menú y título; API de tendencias retirada según DEC-19. Smoke 29/29. Evidencia en [[05-Desarrollo/Testing]] «Corridas F8».
 
 | Campo | Contenido |
 | --- | --- |
@@ -23,9 +23,9 @@ updated: 2026-10-03
 
 ## Aceptación
 
-- [ ] El menú y la navegación no muestran Tendencias ni Vencimiento; antiguos enlaces se redirigen o retiran según contrato aprobado, sin dejar rutas huérfanas.
-- [ ] Menú y título de UI-12 dicen Publicaciones por marca; botones, formularios, demás textos y permisos se conservan.
-- [ ] Dashboard, Actividad, Movimientos, Canjes y Exportación permanecen disponibles; la API de tendencias sólo se retira si DEC-19 lo confirma.
+- [x] El menú y la navegación no muestran Tendencias ni Vencimiento; antiguos enlaces se redirigen o retiran según contrato aprobado, sin dejar rutas huérfanas.
+- [x] Menú y título de UI-12 dicen Publicaciones por marca; botones, formularios, demás textos y permisos se conservan.
+- [x] Dashboard, Actividad, Movimientos, Canjes y Exportación permanecen disponibles; la API de tendencias sólo se retira si DEC-19 lo confirma.
 
 ## Verificación prevista
 

@@ -1,15 +1,15 @@
 ---
 title: "F8-BE-03 — Registrar suma manual con fecha propia"
 tags: [zontes, lote, f8]
-status: planificado
+status: verificado
 fase: F8
 frente: BE
-updated: 2026-10-03
+updated: 2026-10-04
 ---
 
 # F8-BE-03 — Registrar suma manual con fecha propia
 
-**Estado:** planificado por SRC-06; implementación y pruebas no ejecutadas. La aprobación de cambios de alcance y contratos se registra en [[02-Arquitectura/Impacto SRC-06 y decisiones F8]] antes de abrir el trabajo operativo.
+**Estado (2026-10-04):** Implementado (`POST /admin/asignaciones`; retirados `/admin/eventos`, `/admin/ajustes`, `/admin/vigencias*` y `/admin/vencimientos/procesar`; la integración exige `vence`) y verificado con dobles y contra Firestore real. Evidencia en [[05-Desarrollo/Testing]] «Corridas F8».
 
 | Campo | Contenido |
 | --- | --- |
@@ -23,9 +23,9 @@ updated: 2026-10-03
 
 ## Aceptación
 
-- [ ] El BE exige cliente por correo, marca vinculada, puntos > 0, motivo y fecha no anterior al día de registro en America/La_Paz; rechaza 0 y negativos.
-- [ ] Cada operación guarda administrador, fecha, cliente, marca, cantidad, motivo y vencimiento propio; no cambia lotes previos ni mezcla marcas.
-- [ ] Una confirmación repetida produce un solo movimiento; el contrato deja de permitir resta manual y documenta el destino del flujo de eventos/ajustes previo.
+- [x] El BE exige cliente por correo, marca vinculada, puntos > 0, motivo y fecha no anterior al día de registro en America/La_Paz; rechaza 0 y negativos.
+- [x] Cada operación guarda administrador, fecha, cliente, marca, cantidad, motivo y vencimiento propio; no cambia lotes previos ni mezcla marcas.
+- [x] Una confirmación repetida produce un solo movimiento; el contrato deja de permitir resta manual y documenta el destino del flujo de eventos/ajustes previo.
 
 ## Verificación prevista
 

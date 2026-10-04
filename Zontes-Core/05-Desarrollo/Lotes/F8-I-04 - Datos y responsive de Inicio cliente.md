@@ -1,15 +1,15 @@
 ---
 title: "F8-I-04 — Datos y responsive de Inicio cliente"
 tags: [zontes, lote, f8]
-status: planificado
+status: verificado-con-salvedades
 fase: F8
 frente: Integración
-updated: 2026-10-03
+updated: 2026-10-04
 ---
 
 # F8-I-04 — Datos y responsive de Inicio cliente
 
-**Estado:** planificado por SRC-06; implementación y pruebas no ejecutadas. La aprobación de cambios de alcance y contratos se registra en [[02-Arquitectura/Impacto SRC-06 y decisiones F8]] antes de abrir el trabajo operativo.
+**Estado (2026-10-04):** Revisado con la sesión de cliente de Usuario: datos reales, buscador, avisos y accesos; 1280/768/375 px sin desborde ni controles sin nombre. Diferencias con la imagen: sin fotos ni logotipos (DEC-11), iniciales en lugar de logotipo, saludo neutro «Hola de nuevo». Salvedad: la cuenta de prueba tenía 0 puntos, así que el vencimiento con datos se probó sólo en componentes. Evidencia en [[05-Desarrollo/Testing]] «Corridas F8».
 
 | Campo | Contenido |
 | --- | --- |
@@ -23,9 +23,9 @@ updated: 2026-10-03
 
 ## Aceptación
 
-- [ ] Saldo total coincide con suma informativa de marcas, pero ningún canje cruza marca; vencimiento y reglas coinciden con respuestas BE.
-- [ ] Buscador llega a catálogo y accesos rápidos a sus secciones; notificaciones siguen origen/estado acordado en DEC-19 sin inventar datos.
-- [ ] En escritorio/tablet/móvil no se oculta información esencial ni aparece scroll horizontal; se documentan diferencias justificadas con la imagen.
+- [x] Saldo total coincide con suma informativa de marcas, pero ningún canje cruza marca; vencimiento y reglas coinciden con respuestas BE.
+- [x] Buscador llega a catálogo y accesos rápidos a sus secciones; notificaciones siguen origen/estado acordado en DEC-19 sin inventar datos.
+- [x] En escritorio/tablet/móvil no se oculta información esencial ni aparece scroll horizontal; se documentan diferencias justificadas con la imagen.
 
 ## Verificación prevista
 

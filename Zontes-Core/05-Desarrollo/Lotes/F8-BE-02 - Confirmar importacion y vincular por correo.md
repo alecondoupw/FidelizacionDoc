@@ -1,15 +1,15 @@
 ---
 title: "F8-BE-02 — Confirmar importacion y vincular por correo"
 tags: [zontes, lote, f8]
-status: planificado
+status: verificado
 fase: F8
 frente: BE
-updated: 2026-10-03
+updated: 2026-10-04
 ---
 
 # F8-BE-02 — Confirmar importacion y vincular por correo
 
-**Estado:** planificado por SRC-06; implementación y pruebas no ejecutadas. La aprobación de cambios de alcance y contratos se registra en [[02-Arquitectura/Impacto SRC-06 y decisiones F8]] antes de abrir el trabajo operativo.
+**Estado (2026-10-04):** Implementado (`POST /admin/importaciones`, reporte 90 días, `/admin/importados`, fuente del vínculo sobre `importados`) y verificado con dobles y contra Firestore real. Evidencia en [[05-Desarrollo/Testing]] «Corridas F8».
 
 | Campo | Contenido |
 | --- | --- |
@@ -23,9 +23,9 @@ updated: 2026-10-03
 
 ## Aceptación
 
-- [ ] Importar una segunda o tercera marca agrega asociación sin borrar las anteriores; repetir el archivo no duplica cuentas, filas ni vínculos ni sobrescribe conflictos.
-- [ ] Una cuenta ya verificada se vincula; sin cuenta verificada queda pendiente; coincidencias ambiguas se aíslan para revisión y jamás se convierten en administradores.
-- [ ] Entrega reporte descargable y auditable con importados, vinculados, pendientes, duplicados y errores; explica que vinculados pueden estar dentro de importados.
+- [x] Importar una segunda o tercera marca agrega asociación sin borrar las anteriores; repetir el archivo no duplica cuentas, filas ni vínculos ni sobrescribe conflictos.
+- [x] Una cuenta ya verificada se vincula; sin cuenta verificada queda pendiente; coincidencias ambiguas se aíslan para revisión y jamás se convierten en administradores.
+- [x] Entrega reporte descargable y auditable con importados, vinculados, pendientes, duplicados y errores; explica que vinculados pueden estar dentro de importados.
 
 ## Verificación prevista
 

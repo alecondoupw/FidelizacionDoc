@@ -1,15 +1,15 @@
 ---
 title: "F8-FE-02 — Clientes y marcas asociadas administrador"
 tags: [zontes, lote, f8]
-status: planificado
+status: implementado
 fase: F8
 frente: FE
-updated: 2026-10-03
+updated: 2026-10-04
 ---
 
 # F8-FE-02 — Clientes y marcas asociadas administrador
 
-**Estado:** planificado por SRC-06; implementación y pruebas no ejecutadas. La aprobación de cambios de alcance y contratos se registra en [[02-Arquitectura/Impacto SRC-06 y decisiones F8]] antes de abrir el trabajo operativo.
+**Estado (2026-10-04):** Botón «Importar clientes», vista «Pendientes de registro» y marcas importadas en el detalle; verificado con pruebas de componentes. Revisión visual pendiente con sesión de administrador. Evidencia en [[05-Desarrollo/Testing]] «Corridas F8».
 
 | Campo | Contenido |
 | --- | --- |
@@ -23,9 +23,9 @@ updated: 2026-10-03
 
 ## Aceptación
 
-- [ ] Búsqueda por correo y filtro por marca reflejan la respuesta autorizada del BE; cada cliente muestra 0–3 asociaciones y su estado.
-- [ ] El listado no presenta Crear cliente manualmente; la gestión de administradores sigue en UI-06 independiente.
-- [ ] Saldo y movimientos se muestran por marca, incluso tras reimportación, sin suma canjeable compartida.
+- [x] Búsqueda por correo y filtro por marca reflejan la respuesta autorizada del BE; cada cliente muestra 0–3 asociaciones y su estado.
+- [x] El listado no presenta Crear cliente manualmente; la gestión de administradores sigue en UI-06 independiente.
+- [x] Saldo y movimientos se muestran por marca, incluso tras reimportación, sin suma canjeable compartida. (el detalle conserva el saldo por marca; la importación no toca saldos).
 
 ## Verificación prevista
 

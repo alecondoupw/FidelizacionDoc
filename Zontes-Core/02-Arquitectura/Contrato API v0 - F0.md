@@ -181,3 +181,19 @@ Según DEC-13; evidencia en [[05-Desarrollo/Testing]] «Corridas F7». Referenci
 | FE | `GET /me` espera hasta 75 s (backend gratuito suspendido) y avisa a los 5 s; la pantalla de acceso llama a `/health` para despertarlo; un 5xx muestra «(referencia xxxxxxxx)» con el inicio del `requestId` |
 | Cabeceras FE | `X-Frame-Options: DENY`, `X-Content-Type-Options: nosniff`, `Referrer-Policy: strict-origin-when-cross-origin`, `Permissions-Policy` restrictiva |
 | Firestore | `firestore.rules` deniega todo acceso directo; sólo el Admin SDK del BE accede |
+
+
+## 13. Correcciones de SRC-06 — implementado en F8 (2026-10-04)
+
+Según DEC-17/18/19; referencia completa en `FidelizacionBackend/docs/API.md`, evidencia en [[05-Desarrollo/Testing]] «Corridas F8».
+
+| Cambio | Contrato |
+| --- | --- |
+| Retiradas | `POST /admin/eventos`, `POST /admin/ajustes`, `GET/PUT /admin/vigencias*`, `POST /admin/vencimientos/procesar`, `GET /admin/reportes/tendencias` → 404 |
+| Asignación | `POST /admin/asignaciones` `{ idSolicitud, marca, correoCliente, puntos (> 0), motivo, vence (AAAA-MM-DD, hoy a 2 años) }` → 201/200 `{ movimientoId, puntos, venceEn, disponible, repetido }`; movimiento `otorgamiento` sin evento; auditoría `puntos.asignados` con motivo y vencimiento |
+| Integración | `POST /integracion/eventos` exige `vence` con el mismo rango |
+| Reglas del cliente | `GET /reglas` → `{ items: [{ marca, evento, puntos }] }` activas de sus marcas |
+| Importación | `POST /admin/importaciones/vista-previa?marca` y `POST /admin/importaciones?marca&archivo&idImportacion` con el archivo como cuerpo (≤ 5 MB, ≤ 5.000 filas); `GET /admin/importaciones`, `GET /admin/importaciones/{id}/reporte?formato`, `GET /admin/importados` (pendientes de registro); el detalle del cliente añade `importadas` |
+| Fuente del vínculo | `importados/{sha256(correo)}` (marcas con nombre, fecha e importación; `uid` de la cuenta cuando existe). `LEGACY_SOURCE=importacion` por defecto; `sintetica` suma el doble de desarrollo |
+
+**Modelo Firestore F8 (sin índices compuestos):** `importados/{huella}`, `importaciones/{id}` (resumen, estado, `expiraEn` a 90 días) y `importaciones/{id}/partes/{n}` (≤ 500 filas por documento). La confirmación procesa grupos de 40 filas por transacción leyendo todo antes de escribir. `vigencias/{marca}` queda como histórico sin uso.

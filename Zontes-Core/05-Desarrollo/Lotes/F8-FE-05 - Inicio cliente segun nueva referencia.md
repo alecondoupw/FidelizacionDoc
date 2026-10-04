@@ -1,15 +1,15 @@
 ---
 title: "F8-FE-05 — Inicio cliente segun nueva referencia"
 tags: [zontes, lote, f8]
-status: planificado
+status: verificado
 fase: F8
 frente: FE
-updated: 2026-10-03
+updated: 2026-10-04
 ---
 
 # F8-FE-05 — Inicio cliente segun nueva referencia
 
-**Estado:** planificado por SRC-06; implementación y pruebas no ejecutadas. La aprobación de cambios de alcance y contratos se registra en [[02-Arquitectura/Impacto SRC-06 y decisiones F8]] antes de abrir el trabajo operativo.
+**Estado (2026-10-04):** Nuevo Inicio con encabezado (saludo, fecha, buscador, avisos, perfil), banner ilustrado que rota destacadas, saldo con «Ver detalles», accesos, marcas vinculadas y «¿Cómo ganar puntos?» desde `GET /reglas`; pruebas de componentes y revisión en el navegador con la sesión de cliente de Usuario en 1280/768/375 px sin desbordes. Evidencia en [[05-Desarrollo/Testing]] «Corridas F8».
 
 | Campo | Contenido |
 | --- | --- |
@@ -23,9 +23,9 @@ updated: 2026-10-03
 
 ## Aceptación
 
-- [ ] Sidebar/header, saludo/fecha, búsqueda, notificaciones/perfil, banner con Explorar catálogo, puntos por marca, vencimientos, accesos y Mis marcas siguen SRC-06.
-- [ ] Total de puntos sólo informativo; cada marca conserva saldo y canjes propios; Puntos por vencer identifica marca y fecha reales, o estado vacío claro.
-- [ ] Cómo ganar puntos muestra sólo reglas activas; Gestionar marcas no vincula por selección; contempla sin marcas/puntos/movimientos y adapta 1280/768/375 px.
+- [x] Sidebar/header, saludo/fecha, búsqueda, notificaciones/perfil, banner con Explorar catálogo, puntos por marca, vencimientos, accesos y Mis marcas siguen SRC-06.
+- [x] Total de puntos sólo informativo; cada marca conserva saldo y canjes propios; Puntos por vencer identifica marca y fecha reales, o estado vacío claro.
+- [x] Cómo ganar puntos muestra sólo reglas activas; Gestionar marcas no vincula por selección; contempla sin marcas/puntos/movimientos y adapta 1280/768/375 px.
 
 ## Verificación prevista
 

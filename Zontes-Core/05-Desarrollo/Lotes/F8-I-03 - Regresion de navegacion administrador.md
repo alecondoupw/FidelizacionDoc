@@ -1,15 +1,15 @@
 ---
 title: "F8-I-03 — Regresion de navegacion administrador"
 tags: [zontes, lote, f8]
-status: planificado
+status: pendiente
 fase: F8
 frente: Integración
-updated: 2026-10-03
+updated: 2026-10-04
 ---
 
 # F8-I-03 — Regresion de navegacion administrador
 
-**Estado:** planificado por SRC-06; implementación y pruebas no ejecutadas. La aprobación de cambios de alcance y contratos se registra en [[02-Arquitectura/Impacto SRC-06 y decisiones F8]] antes de abrir el trabajo operativo.
+**Estado (2026-10-04):** Smoke de rutas y pruebas de componentes en verde; falta el recorrido visual con sesión de administrador en tres tamaños. Evidencia en [[05-Desarrollo/Testing]] «Corridas F8».
 
 | Campo | Contenido |
 | --- | --- |

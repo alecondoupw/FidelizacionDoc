@@ -2,7 +2,7 @@
 title: "Guion de demostración"
 tags: [zontes, manual, demo, f7]
 status: preparado
-updated: 2026-10-03
+updated: 2026-10-04
 ---
 
 # Guion de demostración (T-DEMO)
@@ -14,7 +14,7 @@ Recorrido de unos 15 minutos que muestra el núcleo pedido en SRC-01 p. 2 (usuar
 Comandos en `FidelizacionBackend` con el `.env` del proyecto que se va a mostrar:
 
 1. Administrador: `npm run admin:bootstrap -- --email <correo del presentador>` (sólo si aún no hay ninguno) y definir la contraseña con el enlace.
-2. Cliente de prueba vinculado a las tres marcas: `npm run dev:usuario-prueba -- --email cliente.multimarca@ejemplo.test` y definir su contraseña con el enlace. (El comando se niega con `NODE_ENV=production`; en el despliegue se ejecuta desde el equipo local apuntando al mismo proyecto.) Después, entrar una vez como cliente para completar el registro.
+2. Cliente de prueba (su vínculo llega por importación, paso 2 del recorrido; con `LEGACY_SOURCE=sintetica` ya figura en las tres marcas): `npm run dev:usuario-prueba -- --email cliente.multimarca@ejemplo.test` y definir su contraseña con el enlace. (El comando se niega con `NODE_ENV=production`; en el despliegue se ejecuta desde el equipo local apuntando al mismo proyecto.) Después, entrar una vez como cliente para completar el registro.
 3. Catálogo: `npm run catalogo:cargar -- --archivo datos/catalogo.ejemplo.json` (no pisa beneficios existentes).
 4. Dos ventanas: una normal para el administrador y otra privada para el cliente.
 
@@ -25,17 +25,17 @@ Sustituir `AAAAMMDD` por la fecha del día.
 | # | Rol | Acción | Resultado esperado |
 | --- | --- | --- | --- |
 | 1 | Admin | Ingresar en `/admin/ingresar` | Dashboard con KPI de 30 días y gráficos |
-| 2 | Admin | Reglas de puntos → regla **Zontes · Compra = 100** (crearla o editarla) y activa | La vista previa resume la regla («… otorga 100 puntos para Zontes.») |
-| 3 | Admin | Registrar puntos → Registrar evento: Zontes, Compra, `cliente.multimarca@ejemplo.test` | «Evento registrado: 100 puntos de Zontes» con su vencimiento, o «sin vencimiento» |
-| 4 | Admin (opcional, Postman) | `POST /admin/eventos` dos veces con el mismo `idExterno` `demo-AAAAMMDD` (colección de `FidelizacionBackend/docs/postman`) | La segunda responde 200 con `repetido: true` y **no** otorga otros 100 (idempotencia). El formulario genera su propio identificador y lo conserva si falla la red |
-| 5 | Cliente | Ingresar en `/ingresar` | Inicio con el saldo total y por marca, accesos y últimos movimientos |
+| 2 | Admin | Clientes → **Importar clientes**: Zontes y un CSV con `nombre;correo` y la fila `Cliente Demo;cliente.multimarca@ejemplo.test` → vista previa → confirmar | La fila sale «Ya vinculado» o «Se vinculará a su cuenta»; resumen y reporte descargable |
+| 3 | Admin | Registrar puntos → correo `cliente.multimarca@ejemplo.test` → Buscar → Zontes, 100, «Compra en tienda», vence en un año → Revisar y registrar → Registrar puntos | «Se sumaron 100 puntos a … en Zontes; vencen el …» |
+| 4 | Admin (opcional, Postman) | `POST /admin/asignaciones` dos veces con el mismo `idSolicitud` (colección de `FidelizacionBackend/docs/postman`) | La segunda responde 200 con `repetido: true` y no suma otra vez (idempotencia) |
+| 5 | Cliente | Ingresar en `/ingresar` | Inicio: saludo, banner, total y saldo por marca, puntos por vencer con su fecha, marcas vinculadas y «¿Cómo ganar puntos?» |
 | 6 | Cliente | Historial | El movimiento de +100 en Zontes |
 | 7 | Cliente | Catálogo → Zontes → **Revisión de mantenimiento (ejemplo)** (80 pts) → confirmar | Código `ML-…` con QR; el saldo baja 80 |
 | 8 | Cliente | Catálogo → **Casco integral (ejemplo)**, talla S | Opción agotada y no seleccionable; NIU «Casco urbano» aparece agotado |
 | 9 | Admin | Canjes en mostrador → escribir el código del paso 7 → Marcar entregado | Estado «Entregado» |
 | 10 | Cliente | Mis canjes → el canje | Estado «Entregado» |
-| 11 | Admin | Contenido por marca → Zontes → Nuevo contenido: Promoción, «Demo AAAAMMDD», destacada, activa | Estado «Publicada»; vista previa |
-| 12 | Cliente | Volver a Inicio | La promoción en el carrusel de destacadas |
+| 11 | Admin | Publicaciones por marca → Zontes → Nuevo contenido: Promoción, «Demo AAAAMMDD», destacada, activa | Estado «Publicada»; vista previa |
+| 12 | Cliente | Volver a Inicio | La promoción rota en el banner y aparece en la campana |
 | 13 | Admin | Dashboard → Actualizar; Movimientos del día; Exportar → Movimientos → CSV | Las cifras incluyen el otorgamiento y el canje; el CSV abre en Excel con tildes y columnas correctas |
 | 14 | Admin | Clientes → `cliente.multimarca@ejemplo.test` → Gestionar | Puntos por marca e historial de cambios |
 | 15 | Admin | Administradores → intentar desactivar la propia cuenta | Rechazado: no se puede actuar sobre la cuenta propia |

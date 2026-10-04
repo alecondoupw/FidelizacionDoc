@@ -20,9 +20,12 @@ updated: 2026-10-03
 - [ ] Diseñar variantes admin tablet/móvil: SRC-05 sólo aporta escritorio; verificar cada UI-ID en tres tamaños.
 - [x] Lotes ejecutables F1–F7 creados: [[05-Desarrollo/Lotes F1-F7 - indice]].
 
-## F8 — correcciones de SRC-06, planificadas
+## F8 — correcciones de SRC-06, implementadas en local (2026-10-04)
 
-- [ ] Resolver DEC-17/18/19 en [[02-Arquitectura/Impacto SRC-06 y decisiones F8]] con Usuario y versionar contratos antes de código.
+- [x] DEC-17/18/19 resueltas por Usuario y contratos escritos (§13).
+- [ ] Recorridos F8-I-01…I-03 con sesión de administrador y un archivo sintético (requiere autorización para escribir en el proyecto de desarrollo).
+- [ ] Revisión visual de Importar clientes, Clientes y Registrar puntos en tres tamaños.
+- [ ] Commit y push de F8 cuando Usuario lo pida.
 - [ ] Ejecutar cadena A: F8-BE-01→02, F8-FE-01/02, F8-I-01; importar sin crear acceso ni duplicar vínculos.
 - [ ] Ejecutar cadena B: F8-BE-03→04, F8-FE-03, F8-I-02; suma manual con vencimiento propio, auto caducidad y sin resta manual.
 - [ ] Ejecutar cadena C: F8-FE-04→F8-I-03; retirar Tendencias/Vencimiento del menú y renombrar sólo Publicaciones por marca.
