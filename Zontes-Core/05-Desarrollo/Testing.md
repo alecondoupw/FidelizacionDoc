@@ -172,7 +172,7 @@ Observación para F7: cada pantalla protegida tarda ~2–2,5 s en mostrar conten
 
 ## Corridas F7 — 2026-10-03
 
-Código F7 **sin commit** sobre BE `713e39e` y FE `bb93380`. Firestore real = proyecto de desarrollo de Paulo. Las mediciones de rendimiento se hicieron con los servidores de desarrollo que Paulo tenía en marcha (`next dev` + `tsx watch`, que recargaron los cambios) y su sesión de cliente en el navegador integrado.
+Código publicado en `main` como BE `1a46ea6` y FE `e83b92f`. Firestore real = proyecto de desarrollo de Paulo. Las mediciones de rendimiento se hicieron con los servidores de desarrollo que Paulo tenía en marcha (`next dev` + `tsx watch`, que recargaron los cambios) y su sesión de cliente en el navegador integrado.
 
 | ID | Prueba | Comando | Resultado | Límite |
 | --- | --- | --- | --- | --- |
