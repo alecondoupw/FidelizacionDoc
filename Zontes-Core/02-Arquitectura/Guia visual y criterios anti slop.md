@@ -27,6 +27,10 @@ SRC-02 pp.8–9 define el panel administrativo; SRC-03 pp.2–10 define la exper
 - Formularios de una columna móvil, filtros desplazables dentro de su fila, tablas de historial/canjes como tarjetas, controles táctiles legibles y página sin scroll horizontal innecesario (pp. 2, 5, 7 y 9).
 - SRC-03 pide línea visual compatible con admin, pero su tipografía y fondo sugeridos no coinciden exactamente con SRC-02. **DEC-11 debe fijar tokens comunes y diferencias por rol**; hasta entonces los valores anteriores son especificaciones de fuente, no un tema único aprobado.
 
+## Adenda F9 — identidad Zontes solicitada el 2026-10-05
+
+El índigo anterior describe la referencia y la implementación provisional F6; el objetivo cromático posterior está en [[02-Arquitectura/Paleta Zontes propuesta F9]]. SRC-07/DEC-20 también cambia el texto del sidebar a «Zontes» en cliente/admin. Los tokens exactos de DEC-21 siguen propuestos, mientras DEC-11 continúa abierta para activos licenciados. Aplicar la paleta a ambos roles sin perder los colores que distinguen datos por marca ni los estados semánticos. La versión implementada sólo se declarará tras F9-I-01.
+
 ## Puerta visual por pantalla
 
 1. **Fuente:** SRC-02 pp.8–9 para admin o SRC-03 pp.2–10 para cliente + imagen C/A asignada y revisión identificada; documentar ausencia de mockup cuando corresponda.

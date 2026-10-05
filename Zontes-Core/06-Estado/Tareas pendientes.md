@@ -34,6 +34,17 @@ updated: 2026-10-03
 
 Índice y 14 tareas individuales: [[05-Desarrollo/Lotes F8 - correcciones SRC-06]].
 
+## F9 — simplificación UI e identidad Zontes, planificada el 2026-10-05
+
+- [x] Registrar SRC-07/08, alcance DEC-20 y paleta propuesta DEC-21 en el Core.
+- [ ] F9-D-01: inspeccionar el FE al iniciar la fase y revisar selección exacta de tokens.
+- [ ] F9-FE-01/02/03: retirar controles y bloques solicitados en Mis marcas, cuenta e Inicio; conservar datos y contratos.
+- [ ] F9-FE-04/05: aplicar paleta en ambos roles, texto «Zontes» en ambos sidebars y Novedades en navegación cliente.
+- [ ] F9-FE-03/06: R02 en card hero de Inicio según R01; R03 en ingreso cliente y R04 en crear cuenta; preservar lectura móvil.
+- [ ] F9-I-01: pruebas de navegación, permisos, contraste y responsive 1280/768/375 px; actualizar manuales y evidencia.
+
+Índice y 8 lotes F9: [[05-Desarrollo/Lotes F9 - simplificacion de interfaz e identidad Zontes]]. Ninguna casilla de implementación F9 está cumplida.
+
 ## Próximos gates de negocio
 
 - [ ] F1: resolver DEC-03/04 antes de bootstrap y legacy.

@@ -1,13 +1,13 @@
 ---
 title: "Lotes F8 — correcciones de administrador y cliente (SRC-06)"
 tags: [zontes, lotes, f8]
-status: planificado
-updated: 2026-10-03
+status: parcialmente_verificado
+updated: 2026-10-05
 ---
 
 # Lotes F8 — correcciones de administrador y cliente (SRC-06)
 
-**Fuente:** [[09-Entradas/Requerimientos_Administrador_y_Cliente.pdf|SRC-06]] pp. 1–5; REQ-25–28. **Propósito:** ajustar el producto ya documentado en F1–F7. Los estados de esas fases describen la versión anterior y no verifican F8. Todo lote de abajo está **sin implementar y sin pruebas ejecutadas**. FE_REPO y BE_REPO siguen separados; rutas en [[05-Desarrollo/Entorno local]]. La implementación requiere orden de Usuario y las puertas de [[02-Arquitectura/Impacto SRC-06 y decisiones F8]].
+**Fuente:** [[09-Entradas/Requerimientos_Administrador_y_Cliente.pdf|SRC-06]] pp. 1–5; REQ-25–28. **Propósito:** ajustar el producto ya documentado en F1–F7. Los estados de esas fases describen la versión anterior y no verifican F8. Los lotes se planificaron originalmente antes de implementar F8. Según [[05-Desarrollo/Progreso]] y [[05-Desarrollo/Testing]], al 2026-10-04 hay código FE/BE y pruebas F8 registradas, con recorridos integrados F8-I-01…I-03 y revisión visual admin pendientes. FE_REPO y BE_REPO siguen separados; rutas en [[05-Desarrollo/Entorno local]]. La nueva petición SRC-07 se planifica aparte en [[05-Desarrollo/Lotes F9 - simplificacion de interfaz e identidad Zontes]]; no reescribe las pruebas F8.
 
 ## Cadena A — importación y vínculo de clientes
 

@@ -82,3 +82,11 @@ Usuario aportó SRC-06 y pidió nuevas cadenas de tareas. Se preservaron el PDF 
 | 2026-10-04 | **Implementación F8 (FE):** Registrar puntos de un solo formulario, Importar clientes, pendientes de registro y marcas importadas en Clientes, menú sin Tendencias ni Vencimiento, «Publicaciones por marca», nuevo Inicio según SRC-06. **Verificación:** check 118, 2 mutaciones, smoke 29/29; Inicio revisado con la sesión de cliente de Usuario en tres tamaños | F8-T05…T08. Pendientes F8-I-01…I-03 y la revisión visual del panel. |
 | 2026-10-04 | **Decisión de Usuario:** commit y push de F8 a `main` antes de los recorridos | BE `4e886e8`, FE `647012c`, Doc `a269749`; verificado con `git ls-remote`. Pendientes F8-I-01…I-03 y la revisión visual del panel. |
 | 2026-10-04 | **Cambio de Usuario (FE):** quita del marco común el encabezado superior con nombre y rol, en el panel y en el área de cliente. **Verificación:** FE check 118 pasadas y smoke 29/29 (una primera corrida tuvo 3 pruebas fuera de tiempo por carga; pasan aisladas con y sin el cambio, y en la segunda corrida completa) | FE `ca67b26` en `main`. En móvil ya no se muestra la marca de la app sobre el contenido. |
+
+## 2026-10-05 — planificación F9
+
+Usuario pidió simplificar Mis marcas, Información de cuenta e Inicio, reubicar Novedades, cambiar el texto de ambos sidebars a «Zontes» y proponer una paleta basada en zontesbolivia.com. Se registraron SRC-07/08, DEC-20 (pedido) y DEC-21 (tokens propuestos), mapa UI, fase F9 y siete lotes. La fuente web es referencia visual fechada; no otorga derechos sobre activos. No se inspeccionaron ni modificaron FE_REPO/BE_REPO; no hay pruebas F9. Siguiente acción: ejecutar F9-D-01 al iniciar la fase y revisar los tokens antes de aplicar F9-FE-04.
+
+## 2026-10-05 — ampliación F9 con imágenes de Usuario
+
+Usuario aportó cuatro imágenes: R01 captura de composición del hero, R02 panorámica destinada al card hero, R03 panel visual de ingreso cliente y R04 panel visual de registro cliente. Se copiaron sin editar al Core y se registraron tamaños/SHA-256 en SRC-09. DEC-22 asigna cada una; F9-FE-03 recibió criterios de encuadre y CTA vigente, se añadió F9-FE-06 para los formularios y F9-I-01 incorpora pruebas F9-T07/T08. No se modificó FE_REPO/BE_REPO ni se ejecutaron pruebas F9.

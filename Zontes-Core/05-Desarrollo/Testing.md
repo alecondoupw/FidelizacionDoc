@@ -217,3 +217,7 @@ Escenarios cubiertos: **T-IMPORT** (columnas obligatorias, filas con error, dupl
 Fallos encontrados y corregidos en F8: el reporte de actividad devolvía `-0` en «ajustes negativos» cuando no había ninguno; las asignaciones se guardaban como «ajuste» y no habrían contado en «puntos otorgados» del Dashboard (ahora son otorgamientos sin evento); el correo con espacios alrededor no pasaba la validación (SRC-06 pide recortarlos).
 
 Una captura o una compilación no es prueba de reglas. Los resultados se registrarán aquí o se enlazarán desde una nota de evidencia dentro de este Core. Ver [[05-Desarrollo/Criterio de terminado]] y [[06-Estado/Bitacora]].
+
+## Pruebas previstas F9 — 2026-10-05 (sin ejecución)
+
+F9-T01 UI-17 sin control «Marca activa» y aislamiento 0/1/3 marcas; F9-T02 UI-18 sin vínculo ni marca, con cuenta editable; F9-T03 UI-13 sin «Cómo ganar puntos»/«Explorar catálogo» y CTA «Ver novedades»; F9-T04 paleta/contraste de ambos roles; F9-T05 sidebar «Zontes» en ambos roles y Novedades cliente; F9-T06 recorrido integrado a 1280/768/375 px con estados, permisos y foco; F9-T07 panel R03 en ingreso y R04 en registro cliente con formulario accesible y fallos de carga; F9-T08 card hero con R02 según R01, encuadre y LCP/CLS en tres tamaños. Ejecutar y registrar revisión FE/BE, comandos, capturas y límites en F9-I-01 antes de afirmar cierre. [[05-Desarrollo/Lotes F9 - simplificacion de interfaz e identidad Zontes]].

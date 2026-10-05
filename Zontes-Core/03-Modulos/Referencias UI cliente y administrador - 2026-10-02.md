@@ -49,7 +49,7 @@ updated: 2026-10-02
 ## Reglas para usar estas referencias en tareas FE
 
 1. Abrir la imagen asignada y las páginas de PDF indicadas antes de diseñar cada UI-ID. Mantener jerarquía, navegación, componentes, tono visual y relación escritorio/móvil del cliente; adaptar el admin móvil con los criterios de SRC-02 p. 8.
-2. Separar **hecho de la fuente**, **mockup ilustrativo** y **decisión pendiente**. No copiar valores de ejemplo ni usar las fotos/logos JPEG como activos finales sin permisos y fuente autorizados. Mantener `MOTO LOYALTY` como denominación de referencia hasta DEC-11.
+2. Separar **hecho de la fuente**, **mockup ilustrativo** y **decisión pendiente**. No copiar valores de ejemplo ni usar las fotos/logos JPEG como activos finales sin permisos y fuente autorizados. La denominación `MOTO LOYALTY` pertenecía a la referencia original; DEC-20 pide «Zontes» en ambos sidebars para F9.
 3. Confirmar el contrato de BE, rol, propiedad y estados de carga/vacío/error/éxito para cada acción. El total agregado de puntos es informativo: saldo, vencimiento y canje se validan por marca según contrato. Todas las vistas que muestran saldo usan la misma fuente autorizada.
 4. En cliente comprobar al menos escritorio, tablet y móvil; la barra inferior móvil da accesos principales y el menú da acceso a todas las secciones. Las tablas de historial y canjes pasan a tarjetas legibles; filtros pueden desplazarse dentro de su fila sin provocar scroll horizontal de página.
 5. En admin comprobar los mismos tres tamaños aunque no haya capturas móviles. Ningún control funcional desaparece en el cambio de tamaño. Probar foco/teclado, contraste, controles táctiles, desbordes y estados reales con capturas de implementación por UI-ID.
@@ -57,6 +57,14 @@ updated: 2026-10-02
 ## Adenda visual SRC-06 (2026-10-03)
 
 [[09-Entradas/Referencias UI 2026-10-03/Manifiesto|SRC-06 p. 4]] aporta una nueva imagen de Inicio cliente para **UI-13/F8-FE-05**, complementaria de C08. Guía jerarquía, tarjetas claras, fondo suave y acento violeta; cifras, fotos y logotipos son ilustrativos y su uso como activos depende de DEC-11/19. No hay variante móvil de esta imagen: F8-I-04 prueba escritorio/tablet/móvil. El nuevo PDF convierte A02/UI-23 en requisito de importación propuesto para F8, sujeto a sustituir expresamente DEC-16; la tabla histórica A02 conserva su procedencia original. A06/UI-19 y A11/UI-10 quedan como referencias históricas de vistas que SRC-06 pide retirar del menú; A09/UI-12 se mantiene con nuevo nombre de menú y título. Ver [[02-Arquitectura/Impacto SRC-06 y decisiones F8]].
+
+## Adenda F9 — asignación de referencias (2026-10-05)
+
+SRC-07 cambia el objetivo de diseño sin modificar los JPEG preservados. **C02 → UI-17/F9-FE-01:** conservar estructura de marcas y su adaptación móvil, retirar el botón «Marca activa». **C03 → UI-18/F9-FE-02:** conservar cuenta y edición permitida, retirar vínculo con clientes existentes e información de marca. **C08 + SRC-06 p. 4 → UI-13/F9-FE-03:** conservar jerarquía y datos reales, retirar «Cómo ganar puntos»/«Explorar catálogo», dejar CTA «Ver novedades». **UI-28/F9-FE-05:** destino Novedades en sidebar/menú cliente; sin mockup aislado. **A01–A13 + C01–C10 → shell compartido/F9-FE-04/05:** las imágenes orientan estructura y responsividad, mientras la paleta propuesta [[02-Arquitectura/Paleta Zontes propuesta F9]] y el texto «Zontes» sustituyen el tema/copy provisional cuando se ejecute F9. Admin móvil no tiene mockup; se diseña y prueba en tres anchos. Ver [[05-Desarrollo/Lotes F9 - simplificacion de interfaz e identidad Zontes]].
+
+## Adenda SRC-09 — imágenes de Inicio y acceso cliente (2026-10-05)
+
+[[09-Entradas/Referencias UI 2026-10-05/Manifiesto de imagenes F9]] preserva cuatro referencias nuevas y su SHA-256. **F9-R01 → UI-13/F9-FE-03:** composición desktop/móvil del card hero, no asset de producto; sus textos y botones antiguos ceden a DEC-20. **F9-R02 → UI-13/F9-FE-03:** imagen panorámica destinada al card hero. **F9-R03 → UI-02/F9-FE-06:** panel visual del formulario de ingreso cliente. **F9-R04 → UI-02/F9-FE-06:** panel visual del formulario de crear cuenta cliente. C09/C10 siguen describiendo el flujo de verificación/registro; R03/R04 asignan imágenes nuevas a sus formularios. El login admin UI-01 no recibe estas imágenes. En móvil revisar encuadre/orden de lectura, no asumir que los JPEG verticales son mockups completos de formularios.
 
 ## Puntos que requieren decisión antes de implementar
 

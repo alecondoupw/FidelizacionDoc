@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="260" viewBox="0 0 840 260" role="img" aria-label="Paleta propuesta Zontes: tinta, lima, blanco, rojo y neutros claros">
+  <rect width="840" height="260" rx="18" fill="#F7F8F3"/>
+  <text x="24" y="35" font-family="Arial,sans-serif" font-size="21" font-weight="700" fill="#1A1A1A">Zontes · paleta propuesta F9</text>
+  <g font-family="Arial,sans-serif" font-size="13" font-weight="700">
+    <rect x="24" y="58" width="152" height="150" rx="12" fill="#1A1A1A"/><text x="38" y="184" fill="#FFFFFF">INK · #1A1A1A</text>
+    <rect x="184" y="58" width="152" height="150" rx="12" fill="#DCFC36"/><text x="198" y="184" fill="#1A1A1A">LIME · #DCFC36</text>
+    <rect x="344" y="58" width="152" height="150" rx="12" fill="#FFFFFF" stroke="#DDE2D4"/><text x="358" y="184" fill="#1A1A1A">WHITE · #FFFFFF</text>
+    <rect x="504" y="58" width="152" height="150" rx="12" fill="#D2253D"/><text x="518" y="184" fill="#FFFFFF">RED · #D2253D</text>
+    <rect x="664" y="58" width="152" height="150" rx="12" fill="#DDE2D4"/><text x="678" y="184" fill="#1A1A1A">BORDER · #DDE2D4</text>
+  </g>
+  <text x="24" y="239" font-family="Arial,sans-serif" font-size="13" fill="#4B5563">Colores de sitio: INK, LIME, WHITE, RED · Neutros complementarios: propuesta</text>
+</svg>
