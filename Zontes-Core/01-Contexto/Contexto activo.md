@@ -2,10 +2,21 @@
 title: "Contexto activo y lectura mínima"
 tags: [zontes]
 status: activo
-updated: 2026-10-03
+updated: 2026-10-07
 ---
 
 # Contexto activo y lectura mínima
+
+## Actualización verificada — 2026-10-07
+
+Host de Paulo: repositorios independientes en E:/Repositorios/Hackathon/MainRepo/Fidelazacion/, ramas main. F9 se inspeccionó en el frontend actualizado desde eea0a76; identidad Zontes, acceso único y PWA se implementaron y verificaron en local. Backend: identidad Zontes en comprobantes PDF. Datos y cuentas de demo existen en el Firebase de desarrollo autorizado.
+
+Detalle actual: [[06-Estado/Entrega demo Zontes - 2026-10-07]], [[05-Desarrollo/Cambios frontend - identidad Zontes y PWA]], [[05-Desarrollo/Cambios backend - comprobantes Zontes y demo]] y [[08-Produccion/Guia rapida - Render Vercel y demo 2026-10-07]]. Despliegue web e instalación física pendientes.
+
+## Contexto histórico anterior a esta entrega
+
+Las rutas, estados de planificación y limitaciones de inspección que siguen describen las sesiones documentadas anteriormente.
+
 
 **Proyecto:** Zontes; **Core:** `Zontes-Core`; **estado:** semilla documental creada 2026-10-02. **Fuente estructural:** `CORES/nextjs+nestjs/Plantilla-Core-Proyecto`, usada como formato; el anexo técnico del proyecto usa Express, no NestJS. **Cerebro de dominio:** sin asociación verificada en catálogo, no inferir `BRAIN:nextjs-nestjs` por copiar la estructura.
 

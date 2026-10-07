@@ -2,10 +2,21 @@
 title: "Zontes — Core del proyecto"
 tags: [zontes]
 status: planificado
-updated: 2026-10-03
+updated: 2026-10-07
 ---
 
 # Zontes — Core del proyecto
+
+## Actualización verificada — 2026-10-07
+
+Host de Paulo: repositorios independientes en E:/Repositorios/Hackathon/MainRepo/Fidelazacion/, ramas main. F9 se inspeccionó en el frontend actualizado desde eea0a76; identidad Zontes, acceso único y PWA se implementaron y verificaron en local. Backend: identidad Zontes en comprobantes PDF. Datos y cuentas de demo existen en el Firebase de desarrollo autorizado.
+
+Detalle actual: [[06-Estado/Entrega demo Zontes - 2026-10-07]], [[05-Desarrollo/Cambios frontend - identidad Zontes y PWA]], [[05-Desarrollo/Cambios backend - comprobantes Zontes y demo]] y [[08-Produccion/Guia rapida - Render Vercel y demo 2026-10-07]]. Despliegue web e instalación física pendientes.
+
+## Contexto histórico anterior a esta entrega
+
+Las rutas, estados de planificación y limitaciones de inspección que siguen describen las sesiones documentadas anteriormente.
+
 
 Baúl canónico del proyecto de fidelización Zontes / Kiden / NIU en este repositorio FidelizacionDoc. **Estado según las notas del Core:** F0–F6 con verificaciones y salvedades; F7 parcial; F8 implementada en local con recorridos integrados y revisión visual admin pendientes; F9 planificada en este Core, sin código ni pruebas F9. El código de producto no se inspeccionó en esta actualización documental. Repositorios operativos: FidelizacionFronted (Next.js) y FidelizacionBackend (Express); rutas en [[05-Desarrollo/Entorno local]]. Propietario: Usuario.
 

@@ -10,6 +10,12 @@ Documentación y referencias del proyecto de fidelización multimarca. El baúl 
 
 ## Avance
 
-La [fase F0](Zontes-Core/05-Desarrollo/Lote%20F0%20-%20instalacion%20separada%20frontend%20y%20backend.md) está **verificada (2026-10-03)** y fusionada en `main` de cada repo: frontend Next.js en [FidelizacionFronted](https://github.com/alecondoupw/FidelizacionFronted) y backend Express en [FidelizacionBackend](https://github.com/alecondoupw/FidelizacionBackend), dos repositorios independientes, con instalación limpia, lint, build, pruebas y llamada FE→BE comprobadas ([evidencia](Zontes-Core/05-Desarrollo/Testing.md)). Los lotes F1–F7 están en el [índice de lotes](Zontes-Core/05-Desarrollo/Lotes%20F1-F7%20-%20indice.md); ninguno se ha iniciado.
+F1–F8 tienen implementación y evidencia registradas en el Core. La versión F9 incorporada desde main se completó con identidad Zontes, acceso único y PWA el 2026-10-07. La entrega reciente se verifica en local; publicación web e instalación física en teléfono quedan pendientes.
+
+- [Entrega demo Zontes](Zontes-Core/06-Estado/Entrega%20demo%20Zontes%20-%202026-10-07.md).
+- [Cambios frontend](Zontes-Core/05-Desarrollo/Cambios%20frontend%20-%20identidad%20Zontes%20y%20PWA.md).
+- [Cambios backend](Zontes-Core/05-Desarrollo/Cambios%20backend%20-%20comprobantes%20Zontes%20y%20demo.md).
+- [Render, Vercel y cuentas de demo](Zontes-Core/08-Produccion/Guia%20rapida%20-%20Render%20Vercel%20y%20demo%202026-10-07.md).
+- [Instalar en celular](Zontes-Core/07-Manuales/Instalar%20Zontes%20en%20el%20celular%20-%20PWA.md).
 
 El Core conserva requisitos, PDF y mockups aportados, asignación de vistas, contratos, pruebas y evidencia. No contiene código de producto ni credenciales; el código vive en los dos repositorios operativos. Consulta [`AGENTS.md`](AGENTS.md) antes de trabajar en el proyecto.

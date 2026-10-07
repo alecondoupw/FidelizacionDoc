@@ -90,3 +90,9 @@ Usuario pidió simplificar Mis marcas, Información de cuenta e Inicio, reubicar
 ## 2026-10-05 — ampliación F9 con imágenes de Usuario
 
 Usuario aportó cuatro imágenes: R01 captura de composición del hero, R02 panorámica destinada al card hero, R03 panel visual de ingreso cliente y R04 panel visual de registro cliente. Se copiaron sin editar al Core y se registraron tamaños/SHA-256 en SRC-09. DEC-22 asigna cada una; F9-FE-03 recibió criterios de encuadre y CTA vigente, se añadió F9-FE-06 para los formularios y F9-I-01 incorpora pruebas F9-T07/T08. No se modificó FE_REPO/BE_REPO ni se ejecutaron pruebas F9.
+
+## 2026-10-07 — Entrega demo Zontes, identidad y PWA
+
+Por solicitud de Paulo, frontend y backend se documentaron, verificaron y publicaron en main: FE d4d377a (identidad, acceso único, banner centrado, PWA), BE 4a32dac (comprobantes Zontes). Push y SHA remoto comprobados. FE: 8 pruebas; BE: 20 pruebas; lint, typecheck y builds aprobados. Secretos y contraseñas excluidos.
+
+Documentación y límites en [[06-Estado/Entrega demo Zontes - 2026-10-07]], [[05-Desarrollo/Cambios frontend - identidad Zontes y PWA]], [[05-Desarrollo/Cambios backend - comprobantes Zontes y demo]] y [[08-Produccion/Guia rapida - Render Vercel y demo 2026-10-07]]. El despliegue HTTPS y la instalación física en móvil quedan para después de esta entrega.
